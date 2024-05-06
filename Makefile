@@ -3,8 +3,8 @@ SRC := src
 EXE := analisador_lexico.o
 
 C_FILES := \
-	$(SRC)/analisador_lexico.c \
-	 $(SRC)/main.c
+	$(SRC)/tabelas.c \
+	$(SRC)/main.c
 
 all: clean $(EXE) run
 
