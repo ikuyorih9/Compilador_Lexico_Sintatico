@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
 /*
 Busca o índice do próximo estado na tabela de transição. Ele abre o arquivo no caminho TRANSICAO_PATH.
 @param estadoAtual estado atual do autômato.
@@ -12,22 +10,23 @@ Busca o índice do próximo estado na tabela de transição. Ele abre o arquivo 
 @return índice do próximo estado. Se não encontrado na tabela, retorna -1.
 */
 Transicao buscaTabelaTransicoes(char * estadoAtual, char entrada){
-    printf("Procurando por %s com entrada \'%c\'\n", estadoAtual, entrada);
     FILE * tabelaTransicoes = fopen(TRANSICAO_PATH, "r");
     if(!tabelaTransicoes){
         printf("O arquivo %s nao existe. Saindo...\n", TRANSICAO_PATH);
         exit(0);
     }
-
-    char palavra[MAX_PALAVRA];
+    
     Transicao transicaoSaida = {{'\0'}, -1, {'\0'}};
+    char * str = (char*) malloc(MAX_PALAVRA);
     while(!feof(tabelaTransicoes)){
         Transicao t;
         int i = 0;
         int espacos = 0;
 
-        char str[MAX_PALAVRA];
         fgets(str,MAX_PALAVRA,tabelaTransicoes);
+        if(str[0] == '/' && str[1] == '/')
+            continue;
+            
         for(int pos = 0; str[pos] != '\0' && str[pos] != '\n' && str[pos] != '\r'; pos++){
             char c = str[pos];
             if(c == ' '){
@@ -62,14 +61,53 @@ Transicao buscaTabelaTransicoes(char * estadoAtual, char entrada){
             transicaoSaida = t;
         }
     }
+    free(str);
     fclose(tabelaTransicoes);
     return transicaoSaida;
 }
 
+/*
+Verifica se a palavra é reservada.
+@param palavra palavra lida pelo autômato.
+@return (0) se não é uma palavra reservada; (1) se é uma palavra reservada.
+@note A macro PALAVRAS_RESERVADAS_PATH identifica o caminho do arquivo de palavras reservadas.
+*/
+int verificaSePalavraReservada(char * palavra){
+    //Abre o arquivo de palavras reservadas e verifica se existe.
+    FILE * arquivoPalavrasReservadas = fopen(PALAVRAS_RESERVADAS_PATH, "r");
+    if(!arquivoPalavrasReservadas){
+        printf("O arquivo %s nao existe. Saindo...\n", PALAVRAS_RESERVADAS_PATH);
+        exit(0);
+    }
+
+    char palavraReservada[MAX_PALAVRA];
+
+    //Percorre todo o arquivo até atingir EOF.
+    while(!feof(arquivoPalavrasReservadas)){
+        //Lê uma linha do arquivo de palavras reservadas.
+        fgets(palavraReservada, MAX_PALAVRA, arquivoPalavrasReservadas);
+
+        //Percorre toda a linha e retira '\n' e '\r'.
+        for(int i = 0; i < strlen(palavraReservada); i++){
+            if(palavraReservada[i] == '\n' || palavraReservada[i] == '\r'){
+                palavraReservada[i] = '\0';
+                break;
+            }
+        }
+
+        //Verifica se a palavra é reservada.
+        int encontrouPalavraReservada = !strcmp(palavra, palavraReservada);
+        if(encontrouPalavraReservada)
+            return 1;
+    }
+    return 0;
+}
+
 int estadoFinal(char * estado){
-    if(estado[0] == 'S')
+    if(estado[0] == 'S' || estado[0] == 'E')
         return 1;
     return 0;
 }
+
 
 

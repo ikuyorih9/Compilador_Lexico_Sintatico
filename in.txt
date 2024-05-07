@@ -1,6 +1,9 @@
+{Novinha eu quero te ver (Daniel) Contente d+}
+CONST isaac = 5;
 VAR a,b,c;
 BEGIN
     a:=2;
     b:=3;
     c:=@+b;
+    WHILE a >< isaac DO b:=5*(a+c-b);
 END.
