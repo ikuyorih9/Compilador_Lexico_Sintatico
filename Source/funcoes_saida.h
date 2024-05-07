@@ -8,35 +8,35 @@
 //Tipo de dado que associa um estado, uma função e um valor de retroceder.
 typedef struct{
     char estado[4];
-    void (*funcaoSaida)(char*,FILE*);
+    char * (*funcaoSaida)(char*);
     int retrocede;
 } Funcao;
 
-int procuraFuncaoSaida(char * estadoFinal, char * palavra, FILE * saida);
+int procuraFuncaoSaida(char * estadoFinal, char * palavra, char ** saida);
 
 //FUNÇÕES DE SAÍDA.
-void funcaoSaida0(char * palavra, FILE * saida);
-void funcaoSaida1(char * palavra, FILE * saida);
-void funcaoSaida2(char * palavra, FILE * saida);
-void funcaoSaida3(char * palavra, FILE * saida);
-void funcaoSaida4(char * palavra, FILE * saida);
-void funcaoSaida5(char * palavra, FILE * saida);
-void funcaoSaida6(char * palavra, FILE * saida);
-void funcaoSaida7(char * palavra, FILE * saida);
-void funcaoSaida8(char * palavra, FILE * saida);
-void funcaoSaida9(char * palavra, FILE * saida);
-void funcaoSaida10(char * palavra, FILE * saida);
-void funcaoSaida11(char * palavra, FILE * saida);
-void funcaoSaida12(char * palavra, FILE * saida);
-void funcaoSaida13(char * palavra, FILE * saida);
-void funcaoSaida14(char * palavra, FILE * saida);
-void funcaoSaida15(char * palavra, FILE * saida);
-void funcaoSaida16(char * palavra, FILE * saida);
-void funcaoSaida17(char * palavra, FILE * saida);
-void funcaoSaida18(char * palavra, FILE * saida);
-void funcaoSaida19(char * palavra, FILE * saida);
+char * funcaoSaida0(char * palavra);
+char * funcaoSaida1(char * palavra);
+char * funcaoSaida2(char * palavra);
+char * funcaoSaida3(char * palavra);
+char * funcaoSaida4(char * palavra);
+char * funcaoSaida5(char * palavra);
+char * funcaoSaida6(char * palavra);
+char * funcaoSaida7(char * palavra);
+char * funcaoSaida8(char * palavra);
+char * funcaoSaida9(char * palavra);
+char * funcaoSaida10(char * palavra);
+char * funcaoSaida11(char * palavra);
+char * funcaoSaida12(char * palavra);
+char * funcaoSaida13(char * palavra);
+char * funcaoSaida14(char * palavra);
+char * funcaoSaida15(char * palavra);
+char * funcaoSaida16(char * palavra);
+char * funcaoSaida17(char * palavra);
+char * funcaoSaida18(char * palavra);
+char * funcaoSaida19(char * palavra);
 
 //FUNÇÕES DE ERRO.
-void funcaoErro1(char * palavra, FILE * saida);
-void funcaoErro2(char * palavra, FILE * saida);
+char * funcaoErro1(char * palavra);
+char * funcaoErro2(char * palavra);
 #endif

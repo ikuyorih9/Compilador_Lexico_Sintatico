@@ -1,5 +1,6 @@
-
 LINHA: {Novinha eu quero te ver (Daniel) Contente d+}
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0, {) = Q26.
 	Tabela de transicao:  (Q26, N) = Q26.
 	Tabela de transicao:  (Q26, o) = Q26.
@@ -47,8 +48,12 @@ LINHA: {Novinha eu quero te ver (Daniel) Contente d+}
 	Tabela de transicao:  (Q26, +) = Q26.
 	Tabela de transicao:  (Q26, }) = S19.
 		Chamando funcao de saida para S19...
-
+		Enviando palavra {Novinha eu quero te ver (Daniel) Contente d+}...
+			SAIDA: {Novinha eu quero te ver (Daniel) Contente d+}, comentario
+	Voltei na posição linha[45].
 LINHA: CONST isaac = 5;
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0, C) = Q1.
 	Tabela de transicao:  (Q1, O) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
@@ -56,9 +61,18 @@ LINHA: CONST isaac = 5;
 	Tabela de transicao:  (Q1, T) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra CONST ...
+		Recebida a palavra CONST
+			SAIDA: CONST, CONST
 		Retrocedendo ' '...
+	Voltei na posição linha[4].
+	Comecei na posição linha[5].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[5].
+	Comecei na posição linha[6].
 	Tabela de transicao:  (Q0, i) = Q1.
 	Tabela de transicao:  (Q1, s) = Q1.
 	Tabela de transicao:  (Q1, a) = Q1.
@@ -66,140 +80,342 @@ LINHA: CONST isaac = 5;
 	Tabela de transicao:  (Q1, c) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra isaac ...
+		Recebida a palavra isaac
+			SAIDA: isaac, identificador
 		Retrocedendo ' '...
+	Voltei na posição linha[10].
+	Comecei na posição linha[11].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[11].
+	Comecei na posição linha[12].
 	Tabela de transicao:  (Q0, =) = S11.
 		Chamando funcao de saida para S11...
+		Enviando palavra =...
+			SAIDA: =, simbolo_igualdade
+	Voltei na posição linha[12].
+	Comecei na posição linha[13].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[13].
+	Comecei na posição linha[14].
 	Tabela de transicao:  (Q0, 5) = Q14.
 	Tabela de transicao:  (Q14, ;) = S13.
 		Chamando funcao de saida para S13...
+		Enviando palavra 5;...
+			SAIDA: 5, numero
 		Retrocedendo ';'...
+	Voltei na posição linha[14].
+	Comecei na posição linha[15].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
-
+		Enviando palavra ;...
+			SAIDA: ;, simbolo_ponto_virgula
+	Voltei na posição linha[15].
 LINHA: VAR a,b,c;
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0, V) = Q1.
 	Tabela de transicao:  (Q1, A) = Q1.
 	Tabela de transicao:  (Q1, R) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra VAR ...
+		Recebida a palavra VAR
+			SAIDA: VAR, VAR
 		Retrocedendo ' '...
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[3].
+	Comecei na posição linha[4].
 	Tabela de transicao:  (Q0, a) = Q1.
 	Tabela de transicao:  (Q1, ,) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra a,...
+		Recebida a palavra a
+			SAIDA: a, identificador
 		Retrocedendo ','...
+	Voltei na posição linha[4].
+	Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, ,) = S2.
 		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+			SAIDA: ,, simbolo_virgula
+	Voltei na posição linha[5].
+	Comecei na posição linha[6].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, ,) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra b,...
+		Recebida a palavra b
+			SAIDA: b, identificador
 		Retrocedendo ','...
+	Voltei na posição linha[6].
+	Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, ,) = S2.
 		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+			SAIDA: ,, simbolo_virgula
+	Voltei na posição linha[7].
+	Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, c) = Q1.
 	Tabela de transicao:  (Q1, ;) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra c;...
+		Recebida a palavra c
+			SAIDA: c, identificador
 		Retrocedendo ';'...
+	Voltei na posição linha[8].
+	Comecei na posição linha[9].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
-
+		Enviando palavra ;...
+			SAIDA: ;, simbolo_ponto_virgula
+	Voltei na posição linha[9].
 LINHA: BEGIN
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0, B) = Q1.
 	Tabela de transicao:  (Q1, E) = Q1.
 	Tabela de transicao:  (Q1, G) = Q1.
 	Tabela de transicao:  (Q1, I) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
-
+	Voltei na posição linha[0].
+	Comecei na posição linha[1].
+	Tabela de transicao:  (Q0, E) = Q1.
+	Tabela de transicao:  (Q1, G) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Voltei na posição linha[1].
+	Comecei na posição linha[2].
+	Tabela de transicao:  (Q0, G) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
+	Tabela de transicao:  (Q0, I) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Voltei na posição linha[3].
+	Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, N) = Q1.
+	Voltei na posição linha[4].
 LINHA:     a:=2;
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Retrocedendo ' '...
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[0].
+	Comecei na posição linha[1].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[1].
+	Comecei na posição linha[2].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[3].
+	Comecei na posição linha[4].
 	Tabela de transicao:  (Q0, a) = Q1.
 	Tabela de transicao:  (Q1, :) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra a:...
+		Recebida a palavra a
+			SAIDA: a, identificador
 		Retrocedendo ':'...
+	Voltei na posição linha[4].
+	Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, :) = Q4.
 	Tabela de transicao:  (Q4, =) = S12.
 		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+			SAIDA: :=, simbolo_atribuicao
+	Voltei na posição linha[6].
+	Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, 2) = Q14.
 	Tabela de transicao:  (Q14, ;) = S13.
 		Chamando funcao de saida para S13...
+		Enviando palavra 2;...
+			SAIDA: 2, numero
 		Retrocedendo ';'...
+	Voltei na posição linha[7].
+	Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
-
+		Enviando palavra ;...
+			SAIDA: ;, simbolo_ponto_virgula
+	Voltei na posição linha[8].
 LINHA:     b:=3;
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[0].
+	Comecei na posição linha[1].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[1].
+	Comecei na posição linha[2].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[3].
+	Comecei na posição linha[4].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, :) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra b:...
+		Recebida a palavra b
+			SAIDA: b, identificador
 		Retrocedendo ':'...
+	Voltei na posição linha[4].
+	Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, :) = Q4.
 	Tabela de transicao:  (Q4, =) = S12.
 		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+			SAIDA: :=, simbolo_atribuicao
+	Voltei na posição linha[6].
+	Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, 3) = Q14.
 	Tabela de transicao:  (Q14, ;) = S13.
 		Chamando funcao de saida para S13...
+		Enviando palavra 3;...
+			SAIDA: 3, numero
 		Retrocedendo ';'...
+	Voltei na posição linha[7].
+	Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
-
+		Enviando palavra ;...
+			SAIDA: ;, simbolo_ponto_virgula
+	Voltei na posição linha[8].
 LINHA:     c:=@+b;
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[0].
+	Comecei na posição linha[1].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[1].
+	Comecei na posição linha[2].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[3].
+	Comecei na posição linha[4].
 	Tabela de transicao:  (Q0, c) = Q1.
 	Tabela de transicao:  (Q1, :) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra c:...
+		Recebida a palavra c
+			SAIDA: c, identificador
 		Retrocedendo ':'...
+	Voltei na posição linha[4].
+	Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, :) = Q4.
 	Tabela de transicao:  (Q4, =) = S12.
 		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+			SAIDA: :=, simbolo_atribuicao
+	Voltei na posição linha[6].
+	Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, @) = E2.
 		Chamando funcao de saida para E2...
+		Enviando palavra @...
+			SAIDA: @, <erro_lexico>
+	Voltei na posição linha[7].
+	Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, +) = S6.
 		Chamando funcao de saida para S6...
+		Enviando palavra +...
+			SAIDA: +, simbolo_mais
+	Voltei na posição linha[8].
+	Comecei na posição linha[9].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, ;) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra b;...
+		Recebida a palavra b
+			SAIDA: b, identificador
 		Retrocedendo ';'...
+	Voltei na posição linha[9].
+	Comecei na posição linha[10].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
-
+		Enviando palavra ;...
+			SAIDA: ;, simbolo_ponto_virgula
+	Voltei na posição linha[10].
 LINHA:     WHILE a >< isaac DO b:=5*(a+c-b);
+
+	Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[0].
+	Comecei na posição linha[1].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[1].
+	Comecei na posição linha[2].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[3].
+	Comecei na posição linha[4].
 	Tabela de transicao:  (Q0, W) = Q1.
 	Tabela de transicao:  (Q1, H) = Q1.
 	Tabela de transicao:  (Q1, I) = Q1.
@@ -207,25 +423,55 @@ LINHA:     WHILE a >< isaac DO b:=5*(a+c-b);
 	Tabela de transicao:  (Q1, E) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra WHILE ...
+		Recebida a palavra WHILE
+			SAIDA: WHILE, WHILE
 		Retrocedendo ' '...
+	Voltei na posição linha[8].
+	Comecei na posição linha[9].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[9].
+	Comecei na posição linha[10].
 	Tabela de transicao:  (Q0, a) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra a ...
+		Recebida a palavra a
+			SAIDA: a, identificador
 		Retrocedendo ' '...
+	Voltei na posição linha[10].
+	Comecei na posição linha[11].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[11].
+	Comecei na posição linha[12].
 	Tabela de transicao:  (Q0, >) = Q3.
 	Tabela de transicao:  (Q3, <) = S18.
 		Chamando funcao de saida para S18...
+		Enviando palavra ><...
+			SAIDA: >, simbolo_maior
 		Retrocedendo '<'...
+	Voltei na posição linha[12].
+	Comecei na posição linha[13].
 	Tabela de transicao:  (Q0, <) = Q5.
 	Tabela de transicao:  (Q5,  ) = S16.
 		Chamando funcao de saida para S16...
+		Enviando palavra < ...
+			SAIDA: <, simbolo_menor
 		Retrocedendo ' '...
+	Voltei na posição linha[13].
+	Comecei na posição linha[14].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[14].
+	Comecei na posição linha[15].
 	Tabela de transicao:  (Q0, i) = Q1.
 	Tabela de transicao:  (Q1, s) = Q1.
 	Tabela de transicao:  (Q1, a) = Q1.
@@ -233,57 +479,135 @@ LINHA:     WHILE a >< isaac DO b:=5*(a+c-b);
 	Tabela de transicao:  (Q1, c) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra isaac ...
+		Recebida a palavra isaac
+			SAIDA: isaac, identificador
 		Retrocedendo ' '...
+	Voltei na posição linha[19].
+	Comecei na posição linha[20].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[20].
+	Comecei na posição linha[21].
 	Tabela de transicao:  (Q0, D) = Q1.
 	Tabela de transicao:  (Q1, O) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra DO ...
+		Recebida a palavra DO
+			SAIDA: DO, DO
 		Retrocedendo ' '...
+	Voltei na posição linha[22].
+	Comecei na posição linha[23].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+			Nao ha saida.
+	Voltei na posição linha[23].
+	Comecei na posição linha[24].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, :) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra b:...
+		Recebida a palavra b
+			SAIDA: b, identificador
 		Retrocedendo ':'...
+	Voltei na posição linha[24].
+	Comecei na posição linha[25].
 	Tabela de transicao:  (Q0, :) = Q4.
 	Tabela de transicao:  (Q4, =) = S12.
 		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+			SAIDA: :=, simbolo_atribuicao
+	Voltei na posição linha[26].
+	Comecei na posição linha[27].
 	Tabela de transicao:  (Q0, 5) = Q14.
 	Tabela de transicao:  (Q14, *) = S13.
 		Chamando funcao de saida para S13...
+		Enviando palavra 5*...
+			SAIDA: 5, numero
 		Retrocedendo '*'...
+	Voltei na posição linha[27].
+	Comecei na posição linha[28].
 	Tabela de transicao:  (Q0, *) = S8.
 		Chamando funcao de saida para S8...
+		Enviando palavra *...
+			SAIDA: *, simbolo_multiplicacao
+	Voltei na posição linha[28].
+	Comecei na posição linha[29].
 	Tabela de transicao:  (Q0, () = S4.
 		Chamando funcao de saida para S4...
+		Enviando palavra (...
+			SAIDA: (, simbolo_abre_parentese
+	Voltei na posição linha[29].
+	Comecei na posição linha[30].
 	Tabela de transicao:  (Q0, a) = Q1.
 	Tabela de transicao:  (Q1, +) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra a+...
+		Recebida a palavra a
+			SAIDA: a, identificador
 		Retrocedendo '+'...
+	Voltei na posição linha[30].
+	Comecei na posição linha[31].
 	Tabela de transicao:  (Q0, +) = S6.
 		Chamando funcao de saida para S6...
+		Enviando palavra +...
+			SAIDA: +, simbolo_mais
+	Voltei na posição linha[31].
+	Comecei na posição linha[32].
 	Tabela de transicao:  (Q0, c) = Q1.
 	Tabela de transicao:  (Q1, -) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra c-...
+		Recebida a palavra c
+			SAIDA: c, identificador
 		Retrocedendo '-'...
+	Voltei na posição linha[32].
+	Comecei na posição linha[33].
 	Tabela de transicao:  (Q0, -) = S7.
 		Chamando funcao de saida para S7...
+		Enviando palavra -...
+			SAIDA: -, simbolo_menos
+	Voltei na posição linha[33].
+	Comecei na posição linha[34].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, )) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra b)...
+		Recebida a palavra b
+			SAIDA: b, identificador
 		Retrocedendo ')'...
+	Voltei na posição linha[34].
+	Comecei na posição linha[35].
 	Tabela de transicao:  (Q0, )) = S5.
 		Chamando funcao de saida para S5...
+		Enviando palavra )...
+			SAIDA: ), simbolo_fecha_parentese
+	Voltei na posição linha[35].
+	Comecei na posição linha[36].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
-
-LINHA: END.	Tabela de transicao:  (Q0, E) = Q1.
+		Enviando palavra ;...
+			SAIDA: ;, simbolo_ponto_virgula
+	Voltei na posição linha[36].
+LINHA: END.
+	Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, E) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
 	Tabela de transicao:  (Q1, D) = Q1.
 	Tabela de transicao:  (Q1, .) = S0.
 		Chamando funcao de saida para S0...
+		Enviando palavra END....
+		Recebida a palavra END
+			SAIDA: END, END
 		Retrocedendo '.'...
+	Voltei na posição linha[2].
+	Comecei na posição linha[3].
 	Tabela de transicao:  (Q0, .) = S9.
 		Chamando funcao de saida para S9...
+		Enviando palavra ....
+			SAIDA: ., simbolo_ponto
+	Voltei na posição linha[3].

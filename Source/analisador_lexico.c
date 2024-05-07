@@ -8,49 +8,46 @@
 //Realiza a análise léxica do programa de entrada.
 /*
 Realiza a análise léxica do programa de entrada.
-@param entrada arquivo de entrada com o programa PL/0.
+@param posicao
 @return 
 */
-int analisadorLexico(FILE * entrada, FILE * saida){
-    char estadoAtual[3] = {'Q','0'};
+
+char * analisadorLexico(int * pos, char * linha){
+    int i = *pos;
     int posPalavra = 0;
-
-    char * linha = (char*) malloc(MAX_LINHA);
+    char estadoAtual[3] = {'Q','0'};
     char * palavra = (char*) malloc(MAX_PALAVRA);
-    while(!feof(entrada)){
-        fgets(linha, MAX_LINHA, entrada);
-        dprint("\nLINHA: %s", linha);
-        for(int i = 0; linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'; i++){
-            if(linha[i] == '\n' || linha[i] == '\t')
-                continue;
 
-            palavra[posPalavra] = linha[i];
-            palavra[posPalavra+1] = '\0';
-            posPalavra++;
-            
-            dprint("\tTabela de transicao:  (%s, %c) = ", estadoAtual, linha[i]);
+    while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'){
+        palavra[posPalavra] = linha[i];
+        palavra[posPalavra+1] = '\0';
+        posPalavra++;
 
-            Transicao t = buscaTabelaTransicoes(estadoAtual, linha[i]);
-            if(t.entrada == -1){
-                dprint("Transição não encontrada.\n");
-                exit(0);
+        dprint("\tTabela de transicao:  (%s, %c) = ", estadoAtual, linha[i]);
+
+        Transicao t = buscaTabelaTransicoes(estadoAtual, linha[i]);
+        if(t.entrada == -1){
+            dprint("Transição não encontrada.\n");
+            exit(0);
+        }
+        strcpy(estadoAtual, t.estadoProx);
+        dprint("%s.\n", estadoAtual);
+        if(estadoFinal(estadoAtual)){
+            dprint("\t\tChamando funcao de saida para %s...\n", estadoAtual);
+            dprint("\t\tEnviando palavra %s...\n", palavra);
+            char * token;
+            int retrocede = procuraFuncaoSaida(estadoAtual, palavra, &token);
+            if(retrocede){
+                dprint("\t\tRetrocedendo \'%c\'...\n", linha[i]);
+                i--;
             }
-            strcpy(estadoAtual, t.estadoProx);
-            dprint("%s.\n", estadoAtual);
-            if(estadoFinal(estadoAtual)){
-                dprint("\t\tChamando funcao de saida para %s...\n", estadoAtual);
+            posPalavra = 0;
+            strcpy(estadoAtual, ESTADO_INICIAL);
+            *pos = i;
+            return token;
+        }
 
-                int retrocede = procuraFuncaoSaida(estadoAtual, palavra, saida);
-                if(retrocede){
-                    dprint("\t\tRetrocedendo \'%c\'...\n", linha[i]);
-                    i--;
-                }
-                posPalavra = 0;
-                strcpy(estadoAtual, ESTADO_INICIAL);
-                continue;
-            }
-        } 
+        i++;
     }
-    free(palavra);
-    free(linha);
+    return NULL;
 }

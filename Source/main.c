@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "analisador_lexico.h"
+#include "tabelas.h"
 
 #define ENTRADA_PATH "Logs/in.txt"
 #define SAIDA_PATH "Logs/out.txt"
@@ -19,7 +20,22 @@ int main(){
         exit(0);
     }
 
-    analisadorLexico(entrada, saida);
+    char * linha = (char*) malloc(MAX_LINHA);
+    while(!feof(entrada)){
+        fgets(linha, MAX_LINHA, entrada);
+        dprint("LINHA: %s\n", linha);
+        int tamLinha = strlen(linha);
+        for(int i = 0; linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'; i++){
+            dprint("\tComecei na posição linha[%d].\n", i);
+            char * token = pseudoLexico(&i, linha);
+            dprint("\tVoltei na posição linha[%d].\n", i);
+            if(token!=NULL){
+                fprintf(saida,"%s\n", token);
+                printf("TOKEN: %s\n",token);
+                free(token);
+            }
+        }
+    }
 
     fclose(entrada);
     fclose(saida);

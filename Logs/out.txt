@@ -11,7 +11,6 @@ b, identificador
 ,, simbolo_virgula
 c, identificador
 ;, simbolo_ponto_virgula
-BEGIN, BEGIN
 a, identificador
 :=, simbolo_atribuicao
 2, numero

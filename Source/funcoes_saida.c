@@ -43,148 +43,215 @@ Procura a função a se executar, dependendo do estado inserido.
 @param saida arquivo de saída.
 @return (0) se a função não retrocede, (1) se a função retrocede e (-1) se não há função de saída associada ao estado.
 */
-int procuraFuncaoSaida(char * estado, char * palavra, FILE * saida){
+int procuraFuncaoSaida(char * estado, char * palavra, char ** saida){
     for(int i = 0; i < NUM_ESTADOS_SAIDA; i++){
         int encontrouEstado = !strcmp(estado, tabelaFuncoes[i].estado);
         if(encontrouEstado){
-            tabelaFuncoes[i].funcaoSaida(palavra,saida);
+            *saida = tabelaFuncoes[i].funcaoSaida(palavra);
             return tabelaFuncoes[i].retrocede;
         }
     }
     return -1;
 }
 
-void funcaoSaida0(char * palavra, FILE * saida){
+char * funcaoSaida0(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
+
+    char * saida = (char*) malloc(MAX_LINHA);
 
     //Verifica se é palavra reservada.
     int palavraReservada = verificaSePalavraReservada(palavra);
-    if(palavraReservada)
-        fprintf(STREAM_SAIDA, "%s, %s\n",palavra,palavra);
-    else
-        fprintf(STREAM_SAIDA, "%s, %s\n",palavra,IDENT);
-
-    return;
+    if(palavraReservada){
+        strcpy(saida, palavra);
+        strcat(saida,", ");
+        strcat(saida,palavra);
+    }
+    else{
+        strcpy(saida, palavra);
+        strcat(saida,", ");
+        strcat(saida,IDENT);
+    }
+    return saida;
 }
 
-void funcaoSaida1(char * palavra, FILE * saida){
-    return;
+char * funcaoSaida1(char * palavra){
+    return NULL;
 }
 
-void funcaoSaida2(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_VIRGULA);
-    return;
+char * funcaoSaida2(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_VIRGULA);
+    return saida;
 }
 
-void funcaoSaida3(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_PVIRGULA);
-    return;
+char * funcaoSaida3(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_PVIRGULA);
+    return saida;
 }
 
-void funcaoSaida4(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_ABRE_PARENTESE);
-    return;
+char * funcaoSaida4(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_ABRE_PARENTESE);
+    return saida;
 }
 
-void funcaoSaida5(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_FECHA_PARENTESE);
-    return;
+char * funcaoSaida5(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_FECHA_PARENTESE);
+    return saida;
 }
 
-void funcaoSaida6(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MAIS);
-    return;
+char * funcaoSaida6(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MAIS);
+    return saida;
 }
 
-void funcaoSaida7(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MENOS);
-    return;
+char * funcaoSaida7(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MENOS);
+    return saida;
 }
 
-void funcaoSaida8(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MULTI);
-    return;
+char * funcaoSaida8(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MULTI);
+    return saida;
 }
 
-void funcaoSaida9(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_PONTO);
-    return;
+char * funcaoSaida9(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_PONTO);
+    return saida;
 }
 
-void funcaoSaida10(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_DIV);
-    return;
+char * funcaoSaida10(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_DIV);
+    return saida;
 }
 
-void funcaoSaida11(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_IGUAL);
-    return;
+char * funcaoSaida11(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_IGUAL);
+    return saida;
 }
 
-void funcaoSaida12(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_ATRIBUICAO);
-    return;
+char * funcaoSaida12(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_ATRIBUICAO);
+    return saida;
 }
 
-void funcaoSaida13(char * palavra, FILE * saida){
+char * funcaoSaida13(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_NUMERO);
-    return;
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_NUMERO);
+    return saida;
 }
 
-void funcaoSaida14(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MENOR_IGUAL);
-    return;
+char * funcaoSaida14(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MENOR_IGUAL);
+    return saida;
 }
 
-void funcaoSaida15(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_DIFERENTE);
-    return;
+char * funcaoSaida15(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_DIFERENTE);
+    return saida;
 }
 
-void funcaoSaida16(char * palavra, FILE * saida){
+char * funcaoSaida16(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MENOR);
-    return;
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MENOR);
+    return saida;
 }
 
-void funcaoSaida17(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MENOR_IGUAL);
-    return;
+char * funcaoSaida17(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MAIOR_IGUAL);
+    return saida;
 }
 
-void funcaoSaida18(char * palavra, FILE * saida){
+char * funcaoSaida18(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, SIMB_MAIOR);
-    return;
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,SIMB_MAIOR);
+    return saida;
 }
 
-void funcaoSaida19(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, COMENTARIO);
-    return;
+char * funcaoSaida19(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,COMENTARIO);
+    return saida;
 }
 
-void funcaoErro1(char * palavra, FILE * saida){
+char * funcaoErro1(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, ERRO_LEXICO);
-    return;
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,ERRO_LEXICO);
+    return saida;
 }
 
-void funcaoErro2(char * palavra, FILE * saida){
-    fprintf(STREAM_SAIDA, "%s, %s\n",palavra, ERRO_LEXICO);
-    return;
+char * funcaoErro2(char * palavra){
+    char * saida = (char*) malloc(MAX_LINHA);
+    strcpy(saida, palavra);
+    strcat(saida,", ");
+    strcat(saida,ERRO_LEXICO);
+    return saida;
 }
