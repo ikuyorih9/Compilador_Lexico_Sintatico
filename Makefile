@@ -1,11 +1,12 @@
 CC = gcc
-SRC := src
+SRC := Source
 EXE := analisador_lexico.o
-SAIDA := log.txt
+SAIDA := Logs/log.txt
 
 C_FILES := \
 	$(SRC)/tabelas.c \
 	$(SRC)/funcoes_saida.c \
+	$(SRC)/analisador_lexico.c \
 	$(SRC)/main.c
 
 all: clean $(EXE) run

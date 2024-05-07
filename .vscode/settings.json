@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "string.h": "c"
+        "string.h": "c",
+        "funcoes_saida.h": "c",
+        "tabelas.h": "c"
     }
 }

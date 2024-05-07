@@ -3,33 +3,22 @@
 #include <string.h>
 #include "funcoes_saida.h"
 #include "tabelas.h"
+#include "analisador_lexico.h"
 
-#define ENTRADA_PATH "in.txt"
-#define SAIDA_PATH "out.txt"
-
-#define DEBUG_PRINT 1
-#define dprint if(DEBUG_PRINT) printf
-
-int main(){
+//Realiza a análise léxica do programa de entrada.
+/*
+Realiza a análise léxica do programa de entrada.
+@param entrada arquivo de entrada com o programa PL/0.
+@return 
+*/
+int analisadorLexico(FILE * entrada, FILE * saida){
     char estadoAtual[3] = {'Q','0'};
     int posPalavra = 0;
 
-    FILE * entrada = fopen(ENTRADA_PATH, "r");
-    if(!entrada){
-        printf("O arquivo %s nao existe. Saindo...\n", ENTRADA_PATH);
-        exit(0);
-    }
-
-    FILE * saida = fopen(SAIDA_PATH, "w");
-    if(!saida){
-        printf("O arquivo %s nao foi criado. Saindo...\n", SAIDA_PATH);
-        exit(0);
-    }
-
-    char linha[1024];
+    char * linha = (char*) malloc(MAX_LINHA);
     char * palavra = (char*) malloc(MAX_PALAVRA);
     while(!feof(entrada)){
-        fgets(linha, 1024, entrada);
+        fgets(linha, MAX_LINHA, entrada);
         dprint("\nLINHA: %s", linha);
         for(int i = 0; linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'; i++){
             if(linha[i] == '\n' || linha[i] == '\t')
@@ -43,7 +32,7 @@ int main(){
 
             Transicao t = buscaTabelaTransicoes(estadoAtual, linha[i]);
             if(t.entrada == -1){
-                printf("Transição não encontrada.\n");
+                dprint("Transição não encontrada.\n");
                 exit(0);
             }
             strcpy(estadoAtual, t.estadoProx);
@@ -63,7 +52,5 @@ int main(){
         } 
     }
     free(palavra);
-    fclose(entrada);
-    fclose(saida);
-    return 0;
+    free(linha);
 }

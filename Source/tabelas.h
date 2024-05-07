@@ -2,7 +2,7 @@
 #define TABELAS_H
 
 #define MAX_PALAVRA 256
-#define MAX_TABELA 124
+#define MAX_LINHA 1024
 #define NUM_PALAVRAS_RESERVADAS 11
 #define ESTADO_INICIAL "Q0"
 
