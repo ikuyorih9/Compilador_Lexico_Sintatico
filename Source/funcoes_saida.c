@@ -5,9 +5,6 @@
 #include "tabelas.h"
 #include "simbolos.h"
 
-#define STREAM_SAIDA saida
-
-
 /*
 Tabela de funções de saída para cada estado de saída.
 */
@@ -40,14 +37,19 @@ const Funcao tabelaFuncoes[] = {
 Procura a função a se executar, dependendo do estado inserido.
 @param estado estado que executa uma função de saída.
 @param palavra palavra lida pelo autômato.
-@param saida arquivo de saída.
+@param saida ponteiro para uma string de saída.
 @return (0) se a função não retrocede, (1) se a função retrocede e (-1) se não há função de saída associada ao estado.
 */
-int procuraFuncaoSaida(char * estado, char * palavra, char ** saida){
+int procuraFuncaoSaida(char * estado, char * token, char ** saida){
+    //Percorre todos os estados de saída da tabela tabelaFuncoes.
     for(int i = 0; i < NUM_ESTADOS_SAIDA; i++){
+        //Se o estado de saída lido da tabela for igual ao estado de saída recebido pela função.
         int encontrouEstado = !strcmp(estado, tabelaFuncoes[i].estado);
         if(encontrouEstado){
-            *saida = tabelaFuncoes[i].funcaoSaida(palavra);
+            //Recupera a identificação do token 'palavra'.
+            *saida = tabelaFuncoes[i].funcaoSaida(token);
+
+            //Retorna se retrocede ou não, conforme a tabelaFuncoes.
             return tabelaFuncoes[i].retrocede;
         }
     }
@@ -55,7 +57,7 @@ int procuraFuncaoSaida(char * estado, char * palavra, char ** saida){
 }
 
 char * funcaoSaida0(char * palavra){
-    //Ignora a ultima letra que é um caractere invalido.
+    //Ignora o último caractere lido: retrocede.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
@@ -63,11 +65,13 @@ char * funcaoSaida0(char * palavra){
 
     //Verifica se é palavra reservada.
     int palavraReservada = verificaSePalavraReservada(palavra);
+    //Se é reservada, identifica com o próprio nome.
     if(palavraReservada){
         strcpy(saida, palavra);
         strcat(saida,", ");
         strcat(saida,palavra);
     }
+    //Se ela não é reservada, identifica como identificador.
     else{
         strcpy(saida, palavra);
         strcat(saida,", ");

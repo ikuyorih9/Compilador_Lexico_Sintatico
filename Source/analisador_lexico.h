@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-char * analisadorLexico(int * i, char * linha);
+char * analisadorLexico(char * linha, int * i);
 
 #endif

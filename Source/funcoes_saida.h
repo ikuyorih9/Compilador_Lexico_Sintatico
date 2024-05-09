@@ -12,7 +12,7 @@ typedef struct{
     int retrocede;
 } Funcao;
 
-int procuraFuncaoSaida(char * estadoFinal, char * palavra, char ** saida);
+int procuraFuncaoSaida(char * estadoFinal, char * token, char ** saida);
 
 //FUNÇÕES DE SAÍDA.
 char * funcaoSaida0(char * palavra);
