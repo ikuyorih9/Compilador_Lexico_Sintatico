@@ -1,3 +1,4 @@
+{Bom dia, prof. Thiago Pardo}
 VAR n, sum, i, j;
 
 PROCEDURE SumUpToN;

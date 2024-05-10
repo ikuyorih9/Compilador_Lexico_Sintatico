@@ -1,3 +1,4 @@
+{Bom dia, prof. Thiago Pardo}, comentario
 VAR, VAR
 n, identificador
 ,, simbolo_virgula

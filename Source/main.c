@@ -4,7 +4,7 @@
 #include "analisador_lexico.h"
 #include "tabelas.h"
 
-#define ENTRADA_PATH "Logs/in.txt"
+#define ENTRADA_PATH "ProgramasTeste/prog1.txt"
 #define SAIDA_PATH "Logs/out.txt"
 
 int main(){

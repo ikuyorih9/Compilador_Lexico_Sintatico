@@ -1,4 +1,43 @@
 
+LINHA: {Bom dia, prof. Thiago Pardo}
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, {) = Q6.
+	Tabela de transicao:  (Q6, B) = Q6.
+	Tabela de transicao:  (Q6, o) = Q6.
+	Tabela de transicao:  (Q6, m) = Q6.
+	Tabela de transicao:  (Q6,  ) = Q6.
+	Tabela de transicao:  (Q6, d) = Q6.
+	Tabela de transicao:  (Q6, i) = Q6.
+	Tabela de transicao:  (Q6, a) = Q6.
+	Tabela de transicao:  (Q6, ,) = Q6.
+	Tabela de transicao:  (Q6,  ) = Q6.
+	Tabela de transicao:  (Q6, p) = Q6.
+	Tabela de transicao:  (Q6, r) = Q6.
+	Tabela de transicao:  (Q6, o) = Q6.
+	Tabela de transicao:  (Q6, f) = Q6.
+	Tabela de transicao:  (Q6, .) = Q6.
+	Tabela de transicao:  (Q6,  ) = Q6.
+	Tabela de transicao:  (Q6, T) = Q6.
+	Tabela de transicao:  (Q6, h) = Q6.
+	Tabela de transicao:  (Q6, i) = Q6.
+	Tabela de transicao:  (Q6, a) = Q6.
+	Tabela de transicao:  (Q6, g) = Q6.
+	Tabela de transicao:  (Q6, o) = Q6.
+	Tabela de transicao:  (Q6,  ) = Q6.
+	Tabela de transicao:  (Q6, P) = Q6.
+	Tabela de transicao:  (Q6, a) = Q6.
+	Tabela de transicao:  (Q6, r) = Q6.
+	Tabela de transicao:  (Q6, d) = Q6.
+	Tabela de transicao:  (Q6, o) = Q6.
+	Tabela de transicao:  (Q6, }) = S19.
+		Chamando funcao de saida para S19...
+		Enviando palavra {Bom dia, prof. Thiago Pardo}...
+Voltei na posição linha[28].
+
+TOKEN: {Bom dia, prof. Thiago Pardo}, comentario
+
+
 LINHA: VAR n, sum, i, j;
 
 Comecei na posição linha[0].
@@ -288,8 +327,8 @@ Comecei na posição linha[7].
 		Enviando palavra  ...
 Voltei na posição linha[7].
 Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, :) = Q4.
-	Tabela de transicao:  (Q4, =) = S12.
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
 		Chamando funcao de saida para S12...
 		Enviando palavra :=...
 Voltei na posição linha[9].
@@ -302,8 +341,8 @@ Comecei na posição linha[10].
 		Enviando palavra  ...
 Voltei na posição linha[10].
 Comecei na posição linha[11].
-	Tabela de transicao:  (Q0, 0) = Q14.
-	Tabela de transicao:  (Q14, ;) = S13.
+	Tabela de transicao:  (Q0, 0) = Q3.
+	Tabela de transicao:  (Q3, ;) = S13.
 		Chamando funcao de saida para S13...
 		Enviando palavra 0;...
 		Retrocedendo ';'...
@@ -375,8 +414,8 @@ Comecei na posição linha[9].
 		Enviando palavra  ...
 Voltei na posição linha[9].
 Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, :) = Q4.
-	Tabela de transicao:  (Q4, =) = S12.
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
 		Chamando funcao de saida para S12...
 		Enviando palavra :=...
 Voltei na posição linha[11].
@@ -389,8 +428,8 @@ Comecei na posição linha[12].
 		Enviando palavra  ...
 Voltei na posição linha[12].
 Comecei na posição linha[13].
-	Tabela de transicao:  (Q0, 1) = Q14.
-	Tabela de transicao:  (Q14,  ) = S13.
+	Tabela de transicao:  (Q0, 1) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
 		Chamando funcao de saida para S13...
 		Enviando palavra 1 ...
 		Retrocedendo ' '...
@@ -502,8 +541,8 @@ Comecei na posição linha[11].
 		Enviando palavra  ...
 Voltei na posição linha[11].
 Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, :) = Q4.
-	Tabela de transicao:  (Q4, =) = S12.
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
 		Chamando funcao de saida para S12...
 		Enviando palavra :=...
 Voltei na posição linha[13].
