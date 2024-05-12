@@ -1,12 +1,12 @@
-{Bom dia, prof. Thiago Pardo}
+{Bom dia, pr~^`%&of. Th+-=7:84[]iago Pardo}
 VAR n, sum, i, j;
-
-PROCEDURE SumUpToN;
+^~'`
+PROCEDURE Sum^~'`UpToN;
 VAR tem/p;
 BEGIN
     sum := 0;
-    FOR i := 1 TO n DO
-        sum := sum + i;
+    FOR i := 1^~'`%26 TO n DO
+        sum :~= sum + i;
     END;
 END;
 
@@ -22,7 +22,7 @@ END;
 BEGIN
     n: =10;
     j:=0;
-    WHIL@E j <= n DO
+    WHIL@E j <~= n DO
     BEGIN
         CALL SumUpToN;
         j:= j + 1;
