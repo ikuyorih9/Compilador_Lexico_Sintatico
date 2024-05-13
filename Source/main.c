@@ -4,30 +4,39 @@
 #include "analisador_lexico.h"
 #include "tabelas.h"
 
-#define ENTRADA_PATH "Entradas/in.txt"
+#define ENTRADA_PADRAO_PATH "Entradas/in.txt"
 #define SAIDA_PATH "Logs/out.txt"
 
 int main(int argc, char * argv[]){
     //Abertura do arquivo de entrada para leitura.
     FILE * entrada;
+
+    //Se o número de argumentos de entrada inclui o arquivo de entrada;
     if(argc == 2){
         entrada = fopen(argv[1], "r");
         dprint("Lendo arquivo de entrada '%s'...\n", argv[1]);   
+        if(!entrada){
+            printf("O arquivo %s nao existe. Saindo...\n", argv[1]);
+            exit(-1);
+        }
     }
+    //Se o número de argumentos de entrada NÃO inclui o arquivo de entrada;
     else if(argc == 1){
-        entrada = fopen(ENTRADA_PATH, "r");
-        dprint("Lendo arquivo de entrada '%s'...\n", ENTRADA_PATH);
+        entrada = fopen(ENTRADA_PADRAO_PATH, "r");
+        dprint("Lendo arquivo de entrada '%s'...\n", ENTRADA_PADRAO_PATH);
+        if(!entrada){
+            printf("O arquivo %s nao existe. Saindo...\n", ENTRADA_PADRAO_PATH);
+            exit(-1);
+        }
     }
+    //Se o número de argumentos é diferente de qualquer outro.
     else{
         printf("%d\n", argc);
         printf("Número de parâmetros errado.");
         exit(-1);
     }
 
-    if(!entrada){
-        printf("O arquivo %s nao existe. Saindo...\n", ENTRADA_PATH);
-        exit(0);
-    }
+    
 
     //Abertura do arquivo de saída para escrita.
     FILE * saida = fopen(SAIDA_PATH, "w");
