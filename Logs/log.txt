@@ -1979,3 +1979,4 @@ Comecei na posição linha[3].
 Voltei na posição linha[3].
 
 TOKEN: ., simbolo_ponto
+

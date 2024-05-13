@@ -142,7 +142,15 @@ Q1 ) S0
 Q1 [ S0
 Q1 ] S0
 Q1 { S0
-Q1 } S0 
+Q1 } S0
+Q1 ' S0
+Q1 " S0
+Q1 $ S0
+Q1 % S0
+Q1 & S0
+Q1 ` S0
+Q1 ^ S0
+Q1 ~ S0
 
 //SÍMBOLOS
 Q0 \s S1
@@ -231,6 +239,14 @@ Q2 [ E1
 Q2 ] E1
 Q2 { E1
 Q2 } E1
+Q2 ' E1
+Q2 " E1
+Q2 $ E1
+Q2 % E1
+Q2 & E1
+Q2 ` E1
+Q2 ^ E1
+Q2 ~ E1
 
 //NÚMEROS.
 //Primeiro digito.
@@ -334,6 +350,14 @@ Q3 * S13
 Q3 / S13
 Q3 + S13
 Q3 - S13
+Q3 ' S13
+Q3 " S13
+Q3 $ S13
+Q3 % S13
+Q3 & S13
+Q3 ` S13
+Q3 ^ S13
+Q3 ~ S13
 
 //CARACTERES INVALIDOS.
 Q0 @ E2
@@ -344,7 +368,16 @@ Q0 & E2
 Q0 ! E2
 Q0 [ E2
 Q0 ] E2
-Q0 } E2
+Q0 ' E2
+Q0 " E2
+Q0 $ E2
+Q0 % E2
+//Q0 ¨ E2 essa trema fica dando erro nao sei pq
+Q0 & E2
+//Q0 ´ E2 esse tbm da erro
+Q0 ` E2
+Q0 ^ E2
+Q0 ~ E2
 
 //COMPARAÇÃO < OU <> ou <=
 Q0 < Q4
@@ -448,6 +481,14 @@ Q4 * S16
 Q4 / S16
 Q4 + S16
 Q4 - S16
+Q4 ' S16
+Q4 " S16
+Q4 $ S16
+Q4 % S16
+Q4 & S16
+Q4 ` S16
+Q4 ^ S16
+Q4 ~ S16
 
 //COMPARAÇÃO > OU >=
 Q0 > Q5
@@ -550,6 +591,14 @@ Q5 * S18
 Q5 / S18
 Q5 + S18
 Q5 - S18
+Q5 ' S18
+Q5 " S18
+Q5 $ S18
+Q5 % S18
+Q5 & S18
+Q5 ` S18
+Q5 ^ S18
+Q5 ~ S18
 
 //COMENTARIO
 Q0 { Q6
@@ -651,3 +700,9 @@ Q6 * Q6
 Q6 / Q6
 Q6 + Q6
 Q6 - Q6
+Q6 ' Q6
+Q6 " Q6
+Q6 $ Q6
+Q6 ` Q6
+Q6 ^ Q6
+Q6 ~ Q6
