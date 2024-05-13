@@ -1,4 +1,9 @@
 ![Banner](Images/MyFirstCompiler.jpg)
+<p align="center">
+<img src="https://img.shields.io/github/license/ISS2718/Whisper.Driver"/>
+<img src="https://img.shields.io/badge/Language-C-blue"/>
+</p>
+
 # Manual de uso.
 
 ## Compilação e execução.
