@@ -103,6 +103,11 @@ int verificaSePalavraReservada(char * palavra){
     return 0;
 }
 
+/*
+Verificar se o estado é final, analisando se é um estado 'S' ou 'E'.
+@param estado valor do estado.
+@return (0) se não é estado final; (1) se é estado final.
+*/
 int estadoFinal(char * estado){
     if(estado[0] == 'S' || estado[0] == 'E')
         return 1;

@@ -9,7 +9,7 @@
 Realiza a análise léxica do primeiro token encontrado numa linha de entrada.
 @param linha string da linha lida
 @param pos posição da linha lida;
-@return retorna a identificação do primeiro token lido. Se NULL, foi encontrado um espaço vazio.
+@return retorna o par (token, identificação). Se NULL, foi encontrado um espaço vazio.
 */
 char * analisadorLexico(char * linha, int * pos){
     int i = *pos;
