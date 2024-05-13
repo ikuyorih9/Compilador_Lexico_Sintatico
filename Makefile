@@ -20,3 +20,6 @@ run:
 clean:
 	rm -f Logs/*.txt
 	rm -f *.out
+
+
+.PHONY:  run clean
