@@ -1,6 +1,6 @@
 CC = gcc
 SRC := Source
-EXE := analisador_lexico.o
+EXE := analisador_lexico
 SAIDA := Logs/log.txt
 
 C_FILES := \
@@ -12,10 +12,11 @@ C_FILES := \
 all: clean $(EXE) run
 
 $(EXE): $(SRC)/main.c
-	$(CC) $(C_FILES) -o $(EXE)
+	$(CC) $(C_FILES) -o $(EXE).o
 
 run:
-	./$(EXE) | tee $(SAIDA)
+	./$(EXE).o $(IN) | tee $(SAIDA)
 
 clean:
 	rm -f *.o
+	rm -f Logs/*.txt

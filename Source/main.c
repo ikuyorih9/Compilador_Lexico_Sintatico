@@ -4,12 +4,26 @@
 #include "analisador_lexico.h"
 #include "tabelas.h"
 
-#define ENTRADA_PATH "ProgramasTeste/prog1.txt"
+#define ENTRADA_PATH "Entradas/in.txt"
 #define SAIDA_PATH "Logs/out.txt"
 
-int main(){
+int main(int argc, char * argv[]){
     //Abertura do arquivo de entrada para leitura.
-    FILE * entrada = fopen(ENTRADA_PATH, "r");
+    FILE * entrada;
+    if(argc == 2){
+        entrada = fopen(argv[1], "r");
+        dprint("Lendo arquivo de entrada '%s'...\n", argv[1]);   
+    }
+    else if(argc == 1){
+        entrada = fopen(ENTRADA_PATH, "r");
+        dprint("Lendo arquivo de entrada '%s'...\n", ENTRADA_PATH);
+    }
+    else{
+        printf("%d\n", argc);
+        printf("Número de parâmetros errado.");
+        exit(-1);
+    }
+
     if(!entrada){
         printf("O arquivo %s nao existe. Saindo...\n", ENTRADA_PATH);
         exit(0);
