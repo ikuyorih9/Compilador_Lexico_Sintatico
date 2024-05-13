@@ -1,7 +1,10 @@
 ![Banner](Images/MyFirstCompiler.jpg)
 <p align="center">
-<img src="https://img.shields.io/github/license/ISS2718/Whisper.Driver"/>
-<img src="https://img.shields.io/badge/Language-C-blue"/>
+<img src="https://img.shields.io/github/license/ikuyorih9/MyFirstCompiler
+"/>
+<img alt="Static Badge" src="https://img.shields.io/badge/Source%20Language-PL%2F0-blue">
+<img alt="Static Badge" src="https://img.shields.io/badge/Target%20Language-C-blue">
+<img alt="Static Badge" src="https://img.shields.io/badge/Automaton-AFD-yellow">
 </p>
 
 # Manual de uso.
