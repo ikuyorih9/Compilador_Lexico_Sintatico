@@ -1,4 +1,4 @@
-![Banner](Images/Compilador_lexico_sintatico.jpg)
+![Banner](Images/MyFirstCompiler.jpg)
 # Manual de uso.
 
 ## Compilação e execução.
