@@ -233,11 +233,7 @@ char * funcaoSaida18(char * palavra){
 }
 
 char * funcaoSaida19(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,COMENTARIO);
-    return saida;
+    return NULL;
 }
 
 char * funcaoErro1(char * palavra){
