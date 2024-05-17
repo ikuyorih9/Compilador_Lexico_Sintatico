@@ -5,7 +5,7 @@ PROCEDURE Sum^~'`UpToN;
 VAR tem/p;
 BEGIN
     sum := 0;
-    FOR i := 1^~'`%26 TO n DO
+    WHILE i := 1^~'`%26 DO
         sum :~= sum + i;
     END;
 END;
@@ -14,7 +14,7 @@ PROCEDURE 'MultUpToN;
 VAR temp;
 BEG~IN
     te^mp := 1;
-    FOR i := 2 TO n DO
+    WHILE i := 2 DO
         temp := temp * i;
     END;
 END;

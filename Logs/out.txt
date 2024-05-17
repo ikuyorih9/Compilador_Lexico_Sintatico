@@ -28,7 +28,7 @@ sum, identificador
 :=, simbolo_atribuicao
 0, numero
 ;, simbolo_ponto_virgula
-FOR, identificador
+WHILE, WHILE
 i, identificador
 :=, simbolo_atribuicao
 1, numero
@@ -38,8 +38,6 @@ i, identificador
 `, <erro_lexico>
 %, <erro_lexico>
 26, numero
-TO, identificador
-n, identificador
 sum, identificador
 :, <erro_lexico>
 ~, <erro_lexico>
@@ -67,12 +65,10 @@ mp, identificador
 :=, simbolo_atribuicao
 1, numero
 ;, simbolo_ponto_virgula
-FOR, identificador
+WHILE, WHILE
 i, identificador
 :=, simbolo_atribuicao
 2, numero
-TO, identificador
-n, identificador
 temp, identificador
 :=, simbolo_atribuicao
 temp, identificador

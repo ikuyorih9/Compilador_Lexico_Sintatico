@@ -1,6 +1,7 @@
 CC = gcc
 SRC := Source
 EXE := analisador_lexico
+ENTRADAS := Entradas
 SAIDA_LOG := Logs/log.txt
 
 C_FILES := \

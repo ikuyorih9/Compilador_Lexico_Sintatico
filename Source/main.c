@@ -4,7 +4,9 @@
 #include "analisador_lexico.h"
 #include "tabelas.h"
 
+//Arquivo de entrada PL/0 padrão.
 #define ENTRADA_PADRAO_PATH "Entradas/in.txt"
+//Arquivo de saída padrão.
 #define SAIDA_PATH "Logs/out.txt"
 
 int main(int argc, char * argv[]){
@@ -36,8 +38,6 @@ int main(int argc, char * argv[]){
         exit(-1);
     }
 
-    
-
     //Abertura do arquivo de saída para escrita.
     FILE * saida = fopen(SAIDA_PATH, "w");
     if(!saida){
@@ -59,7 +59,7 @@ int main(int argc, char * argv[]){
         while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'){
             dprint("Comecei na posição linha[%d].\n", i);
             
-            //Chama o analisador léxico para receber um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
+            //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
             char * token = analisadorLexico(linha, &i);
             dprint("Voltei na posição linha[%d].\n", i);
 

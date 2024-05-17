@@ -444,7 +444,7 @@ Voltei na posição linha[12].
 TOKEN: ;, simbolo_ponto_virgula
 
 
-LINHA:     FOR i := 1^~'`%26 TO n DO
+LINHA:     WHILE i := 1^~'`%26 DO
 
 Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -467,31 +467,18 @@ Comecei na posição linha[3].
 		Enviando palavra  ...
 Voltei na posição linha[3].
 Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, F) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1, R) = Q1.
+	Tabela de transicao:  (Q0, W) = Q1.
+	Tabela de transicao:  (Q1, H) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, L) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra FOR ...
-		Retrocedendo ' '...
-Voltei na posição linha[6].
-
-TOKEN: FOR, identificador
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, i) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra i ...
+		Enviando palavra WHILE ...
 		Retrocedendo ' '...
 Voltei na posição linha[8].
 
-TOKEN: i, identificador
+TOKEN: WHILE, WHILE
 
 Comecei na posição linha[9].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -499,123 +486,107 @@ Comecei na posição linha[9].
 		Enviando palavra  ...
 Voltei na posição linha[9].
 Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, i) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra i ...
+		Retrocedendo ' '...
+Voltei na posição linha[10].
+
+TOKEN: i, identificador
+
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
 	Tabela de transicao:  (Q0, :) = Q2.
 	Tabela de transicao:  (Q2, =) = S12.
 		Chamando funcao de saida para S12...
 		Enviando palavra :=...
-Voltei na posição linha[11].
+Voltei na posição linha[13].
 
 TOKEN: :=, simbolo_atribuicao
 
-Comecei na posição linha[12].
+Comecei na posição linha[14].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
 		Enviando palavra  ...
-Voltei na posição linha[12].
-Comecei na posição linha[13].
+Voltei na posição linha[14].
+Comecei na posição linha[15].
 	Tabela de transicao:  (Q0, 1) = Q3.
 	Tabela de transicao:  (Q3, ^) = S13.
 		Chamando funcao de saida para S13...
 		Enviando palavra 1^...
 		Retrocedendo '^'...
-Voltei na posição linha[13].
+Voltei na posição linha[15].
 
 TOKEN: 1, numero
 
-Comecei na posição linha[14].
+Comecei na posição linha[16].
 	Tabela de transicao:  (Q0, ^) = E2.
 		Chamando funcao de saida para E2...
 		Enviando palavra ^...
-Voltei na posição linha[14].
+Voltei na posição linha[16].
 
 TOKEN: ^, <erro_lexico>
 
-Comecei na posição linha[15].
+Comecei na posição linha[17].
 	Tabela de transicao:  (Q0, ~) = E2.
 		Chamando funcao de saida para E2...
 		Enviando palavra ~...
-Voltei na posição linha[15].
+Voltei na posição linha[17].
 
 TOKEN: ~, <erro_lexico>
 
-Comecei na posição linha[16].
+Comecei na posição linha[18].
 	Tabela de transicao:  (Q0, ') = E2.
 		Chamando funcao de saida para E2...
 		Enviando palavra '...
-Voltei na posição linha[16].
+Voltei na posição linha[18].
 
 TOKEN: ', <erro_lexico>
 
-Comecei na posição linha[17].
+Comecei na posição linha[19].
 	Tabela de transicao:  (Q0, `) = E2.
 		Chamando funcao de saida para E2...
 		Enviando palavra `...
-Voltei na posição linha[17].
+Voltei na posição linha[19].
 
 TOKEN: `, <erro_lexico>
 
-Comecei na posição linha[18].
+Comecei na posição linha[20].
 	Tabela de transicao:  (Q0, %) = E2.
 		Chamando funcao de saida para E2...
 		Enviando palavra %...
-Voltei na posição linha[18].
+Voltei na posição linha[20].
 
 TOKEN: %, <erro_lexico>
 
-Comecei na posição linha[19].
+Comecei na posição linha[21].
 	Tabela de transicao:  (Q0, 2) = Q3.
 	Tabela de transicao:  (Q3, 6) = Q3.
 	Tabela de transicao:  (Q3,  ) = S13.
 		Chamando funcao de saida para S13...
 		Enviando palavra 26 ...
 		Retrocedendo ' '...
-Voltei na posição linha[20].
+Voltei na posição linha[22].
 
 TOKEN: 26, numero
 
-Comecei na posição linha[21].
+Comecei na posição linha[23].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
 		Enviando palavra  ...
-Voltei na posição linha[21].
-Comecei na posição linha[22].
-	Tabela de transicao:  (Q0, T) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra TO ...
-		Retrocedendo ' '...
 Voltei na posição linha[23].
-
-TOKEN: TO, identificador
-
 Comecei na posição linha[24].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[24].
-Comecei na posição linha[25].
-	Tabela de transicao:  (Q0, n) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra n ...
-		Retrocedendo ' '...
-Voltei na posição linha[25].
-
-TOKEN: n, identificador
-
-Comecei na posição linha[26].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[26].
-Comecei na posição linha[27].
 	Tabela de transicao:  (Q0, D) = Q1.
 	Tabela de transicao:  (Q1, O) = Q1.
-Voltei na posição linha[27].
-Comecei na posição linha[28].
+Voltei na posição linha[24].
+Comecei na posição linha[25].
 	Tabela de transicao:  (Q0, O) = Q1.
-Voltei na posição linha[28].
+Voltei na posição linha[25].
 
 LINHA:         sum :~= sum + i;
 
@@ -1046,7 +1017,7 @@ Voltei na posição linha[14].
 TOKEN: ;, simbolo_ponto_virgula
 
 
-LINHA:     FOR i := 2 TO n DO
+LINHA:     WHILE i := 2 DO
 
 Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -1069,31 +1040,18 @@ Comecei na posição linha[3].
 		Enviando palavra  ...
 Voltei na posição linha[3].
 Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, F) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1, R) = Q1.
+	Tabela de transicao:  (Q0, W) = Q1.
+	Tabela de transicao:  (Q1, H) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, L) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
 	Tabela de transicao:  (Q1,  ) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra FOR ...
-		Retrocedendo ' '...
-Voltei na posição linha[6].
-
-TOKEN: FOR, identificador
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, i) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra i ...
+		Enviando palavra WHILE ...
 		Retrocedendo ' '...
 Voltei na posição linha[8].
 
-TOKEN: i, identificador
+TOKEN: WHILE, WHILE
 
 Comecei na posição linha[9].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -1101,28 +1059,28 @@ Comecei na posição linha[9].
 		Enviando palavra  ...
 Voltei na posição linha[9].
 Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, i) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra i ...
+		Retrocedendo ' '...
+Voltei na posição linha[10].
+
+TOKEN: i, identificador
+
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
 	Tabela de transicao:  (Q0, :) = Q2.
 	Tabela de transicao:  (Q2, =) = S12.
 		Chamando funcao de saida para S12...
 		Enviando palavra :=...
-Voltei na posição linha[11].
-
-TOKEN: :=, simbolo_atribuicao
-
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[12].
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0, 2) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 2 ...
-		Retrocedendo ' '...
 Voltei na posição linha[13].
 
-TOKEN: 2, numero
+TOKEN: :=, simbolo_atribuicao
 
 Comecei na posição linha[14].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -1130,43 +1088,27 @@ Comecei na posição linha[14].
 		Enviando palavra  ...
 Voltei na posição linha[14].
 Comecei na posição linha[15].
-	Tabela de transicao:  (Q0, T) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra TO ...
+	Tabela de transicao:  (Q0, 2) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 2 ...
 		Retrocedendo ' '...
+Voltei na posição linha[15].
+
+TOKEN: 2, numero
+
+Comecei na posição linha[16].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
 Voltei na posição linha[16].
-
-TOKEN: TO, identificador
-
 Comecei na posição linha[17].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[17].
-Comecei na posição linha[18].
-	Tabela de transicao:  (Q0, n) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra n ...
-		Retrocedendo ' '...
-Voltei na posição linha[18].
-
-TOKEN: n, identificador
-
-Comecei na posição linha[19].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[19].
-Comecei na posição linha[20].
 	Tabela de transicao:  (Q0, D) = Q1.
 	Tabela de transicao:  (Q1, O) = Q1.
-Voltei na posição linha[20].
-Comecei na posição linha[21].
+Voltei na posição linha[17].
+Comecei na posição linha[18].
 	Tabela de transicao:  (Q0, O) = Q1.
-Voltei na posição linha[21].
+Voltei na posição linha[18].
 
 LINHA:         temp := temp * i;
 
