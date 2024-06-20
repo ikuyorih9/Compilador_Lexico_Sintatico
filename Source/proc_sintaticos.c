@@ -118,7 +118,7 @@ int p_variavel(FILE * entrada, char * linha, int *i, char **token, char ** s){
         dprint("*token antes mais_var: %s.\n", *token);
         p_mais_var(entrada, linha, i, token, s);
         dprint("*token apos mais_var: %s.\n", *token);
-        if(*token != NULL && (strcmp(*token, SIMB_VIRGULA) == 0 || strcmp(*token, SIMB_PVIRGULA) == 0)){ //Tem um problema aqui que nao consegui resolver: mais var ta reotrnando virgula ao inver de pvirgula na chamada recursiva !!
+        if(*token != NULL && strcmp(*token, SIMB_PVIRGULA) == 0){
             *token = obterSimbolo(entrada, linha, i);
             dprint("Fim procedimento Variavel.\n");
             return 0;
