@@ -8,6 +8,7 @@ C_FILES := \
 	$(SRC)/tabelas.c \
 	$(SRC)/funcoes_saida.c \
 	$(SRC)/analisador_lexico.c \
+	$(SRC)/proc_sintaticos.c \
 	$(SRC)/main.c
 
 all: clean $(EXE) run

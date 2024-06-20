@@ -68,14 +68,15 @@ char * funcaoSaida0(char * palavra){
     //Se é reservada, identifica com o próprio nome.
     if(palavraReservada){
         strcpy(saida, palavra);
-        strcat(saida,", ");
-        strcat(saida,palavra);
+        //strcat(saida,", ");
+        //strcat(saida,palavra);
     }
     //Se ela não é reservada, identifica como identificador.
     else{
-        strcpy(saida, palavra);
-        strcat(saida,", ");
-        strcat(saida,IDENT);
+        //strcpy(saida, palavra);
+        //strcat(saida,", ");
+        //strcat(saida,IDENT);
+        strcpy(saida,IDENT);
     }
     return saida;
 }
@@ -86,89 +87,100 @@ char * funcaoSaida1(char * palavra){
 
 char * funcaoSaida2(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_VIRGULA);
+    //strcpy(saida, palavra);
+    //strcat(saida,", ");
+    strcpy(saida, SIMB_VIRGULA);
+    //strcat(saida,SIMB_VIRGULA);
     return saida;
 }
 
 char * funcaoSaida3(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_PVIRGULA);
+    //strcpy(saida, palavra);
+    //strcat(saida,", ");
+    //strcat(saida,SIMB_PVIRGULA);
+    strcpy(saida, SIMB_PVIRGULA);
     return saida;
 }
 
 char * funcaoSaida4(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_ABRE_PARENTESE);
+    //strcpy(saida, palavra);
+    //strcat(saida,", ");
+    //strcat(saida,SIMB_ABRE_PARENTESE);
+    strcpy(saida, SIMB_ABRE_PARENTESE);
     return saida;
 }
 
 char * funcaoSaida5(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_FECHA_PARENTESE);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_FECHA_PARENTESE);
+    strcpy(saida, SIMB_FECHA_PARENTESE);
     return saida;
 }
 
 char * funcaoSaida6(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MAIS);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MAIS);
+    strcpy(saida, SIMB_MAIS);
     return saida;
 }
 
 char * funcaoSaida7(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MENOS);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MAIS);
+    strcpy(saida, SIMB_MAIS);
     return saida;
 }
 
 char * funcaoSaida8(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MULTI);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MULTI);
+    strcpy(saida, SIMB_MULTI);
     return saida;
 }
 
 char * funcaoSaida9(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_PONTO);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_PONTO);
+    strcpy(saida, SIMB_PONTO);
     return saida;
 }
 
 char * funcaoSaida10(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_DIV);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_DIV);
+    strcpy(saida, SIMB_DIV);
     return saida;
 }
 
 char * funcaoSaida11(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_IGUAL);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_IGUAL);
+    strcpy(saida, SIMB_IGUAL);
     return saida;
 }
 
 char * funcaoSaida12(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_ATRIBUICAO);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_ATRIBUICAO);
+    strcpy(saida, SIMB_ATRIBUICAO);
     return saida;
 }
 
@@ -178,25 +190,28 @@ char * funcaoSaida13(char * palavra){
     palavra[tam-1] = '\0';
 
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_NUMERO);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_NUMERO);
+    strcpy(saida, SIMB_NUMERO);
     return saida;
 }
 
 char * funcaoSaida14(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MENOR_IGUAL);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MENOR_IGUAL);
+    strcpy(saida, SIMB_MENOR_IGUAL);
     return saida;
 }
 
 char * funcaoSaida15(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_DIFERENTE);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_DIFERENTE);
+    strcpy(saida, SIMB_DIFERENTE);
     return saida;
 }
 
@@ -206,17 +221,19 @@ char * funcaoSaida16(char * palavra){
     palavra[tam-1] = '\0';
 
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MENOR);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MENOR);
+    strcpy(saida, SIMB_MENOR);
     return saida;
 }
 
 char * funcaoSaida17(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MAIOR_IGUAL);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MAIOR_IGUAL);
+    strcpy(saida, SIMB_MAIOR_IGUAL);
     return saida;
 }
 
@@ -226,9 +243,10 @@ char * funcaoSaida18(char * palavra){
     palavra[tam-1] = '\0';
 
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,SIMB_MAIOR);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,SIMB_MAIOR);
+    strcpy(saida, SIMB_MAIOR);
     return saida;
 }
 
@@ -242,16 +260,18 @@ char * funcaoErro1(char * palavra){
     palavra[tam-1] = '\0';
 
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,ERRO_LEXICO);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,ERRO_LEXICO);
+    strcpy(saida, ERRO_LEXICO);
     return saida;
 }
 
 char * funcaoErro2(char * palavra){
     char * saida = (char*) malloc(MAX_LINHA);
-    strcpy(saida, palavra);
-    strcat(saida,", ");
-    strcat(saida,ERRO_LEXICO);
+    // strcpy(saida, palavra);
+    // strcat(saida,", ");
+    // strcat(saida,ERRO_LEXICO);
+    strcpy(saida, ERRO_LEXICO);
     return saida;
 }

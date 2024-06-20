@@ -4,6 +4,7 @@
 #include "proc_sintaticos.h"
 #include "analisador_lexico.h"
 #include "simbolos.h"
+#include "tabelas.h"
 
 int p_programa(FILE * entrada, char * linha, int *i, char * token, char ** s){
     // O menor programa tem so um ponto final
@@ -27,6 +28,7 @@ int p_programa(FILE * entrada, char * linha, int *i, char * token, char ** s){
 
 int p_bloco(FILE * entrada, char * linha, int *i, char * token, char ** s){
     dprint("Executando procedimento Bloco.\n");
+    
     if(token != NULL && (strcmp(token, "CONST") == 0 || strcmp(token, "VAR") == 0 || strcmp(token, "PROCEDURE") == 0)){
         //Chama procedimento Declaracao
         p_declaracao(entrada, linha, i, token, s);
@@ -46,7 +48,7 @@ int p_declaracao(FILE * entrada, char * linha, int *i, char * token, char ** s){
     dprint("Executando procedimento Declaracao.\n");
     if(token != NULL && strcmp(token, "CONST") == 0){
         //Chama procedimento Constante
-        p_contante(entrada, linha, i, token, s);
+        p_constante(entrada, linha, i, token, s);
     }
 
     if(token != NULL && strcmp(token, "VAR") == 0){

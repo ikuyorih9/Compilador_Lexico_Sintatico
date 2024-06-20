@@ -3,6 +3,7 @@
 #include <string.h>
 #include "analisador_lexico.h"
 #include "tabelas.h"
+#include "proc_sintaticos.h"
 
 //Arquivo de entrada PL/0 padrão.
 #define ENTRADA_PADRAO_PATH "Entradas/in.txt"
@@ -47,16 +48,19 @@ int main(int argc, char * argv[]){
 
     //Aloca dinamicamente uma linha para ler da entrada.
     char * linha = (char*) malloc(MAX_LINHA);
+    char ** erro = (char**) malloc(1);
+    erro[0] = NULL;
+
     int i = 0;
-    char * token;
-    do{
-        token = obterSimbolo(entrada, linha, &i);
-        fprintf(saida,"%s\n", token);
-        printf("\nTOKEN: %s\n\n",token);
-        free(token);
-    }
-    while(token != NULL);
+    linha[0] = '\0';
     
+    char * token = obterSimbolo(entrada, linha, &i);
+    //fprintf(saida,"%s\n", token);
+    //printf("\nTOKEN: %s\n\n",token);
+    //free(token);
+    p_programa(entrada, linha, &i, token, erro);
+    
+
 
     free(linha); //Libera a memória alocada para a linha.
 

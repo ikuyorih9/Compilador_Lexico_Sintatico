@@ -88,8 +88,10 @@ char * obterSimbolo(FILE * entrada, char * linha, int *i){
             //Avança na linha.
             (*i)++;
 
-            if(token != NULL)
+            if(token != NULL){
+                printf("\nTOKEN: %s\n\n",token);
                 return token;
+            }
             
         }
 

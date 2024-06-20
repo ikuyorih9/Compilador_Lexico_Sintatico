@@ -12,8 +12,11 @@ Comecei na posição linha[0].
 		Retrocedendo ' '...
 Voltei na posição linha[2].
 
-TOKEN: VAR, VAR
+TOKEN: VAR
 
+Executando procedimento Bloco.
+Executando procedimento Declaracao.
+Executando procedimento Variavel.
 Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
@@ -27,7 +30,7 @@ Comecei na posição linha[4].
 		Retrocedendo ','...
 Voltei na posição linha[4].
 
-TOKEN: a, identificador
+TOKEN: identificador
 
 Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, ,) = S2.
@@ -35,8 +38,9 @@ Comecei na posição linha[5].
 		Enviando palavra ,...
 Voltei na posição linha[5].
 
-TOKEN: ,, simbolo_virgula
+TOKEN: simbolo_virgula
 
+Executando procedimento Mais Varaivel.
 Comecei na posição linha[6].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, ,) = S0.
@@ -45,7 +49,7 @@ Comecei na posição linha[6].
 		Retrocedendo ','...
 Voltei na posição linha[6].
 
-TOKEN: b, identificador
+TOKEN: identificador
 
 Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, ,) = S2.
@@ -53,8 +57,9 @@ Comecei na posição linha[7].
 		Enviando palavra ,...
 Voltei na posição linha[7].
 
-TOKEN: ,, simbolo_virgula
+TOKEN: simbolo_virgula
 
+Executando procedimento Mais Varaivel.
 Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, c) = Q1.
 	Tabela de transicao:  (Q1, ;) = S0.
@@ -63,7 +68,7 @@ Comecei na posição linha[8].
 		Retrocedendo ';'...
 Voltei na posição linha[8].
 
-TOKEN: c, identificador
+TOKEN: identificador
 
 Comecei na posição linha[9].
 	Tabela de transicao:  (Q0, ;) = S3.
@@ -71,8 +76,14 @@ Comecei na posição linha[9].
 		Enviando palavra ;...
 Voltei na posição linha[9].
 
-TOKEN: ;, simbolo_ponto_virgula
+TOKEN: simbolo_ponto_virgula
 
+Executando procedimento Mais Varaivel.
+Fim procedimento Mais Variavel (2).
+Fim procedimento Mais Variavel (1).
+Fim procedimento Mais Variavel (1).
+ERRO: procedimento Variavel.
+Fim procedimento Declaração.
 
 LINHA: BEGIN
 
@@ -82,14 +93,18 @@ Comecei na posição linha[0].
 	Tabela de transicao:  (Q1, G) = Q1.
 	Tabela de transicao:  (Q1, I) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
+	Tabela de transicao:  (Q1, 
+) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra BEGIN...
-		Retrocedendo ''...
+		Enviando palavra BEGIN
+...
+		Retrocedendo '
+'...
 Voltei na posição linha[4].
 
-TOKEN: BEGIN, BEGIN
+TOKEN: BEGIN
 
+Executando procedimento Comando.
 
 LINHA:     a:=2;
 
@@ -121,8 +136,9 @@ Comecei na posição linha[4].
 		Retrocedendo ':'...
 Voltei na posição linha[4].
 
-TOKEN: a, identificador
+TOKEN: identificador
 
+Executando procedimento Comando.
 Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, :) = Q2.
 	Tabela de transicao:  (Q2, =) = S12.
@@ -130,7 +146,7 @@ Comecei na posição linha[5].
 		Enviando palavra :=...
 Voltei na posição linha[6].
 
-TOKEN: :=, simbolo_atribuicao
+TOKEN: simbolo_atribuicao
 
 Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, 2) = Q3.
@@ -140,16 +156,28 @@ Comecei na posição linha[7].
 		Retrocedendo ';'...
 Voltei na posição linha[7].
 
-TOKEN: 2, numero
+TOKEN: numero
 
+Executando procedimento Expressao.
+Executando procedimento Operador Unario.
+Fim procedimento Operador Unario (2).
+Executando procedimento Termo.
+Executando procedimento Fator.
 Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
 		Enviando palavra ;...
 Voltei na posição linha[8].
 
-TOKEN: ;, simbolo_ponto_virgula
+TOKEN: simbolo_ponto_virgula
 
+Fim procedimento Fator: ident ou numero.
+Executando procedimento Mais Fatores.
+Fim procedimento Fatores (2).
+Fim procedimento Termo.
+Executando procedimento Mais Termos.
+Fim procedimento Mais Termos (2).
+Fim procedimento Expressao.
 
 LINHA:     b:=3;
 
@@ -181,8 +209,11 @@ Comecei na posição linha[4].
 		Retrocedendo ':'...
 Voltei na posição linha[4].
 
-TOKEN: b, identificador
+TOKEN: identificador
 
+Executando procedimento Mais Comandos.
+Fim procedimento Mais Comandos (2).
+Fim procedimento Comando.
 Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, :) = Q2.
 	Tabela de transicao:  (Q2, =) = S12.
@@ -190,108 +221,7 @@ Comecei na posição linha[5].
 		Enviando palavra :=...
 Voltei na posição linha[6].
 
-TOKEN: :=, simbolo_atribuicao
+TOKEN: simbolo_atribuicao
 
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0, 3) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 3;...
-		Retrocedendo ';'...
-Voltei na posição linha[7].
-
-TOKEN: 3, numero
-
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[8].
-
-TOKEN: ;, simbolo_ponto_virgula
-
-
-LINHA:     c:=@+b
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, c) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra c:...
-		Retrocedendo ':'...
-Voltei na posição linha[4].
-
-TOKEN: c, identificador
-
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[6].
-
-TOKEN: :=, simbolo_atribuicao
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0, @) = E2.
-		Chamando funcao de saida para E2...
-		Enviando palavra @...
-Voltei na posição linha[7].
-
-TOKEN: @, <erro_lexico>
-
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[8].
-
-TOKEN: +, simbolo_mais
-
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra b...
-		Retrocedendo ''...
-Voltei na posição linha[9].
-
-TOKEN: b, identificador
-
-
-LINHA: END.
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, E) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, D) = Q1.
-	Tabela de transicao:  (Q1, .) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra END....
-		Retrocedendo '.'...
-Voltei na posição linha[2].
-
-TOKEN: END, END
-
-
-TOKEN: (null)
-
+Fim procedimento Bloco.
+ERRO: esperava ponto final após o bloco
