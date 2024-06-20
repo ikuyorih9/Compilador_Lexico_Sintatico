@@ -3,6 +3,7 @@
 #include <string.h>
 #include "analisador_lexico.h"
 #include "tabelas.h"
+#include "simbolos.h"
 #include "proc_sintaticos.h"
 
 //Arquivo de entrada PL/0 padrão.
@@ -48,8 +49,9 @@ int main(int argc, char * argv[]){
 
     //Aloca dinamicamente uma linha para ler da entrada.
     char * linha = (char*) malloc(MAX_LINHA);
-    char ** erro = (char**) malloc(1);
-    erro[0] = NULL;
+    char ** simb_sincronizacao = (char**) malloc(sizeof(char *));
+    simb_sincronizacao[0] = malloc(sizeof(char)*10);
+    strcpy(simb_sincronizacao[0], SIMB_PONTO);
 
     int i = 0;
     linha[0] = '\0';
@@ -58,7 +60,7 @@ int main(int argc, char * argv[]){
     //fprintf(saida,"%s\n", token);
     //printf("\nTOKEN: %s\n\n",token);
     //free(token);
-    p_programa(entrada, linha, &i, &token, erro);
+    p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
     
 
 

@@ -1,6 +1,6 @@
 Lendo arquivo de entrada 'Entradas/in.txt'...
 
-LINHA: CONST x = 1;
+LINHA: CONST x = 1
 
 Comecei na posição linha[0].
 	Tabela de transicao:  (Q0, C) = Q1.
@@ -54,24 +54,14 @@ Comecei na posição linha[9].
 Voltei na posição linha[9].
 Comecei na posição linha[10].
 	Tabela de transicao:  (Q0, 1) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
+	Tabela de transicao:  (Q3, ) = S13.
 		Chamando funcao de saida para S13...
-		Enviando palavra 1;...
-		Retrocedendo ';'...
+		Enviando palavra 1...
+		Retrocedendo ''...
 Voltei na posição linha[10].
 
 TOKEN: numero
 
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[11].
-
-TOKEN: simbolo_ponto_virgula
-
-Executando procedimento Mais Constante.
-Fim procedimento Mais Constante (2).
 
 LINHA: VAR a,b,c;
 
@@ -87,9 +77,12 @@ Voltei na posição linha[2].
 
 TOKEN: VAR
 
-Fim procedimento Constante.
-token apos proc const VAR
-Executando procedimento Variavel.
+Executando procedimento Mais Constante.
+Fim procedimento Mais Constante (2).
+Sincronizacao: simbolo_ponto_virgula
+Iniciando tratamento de erro
+Falha no tratamento: VAR != simbolo_ponto_virgula
+Falha no tratamento: VAR != simbolo_ponto
 Comecei na posição linha[3].
 	Tabela de transicao:  (Q0,  ) = S1.
 		Chamando funcao de saida para S1...
@@ -105,6 +98,8 @@ Voltei na posição linha[4].
 
 TOKEN: identificador
 
+Falha no tratamento: identificador != simbolo_ponto_virgula
+Falha no tratamento: identificador != simbolo_ponto
 Comecei na posição linha[5].
 	Tabela de transicao:  (Q0, ,) = S2.
 		Chamando funcao de saida para S2...
@@ -113,8 +108,8 @@ Voltei na posição linha[5].
 
 TOKEN: simbolo_virgula
 
-*token antes mais_var: simbolo_virgula.
-Executando procedimento Mais Variavel.
+Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+Falha no tratamento: simbolo_virgula != simbolo_ponto
 Comecei na posição linha[6].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, ,) = S0.
@@ -125,6 +120,8 @@ Voltei na posição linha[6].
 
 TOKEN: identificador
 
+Falha no tratamento: identificador != simbolo_ponto_virgula
+Falha no tratamento: identificador != simbolo_ponto
 Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, ,) = S2.
 		Chamando funcao de saida para S2...
@@ -133,7 +130,8 @@ Voltei na posição linha[7].
 
 TOKEN: simbolo_virgula
 
-Executando procedimento Mais Variavel.
+Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+Falha no tratamento: simbolo_virgula != simbolo_ponto
 Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, c) = Q1.
 	Tabela de transicao:  (Q1, ;) = S0.
@@ -144,6 +142,8 @@ Voltei na posição linha[8].
 
 TOKEN: identificador
 
+Falha no tratamento: identificador != simbolo_ponto_virgula
+Falha no tratamento: identificador != simbolo_ponto
 Comecei na posição linha[9].
 	Tabela de transicao:  (Q0, ;) = S3.
 		Chamando funcao de saida para S3...
@@ -152,14 +152,7 @@ Voltei na posição linha[9].
 
 TOKEN: simbolo_ponto_virgula
 
-Executando procedimento Mais Variavel.
-*token mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (2).
-*token ap mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (1).
-*token ap mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (1).
-*token apos mais_var: simbolo_ponto_virgula.
+Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
 
 LINHA: PROCEDURE proc1;
 
@@ -181,7 +174,7 @@ Voltei na posição linha[8].
 
 TOKEN: PROCEDURE
 
-Fim procedimento Variavel.
+token apos proc const PROCEDURE
 Executando procedimento Procedimento.
 Comecei na posição linha[9].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -1485,4 +1478,5 @@ Fim procedimento Mais Comandos (1).
 Token apos mais cmds: END
 Token apos mais cmds 2: (null)
 Fim procedimento Bloco.
+Token: (null)
 Programa terminou como esperado (leu ponto final --> leu NULL)
