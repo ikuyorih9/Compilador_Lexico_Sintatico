@@ -23,10 +23,13 @@ Transicao buscaTabelaTransicoes(char * estadoAtual, char entrada){
         int i = 0;
         int espacos = 0;
 
-        fgets(str,MAX_PALAVRA,tabelaTransicoes);
+        fgets(str, MAX_PALAVRA, tabelaTransicoes);
+
+        //Ignora os comentáriso da tabela de transição.
         if(str[0] == '/' && str[1] == '/')
             continue;
             
+        //Lê uma linha do arquivo da tabela de transição.
         for(int pos = 0; str[pos] != '\0' && str[pos] != '\n' && str[pos] != '\r'; pos++){
             char c = str[pos];
             if(c == ' '){
@@ -42,6 +45,22 @@ Transicao buscaTabelaTransicoes(char * estadoAtual, char entrada){
             else if(espacos == 1){
                 if(str[pos] == '\\' && str[pos+1] == 's'){
                     t.entrada = ' ';
+                    pos++;
+                }
+                else if(str[pos] == '\\' && str[pos+1] == 'n'){
+                    t.entrada = '\n';
+                    pos++;
+                }
+                else if(str[pos] == '\\' && str[pos+1] == 't'){
+                    t.entrada = '\t';
+                    pos++;
+                }
+                else if(str[pos] == '\\' && str[pos+1] == 'r'){
+                    t.entrada = '\r';
+                    pos++;
+                }
+                else if(str[pos] == '\\' && str[pos+1] == '0'){
+                    t.entrada = '\0';
                     pos++;
                 }
                 else{

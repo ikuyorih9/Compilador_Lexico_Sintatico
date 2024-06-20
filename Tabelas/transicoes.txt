@@ -151,6 +151,10 @@ Q1 & S0
 Q1 ` S0
 Q1 ^ S0
 Q1 ~ S0
+Q1 \n S0
+Q1 \r S0
+Q1 \t S0
+Q1 \0 S0
 
 //SÍMBOLOS
 Q0 \s S1
@@ -247,6 +251,10 @@ Q2 & E1
 Q2 ` E1
 Q2 ^ E1
 Q2 ~ E1
+Q2 \n E1
+Q2 \r E1
+Q2 \t E1
+Q2 \0 E1
 
 //NÚMEROS.
 //Primeiro digito.
@@ -358,6 +366,10 @@ Q3 & S13
 Q3 ` S13
 Q3 ^ S13
 Q3 ~ S13
+Q3 \n S13
+Q3 \r S13
+Q3 \t S13
+Q3 \0 S13
 
 //CARACTERES INVALIDOS.
 Q0 @ E2
@@ -378,6 +390,10 @@ Q0 & E2
 Q0 ` E2
 Q0 ^ E2
 Q0 ~ E2
+Q0 \n E2
+Q0 \r E2
+Q0 \t E2
+Q0 \0 E2
 
 //COMPARAÇÃO < OU <> ou <=
 Q0 < Q4
@@ -489,6 +505,10 @@ Q4 & S16
 Q4 ` S16
 Q4 ^ S16
 Q4 ~ S16
+Q4 \n S16
+Q4 \r S16
+Q4 \t S16
+Q4 \0 S16
 
 //COMPARAÇÃO > OU >=
 Q0 > Q5
@@ -599,6 +619,10 @@ Q5 & S18
 Q5 ` S18
 Q5 ^ S18
 Q5 ~ S18
+Q5 \n S0
+Q5 \r S0
+Q5 \t S0
+Q5 \0 S0
 
 //COMENTARIO
 Q0 { Q6
@@ -706,3 +730,7 @@ Q6 $ Q6
 Q6 ` Q6
 Q6 ^ Q6
 Q6 ~ Q6
+Q6 \n Q6
+Q6 \r Q6
+Q6 \t Q6
+Q6 \0 Q6

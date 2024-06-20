@@ -17,8 +17,12 @@ char * analisadorLexico(char * linha, int * pos){
     char estadoAtual[3] = {'Q','0'};
     char * palavra = (char*) malloc(MAX_PALAVRA);
 
+    int fimDeLinha = 0;
+
     //Enquanto a linha não encontrar um caractere inválido da linha.
-    while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r' && linha[i] != '\t'){
+    // while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r' && linha[i] != '\t'){
+    //Percorre a linha.
+    while(!fimDeLinha){
         //Salva o caractere na 'palavra'.
         palavra[posPalavra] = linha[i];
         palavra[posPalavra+1] = '\0';
@@ -64,22 +68,35 @@ char * analisadorLexico(char * linha, int * pos){
 }
 
 char * obterSimbolo(FILE * entrada, char * linha, int *i){
-    //Lê uma linha da entrada;
-    fgets(linha, MAX_LINHA, entrada);
-    dprint("\nLINHA: %s\n", linha);
 
-    //Percorre toda a linha com o iterador 'i', evitando caracteres inválidos da linha.
-    if(linha[*i] != '\n' && linha[*i] != '\0' && linha[*i] != '\r'){
-        dprint("Comecei na posição linha[%d].\n", *i);
+    //Enquanto o arquivo de entrada não estiver em EOF:
+    while(!feof(entrada)){
+        //Lê uma linha da entrada;
+        if(strlen(linha) == 0){
+            fgets(linha, MAX_LINHA, entrada);
+            dprint("\nLINHA: %s\n", linha);
+        }
+
+        //Percorre toda a linha com o iterador 'i', evitando caracteres inválidos da linha.
+        while(linha[*i] != '\n' && linha[*i] != '\0' && linha[*i] != '\r'){
+            dprint("Comecei na posição linha[%d].\n", *i);
+            
+            //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
+            char * token = analisadorLexico(linha, i);
+            dprint("Voltei na posição linha[%d].\n", *i);
+
+            //Avança na linha.
+            (*i)++;
+
+            if(token != NULL)
+                return token;
+            
+        }
+
+        (*i) = 0;
+        linha[*i] = '\0';
         
-        //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
-        char * token = analisadorLexico(linha, i);
-        dprint("Voltei na posição linha[%d].\n", *i);
-
-        //Avança na linha.
-        (*i)++;
-
-        return token;
     }
     return NULL;
+    
 }

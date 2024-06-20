@@ -5,6 +5,7 @@ b, identificador
 ,, simbolo_virgula
 c, identificador
 ;, simbolo_ponto_virgula
+BEGIN, BEGIN
 a, identificador
 :=, simbolo_atribuicao
 2, numero
@@ -17,5 +18,6 @@ c, identificador
 :=, simbolo_atribuicao
 @, <erro_lexico>
 +, simbolo_mais
+b, identificador
 END, END
-., simbolo_ponto
+(null)

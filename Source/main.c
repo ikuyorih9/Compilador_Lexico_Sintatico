@@ -47,33 +47,16 @@ int main(int argc, char * argv[]){
 
     //Aloca dinamicamente uma linha para ler da entrada.
     char * linha = (char*) malloc(MAX_LINHA);
-
-    //Enquanto o arquivo de entrada não estiver em EOF:
-    while(!feof(entrada)){
-        //Lê uma linha da entrada;
-        fgets(linha, MAX_LINHA, entrada);
-        dprint("\nLINHA: %s\n", linha);
-
-        //Percorre toda a linha com o iterador 'i', evitando caracteres inválidos da linha.
-        int i = 0;
-        while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r' && linha[i] != '\t'){
-            dprint("Comecei na posição linha[%d].\n", i);
-            
-            //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
-            char * token = analisadorLexico(linha, &i);
-            dprint("Voltei na posição linha[%d].\n", i);
-
-            //Se o valor do token for válido, imprime o token no arquivo e no terminal.
-            if(token!=NULL){
-                fprintf(saida,"%s\n", token);
-                printf("\nTOKEN: %s\n\n",token);
-                free(token);
-            }
-
-            //Avança na linha.
-            i++;
-        }
+    int i = 0;
+    char * token;
+    do{
+        token = obterSimbolo(entrada, linha, &i);
+        fprintf(saida,"%s\n", token);
+        printf("\nTOKEN: %s\n\n",token);
+        free(token);
     }
+    while(token != NULL);
+    
 
     free(linha); //Libera a memória alocada para a linha.
 
