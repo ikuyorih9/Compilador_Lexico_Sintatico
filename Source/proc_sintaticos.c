@@ -49,6 +49,7 @@ int p_declaracao(FILE * entrada, char * linha, int *i, char **token, char ** s){
     if(*token != NULL && strcmp(*token, "CONST") == 0){
         //Chama procedimento Constante
         p_constante(entrada, linha, i, token, s);
+        dprint("token apos proc const %s\n", *token);
     }
 
     if(*token != NULL && strcmp(*token, "VAR") == 0){
@@ -77,6 +78,7 @@ int p_constante(FILE * entrada, char * linha, int *i, char **token, char ** s){
                 //Chama procedimento Mais_const
                 p_mais_const(entrada, linha, i, token, s);
                 if(*token != NULL && strcmp(*token, SIMB_PVIRGULA) == 0){
+                    *token = obterSimbolo(entrada, linha, i);
                     dprint("Fim procedimento Constante.\n");
                     return 0;
                 }
@@ -233,6 +235,7 @@ int p_mais_cmd(FILE * entrada, char * linha, int *i, char **token, char ** s){
     dprint("Executando procedimento Mais Comandos.\n");
     if(*token != NULL && strcmp(*token, SIMB_PVIRGULA) == 0){
         *token = obterSimbolo(entrada, linha, i);
+        dprint("Proc mais cmds: chamando cmd de novo, token %s\n", *token);
         //Chama procedimento Comando
         p_comando(entrada, linha, i, token, s);
         //Chama procedimento Mais_cmd
@@ -246,6 +249,7 @@ int p_mais_cmd(FILE * entrada, char * linha, int *i, char **token, char ** s){
 
 int p_expressao(FILE * entrada, char * linha, int *i, char **token, char ** s){
     dprint("Executando procedimento Expressao.\n");
+    dprint("Token: %s\n", *token);
     //Chama procedimento Operador unario
     p_operador_unario(entrada, linha, i, token, s);
     //Chama procedimento Termo
@@ -259,6 +263,7 @@ int p_expressao(FILE * entrada, char * linha, int *i, char **token, char ** s){
 
 int p_operador_unario(FILE * entrada, char * linha, int *i, char **token, char ** s){
     dprint("Executando procedimento Operador Unario.\n");
+    dprint("Token: %s\n", *token);
     if(*token != NULL && (strcmp(*token, SIMB_MENOS) == 0 || strcmp(*token, SIMB_MAIS) == 0)){
         *token = obterSimbolo(entrada, linha, i);
         dprint("Fim procedimento Operador Unario (1).\n");
@@ -295,6 +300,7 @@ int p_mais_termos(FILE * entrada, char * linha, int *i, char **token, char ** s)
 
 int p_fator(FILE * entrada, char * linha, int *i, char **token, char ** s){
     dprint("Executando procedimento Fator.\n");
+    dprint("Token: %s\n", *token);
     if(*token != NULL && (strcmp(*token, IDENT) == 0 || strcmp(*token, SIMB_NUMERO) == 0)){
         *token = obterSimbolo(entrada, linha, i);
         dprint("Fim procedimento Fator: ident ou numero.\n");
@@ -330,7 +336,8 @@ int p_mais_fatores(FILE * entrada, char * linha, int *i, char **token, char ** s
 
 int p_condicao(FILE * entrada, char * linha, int *i, char **token, char ** s){
     dprint("Executando procedimento Condicao.\n");
-    if(*token != NULL && strcmp(*token, "ODD")){
+    dprint("Token: %s\n", *token);
+    if(*token != NULL && strcmp(*token, "ODD") == 0){
         *token = obterSimbolo(entrada, linha, i);
         //Chama procedimento Expressao
         p_expressao(entrada, linha, i, token, s);
@@ -352,6 +359,7 @@ int p_condicao(FILE * entrada, char * linha, int *i, char **token, char ** s){
 
 int p_relacional(FILE * entrada, char * linha, int *i, char **token, char ** s){
     dprint("Executando procedimento Relacional.\n");
+    dprint("Token: %s\n", *token);
     if(*token != NULL && 
         (strcmp(*token, SIMB_IGUAL) == 0 || strcmp(*token, SIMB_DIFERENTE) == 0 ||
          strcmp(*token, SIMB_MENOR) == 0 || strcmp(*token, SIMB_MENOR_IGUAL) == 0 ||
