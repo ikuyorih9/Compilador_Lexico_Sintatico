@@ -62,3 +62,24 @@ char * analisadorLexico(char * linha, int * pos){
     }
     return NULL;
 }
+
+char * obterSimbolo(FILE * entrada, char * linha, int *i){
+    //Lê uma linha da entrada;
+    fgets(linha, MAX_LINHA, entrada);
+    dprint("\nLINHA: %s\n", linha);
+
+    //Percorre toda a linha com o iterador 'i', evitando caracteres inválidos da linha.
+    if(linha[*i] != '\n' && linha[*i] != '\0' && linha[*i] != '\r'){
+        dprint("Comecei na posição linha[%d].\n", *i);
+        
+        //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
+        char * token = analisadorLexico(linha, i);
+        dprint("Voltei na posição linha[%d].\n", *i);
+
+        //Avança na linha.
+        (*i)++;
+
+        return token;
+    }
+    return NULL;
+}

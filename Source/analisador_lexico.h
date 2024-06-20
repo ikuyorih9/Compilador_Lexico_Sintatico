@@ -5,4 +5,6 @@
 
 char * analisadorLexico(char * linha, int * i);
 
+char * obterSimbolo(FILE * entrada, char * linha, int *i);
+
 #endif
