@@ -56,7 +56,7 @@ int main(int argc, char * argv[]){
 
         //Percorre toda a linha com o iterador 'i', evitando caracteres inválidos da linha.
         int i = 0;
-        while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'){
+        while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r' && linha[i] != '\t'){
             dprint("Comecei na posição linha[%d].\n", i);
             
             //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
