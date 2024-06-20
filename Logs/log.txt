@@ -40,7 +40,8 @@ Voltei na posição linha[5].
 
 TOKEN: simbolo_virgula
 
-Executando procedimento Mais Varaivel.
+*token antes mais_var: simbolo_virgula.
+Executando procedimento Mais Variavel.
 Comecei na posição linha[6].
 	Tabela de transicao:  (Q0, b) = Q1.
 	Tabela de transicao:  (Q1, ,) = S0.
@@ -59,7 +60,7 @@ Voltei na posição linha[7].
 
 TOKEN: simbolo_virgula
 
-Executando procedimento Mais Varaivel.
+Executando procedimento Mais Variavel.
 Comecei na posição linha[8].
 	Tabela de transicao:  (Q0, c) = Q1.
 	Tabela de transicao:  (Q1, ;) = S0.
@@ -78,12 +79,14 @@ Voltei na posição linha[9].
 
 TOKEN: simbolo_ponto_virgula
 
-Executando procedimento Mais Varaivel.
+Executando procedimento Mais Variavel.
+*token mais_var: simbolo_ponto_virgula.
 Fim procedimento Mais Variavel (2).
+*token ap mais_var: simbolo_ponto_virgula.
 Fim procedimento Mais Variavel (1).
+*token ap mais_var: simbolo_ponto_virgula.
 Fim procedimento Mais Variavel (1).
-ERRO: procedimento Variavel.
-Fim procedimento Declaração.
+*token apos mais_var: simbolo_ponto_virgula.
 
 LINHA: BEGIN
 
@@ -93,20 +96,20 @@ Comecei na posição linha[0].
 	Tabela de transicao:  (Q1, G) = Q1.
 	Tabela de transicao:  (Q1, I) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, 
-) = S0.
+	Tabela de transicao:  (Q1, ) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra BEGIN
-...
-		Retrocedendo '
-'...
+		Enviando palavra BEGIN...
+		Retrocedendo ''...
 Voltei na posição linha[4].
 
 TOKEN: BEGIN
 
+Fim procedimento Variavel.
+Fim procedimento Declaração.
+Token apos declaracao: BEGIN
 Executando procedimento Comando.
 
-LINHA:     a:=2;
+LINHA:     a:=2
 
 Comecei na posição linha[0].
 	Tabela de transicao:  (Q0,  ) = S1.
@@ -150,10 +153,10 @@ TOKEN: simbolo_atribuicao
 
 Comecei na posição linha[7].
 	Tabela de transicao:  (Q0, 2) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
+	Tabela de transicao:  (Q3, ) = S13.
 		Chamando funcao de saida para S13...
-		Enviando palavra 2;...
-		Retrocedendo ';'...
+		Enviando palavra 2...
+		Retrocedendo ''...
 Voltei na posição linha[7].
 
 TOKEN: numero
@@ -163,65 +166,33 @@ Executando procedimento Operador Unario.
 Fim procedimento Operador Unario (2).
 Executando procedimento Termo.
 Executando procedimento Fator.
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[8].
 
-TOKEN: simbolo_ponto_virgula
+LINHA: END.
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, E) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Tabela de transicao:  (Q1, D) = Q1.
+	Tabela de transicao:  (Q1, .) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra END....
+		Retrocedendo '.'...
+Voltei na posição linha[2].
+
+TOKEN: END
 
 Fim procedimento Fator: ident ou numero.
 Executando procedimento Mais Fatores.
-Fim procedimento Fatores (2).
+Fim procedimento Mais Fatores (2).
 Fim procedimento Termo.
 Executando procedimento Mais Termos.
 Fim procedimento Mais Termos (2).
+*token: END
 Fim procedimento Expressao.
-
-LINHA:     b:=3;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra b:...
-		Retrocedendo ':'...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
+*token apos expressao END
+Token apos cmd: END
 Executando procedimento Mais Comandos.
 Fim procedimento Mais Comandos (2).
-Fim procedimento Comando.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[6].
-
-TOKEN: simbolo_atribuicao
-
+Token apos mais cmds: END
+Token apos mais cmds 2: (null)
 Fim procedimento Bloco.
-ERRO: esperava ponto final após o bloco
+Programa terminou como esperado (leu ponto final --> leu NULL)

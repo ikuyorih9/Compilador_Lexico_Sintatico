@@ -58,7 +58,7 @@ int main(int argc, char * argv[]){
     //fprintf(saida,"%s\n", token);
     //printf("\nTOKEN: %s\n\n",token);
     //free(token);
-    p_programa(entrada, linha, &i, token, erro);
+    p_programa(entrada, linha, &i, &token, erro);
     
 
 
