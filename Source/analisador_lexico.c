@@ -18,7 +18,7 @@ char * analisadorLexico(char * linha, int * pos){
     char * palavra = (char*) malloc(MAX_PALAVRA);
 
     //Enquanto a linha não encontrar um caractere inválido da linha.
-    while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r'){
+    while(linha[i] != '\n' && linha[i] != '\0' && linha[i] != '\r' && linha[i] != '\t'){
         //Salva o caractere na 'palavra'.
         palavra[posPalavra] = linha[i];
         palavra[posPalavra+1] = '\0';
