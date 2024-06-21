@@ -158,6 +158,10 @@ Q1 \0 S0
 
 //SÍMBOLOS
 Q0 \s S1
+Q0 \n S1
+Q0 \r S1
+Q0 \t S1
+Q0 \0 S1
 Q0 , S2
 Q0 ; S3
 Q0 ( S4
@@ -390,10 +394,7 @@ Q0 & E2
 Q0 ` E2
 Q0 ^ E2
 Q0 ~ E2
-Q0 \n E2
-Q0 \r E2
-Q0 \t E2
-Q0 \0 E2
+
 
 //COMPARAÇÃO < OU <> ou <=
 Q0 < Q4

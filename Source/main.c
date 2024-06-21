@@ -5,6 +5,7 @@
 #include "tabelas.h"
 #include "simbolos.h"
 #include "proc_sintaticos.h"
+#include "configs.h"
 
 //Arquivo de entrada PL/0 padrão.
 #define ENTRADA_PADRAO_PATH "Entradas/in.txt"
@@ -56,25 +57,13 @@ int main(int argc, char * argv[]){
     int i = 0;
     linha[0] = '\0';
     
-
-    // Token * token = NULL;
-    // do{
-    //     printf("Obtendo token...\n");
-    //     obterSimbolo(entrada, linha, &i, &token);
-    //     //fprintf(saida,"(%s, %s)\n", token->valor, token->tipo);
-    //     if(token != NULL)
-    //         printf("TOKEN = (%s, %s)\n\n", token->valor, token->tipo);
-    //     else{
-    //         printf("TOKEN = (null)\n");
-    //     }
-    //     //destroiToken(token);
-    // }
-    // while(token != NULL);
+    listaTokens(entrada, saida);
 
     Token * token = NULL;
-    obterSimbolo(entrada, linha, &i, &token);
-    p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
+    //obterSimbolo(entrada, linha, &i, &token);
+    //p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
 
+    destroiToken(token);
     free(linha); //Libera a memória alocada para a linha.
 
     //Libera os arquivos de entrada e saída.

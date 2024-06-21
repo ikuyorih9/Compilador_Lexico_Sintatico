@@ -4,6 +4,7 @@
         "funcoes_saida.h": "c",
         "tabelas.h": "c",
         "analisador_lexico.h": "c",
-        "proc_sintaticos.h": "c"
+        "proc_sintaticos.h": "c",
+        "stdio.h": "c"
     }
 }

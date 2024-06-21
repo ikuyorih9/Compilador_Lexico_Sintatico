@@ -18,3 +18,4 @@
 #define SIMB_MAIOR_IGUAL "simbolo_maior_igual"
 #define SIMB_DIFERENTE "simbolo_diferente"
 #define COMENTARIO "comentario"
+#define ERRO_EOF "FIM_DE_ARQUIVO_INESPERADO"
