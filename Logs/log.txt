@@ -1,1542 +1,374 @@
-Lendo arquivo de entrada 'Entradas/in.txt'...
-
-LINHA: CONST a = 4, b = 5;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, C) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, S) = Q1.
-	Tabela de transicao:  (Q1, T) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra CONST ...
-		Retrocedendo ' '...
-Voltei na posição linha[4].
-
-TOKEN: CONST
-
-Executando procedimento Bloco.
-Executando procedimento Declaracao.
-Executando procedimento Constante.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[5].
-Comecei na posição linha[6].
-	Tabela de transicao:  (Q0, a) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra a ...
-		Retrocedendo ' '...
-Voltei na posição linha[6].
-
-TOKEN: identificador
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, =) = S11.
-		Chamando funcao de saida para S11...
-		Enviando palavra =...
-Voltei na posição linha[8].
-
-TOKEN: simbolo_igualdade
-
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, 4) = Q3.
-	Tabela de transicao:  (Q3, ,) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 4,...
-		Retrocedendo ','...
-Voltei na posição linha[10].
-
-TOKEN: numero
-
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0, ,) = S2.
-		Chamando funcao de saida para S2...
-		Enviando palavra ,...
-Voltei na posição linha[11].
-
-TOKEN: simbolo_virgula
-
-Executando procedimento Mais Constante.
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[12].
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra b ...
-		Retrocedendo ' '...
-Voltei na posição linha[13].
-
-TOKEN: identificador
-
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[14].
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0, =) = S11.
-		Chamando funcao de saida para S11...
-		Enviando palavra =...
-Voltei na posição linha[15].
-
-TOKEN: simbolo_igualdade
-
-Comecei na posição linha[16].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[16].
-Comecei na posição linha[17].
-	Tabela de transicao:  (Q0, 5) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 5;...
-		Retrocedendo ';'...
-Voltei na posição linha[17].
-
-TOKEN: numero
-
-Comecei na posição linha[18].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[18].
-
-TOKEN: simbolo_ponto_virgula
-
-Executando procedimento Mais Constante.
-Fim procedimento Mais Constante (2).
-Fim procedimento Mais Constante (1).
-
-LINHA: VAR a,b,c;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, V) = Q1.
-	Tabela de transicao:  (Q1, A) = Q1.
-	Tabela de transicao:  (Q1, R) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra VAR ...
-		Retrocedendo ' '...
-Voltei na posição linha[2].
-
-TOKEN: VAR
-
-Fim procedimento Constante.
-token apos proc const VAR
-Executando procedimento Variavel.
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, a) = Q1.
-	Tabela de transicao:  (Q1, ,) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra a,...
-		Retrocedendo ','...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, ,) = S2.
-		Chamando funcao de saida para S2...
-		Enviando palavra ,...
-Voltei na posição linha[5].
-
-TOKEN: simbolo_virgula
-
-*token antes mais_var: simbolo_virgula.
-Executando procedimento Mais Variavel.
-Comecei na posição linha[6].
-	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1, ,) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra b,...
-		Retrocedendo ','...
-Voltei na posição linha[6].
-
-TOKEN: identificador
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0, ,) = S2.
-		Chamando funcao de saida para S2...
-		Enviando palavra ,...
-Voltei na posição linha[7].
-
-TOKEN: simbolo_virgula
-
-Executando procedimento Mais Variavel.
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, c) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra c;...
-		Retrocedendo ';'...
-Voltei na posição linha[8].
-
-TOKEN: identificador
-
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[9].
-
-TOKEN: simbolo_ponto_virgula
-
-Executando procedimento Mais Variavel.
-*token mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (2).
-*token ap mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (1).
-*token ap mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (1).
-*token apos mais_var: simbolo_ponto_virgula.
-
-LINHA: PROCEDURE proc1;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, P) = Q1.
-	Tabela de transicao:  (Q1, R) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1, C) = Q1.
-	Tabela de transicao:  (Q1, E) = Q1.
-	Tabela de transicao:  (Q1, D) = Q1.
-	Tabela de transicao:  (Q1, U) = Q1.
-	Tabela de transicao:  (Q1, R) = Q1.
-	Tabela de transicao:  (Q1, E) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra PROCEDURE ...
-		Retrocedendo ' '...
-Voltei na posição linha[8].
-
-TOKEN: PROCEDURE
-
-Fim procedimento Variavel.
-Executando procedimento Procedimento.
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, p) = Q1.
-	Tabela de transicao:  (Q1, r) = Q1.
-	Tabela de transicao:  (Q1, o) = Q1.
-	Tabela de transicao:  (Q1, c) = Q1.
-	Tabela de transicao:  (Q1, 1) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra proc1;...
-		Retrocedendo ';'...
-Voltei na posição linha[14].
-
-TOKEN: identificador
-
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[15].
-
-TOKEN: simbolo_ponto_virgula
-
-
-LINHA: CONST y = 2;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, C) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, S) = Q1.
-	Tabela de transicao:  (Q1, T) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra CONST ...
-		Retrocedendo ' '...
-Voltei na posição linha[4].
-
-TOKEN: CONST
-
-Executando procedimento Bloco.
-Executando procedimento Declaracao.
-Executando procedimento Constante.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[5].
-Comecei na posição linha[6].
-	Tabela de transicao:  (Q0, y) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra y ...
-		Retrocedendo ' '...
-Voltei na posição linha[6].
-
-TOKEN: identificador
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, =) = S11.
-		Chamando funcao de saida para S11...
-		Enviando palavra =...
-Voltei na posição linha[8].
-
-TOKEN: simbolo_igualdade
-
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, 2) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 2;...
-		Retrocedendo ';'...
-Voltei na posição linha[10].
-
-TOKEN: numero
-
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[11].
-
-TOKEN: simbolo_ponto_virgula
-
-Executando procedimento Mais Constante.
-Fim procedimento Mais Constante (2).
-
-LINHA: VAR g,h,j;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, V) = Q1.
-	Tabela de transicao:  (Q1, A) = Q1.
-	Tabela de transicao:  (Q1, R) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra VAR ...
-		Retrocedendo ' '...
-Voltei na posição linha[2].
-
-TOKEN: VAR
-
-Fim procedimento Constante.
-token apos proc const VAR
-Executando procedimento Variavel.
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, g) = Q1.
-	Tabela de transicao:  (Q1, ,) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra g,...
-		Retrocedendo ','...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, ,) = S2.
-		Chamando funcao de saida para S2...
-		Enviando palavra ,...
-Voltei na posição linha[5].
-
-TOKEN: simbolo_virgula
-
-*token antes mais_var: simbolo_virgula.
-Executando procedimento Mais Variavel.
-Comecei na posição linha[6].
-	Tabela de transicao:  (Q0, h) = Q1.
-	Tabela de transicao:  (Q1, ,) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra h,...
-		Retrocedendo ','...
-Voltei na posição linha[6].
-
-TOKEN: identificador
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0, ,) = S2.
-		Chamando funcao de saida para S2...
-		Enviando palavra ,...
-Voltei na posição linha[7].
-
-TOKEN: simbolo_virgula
-
-Executando procedimento Mais Variavel.
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, j) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra j;...
-		Retrocedendo ';'...
-Voltei na posição linha[8].
-
-TOKEN: identificador
-
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[9].
-
-TOKEN: simbolo_ponto_virgula
-
-Executando procedimento Mais Variavel.
-*token mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (2).
-*token ap mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (1).
-*token ap mais_var: simbolo_ponto_virgula.
-Fim procedimento Mais Variavel (1).
-*token apos mais_var: simbolo_ponto_virgula.
-
-LINHA: BEGIN
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, B) = Q1.
-	Tabela de transicao:  (Q1, E) = Q1.
-	Tabela de transicao:  (Q1, G) = Q1.
-	Tabela de transicao:  (Q1, I) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra BEGIN...
-		Retrocedendo ''...
-Voltei na posição linha[4].
-
-TOKEN: BEGIN
-
-Fim procedimento Variavel.
-Fim procedimento Declaração.
-Token apos declaracao: BEGIN
-Executando procedimento Comando.
-
-LINHA:     g:= h + j*2;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, g) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra g:...
-		Retrocedendo ':'...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
-Executando procedimento Comando.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[6].
-
-TOKEN: simbolo_atribuicao
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, h) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra h ...
-		Retrocedendo ' '...
-Voltei na posição linha[8].
-
-TOKEN: identificador
-
-Executando procedimento Expressao.
-Token: identificador
-Executando procedimento Operador Unario.
-Token: identificador
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[10].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[11].
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, j) = Q1.
-	Tabela de transicao:  (Q1, *) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra j*...
-		Retrocedendo '*'...
-Voltei na posição linha[12].
-
-TOKEN: identificador
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0, *) = S8.
-		Chamando funcao de saida para S8...
-		Enviando palavra *...
-Voltei na posição linha[13].
-
-TOKEN: simbolo_multiplicacao
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0, 2) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 2;...
-		Retrocedendo ';'...
-Voltei na posição linha[14].
-
-TOKEN: numero
-
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[15].
-
-TOKEN: simbolo_ponto_virgula
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Mais Fatores (1).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: simbolo_ponto_virgula
-Fim procedimento Expressao.
-*token apos expressao simbolo_ponto_virgula
-Token apos cmd: simbolo_ponto_virgula
-Executando procedimento Mais Comandos.
-
-LINHA: END;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, E) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, D) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra END;...
-		Retrocedendo ';'...
-Voltei na posição linha[2].
-
-TOKEN: END
-
-Proc mais cmds: chamando cmd de novo, token END
-Executando procedimento Comando.
-Fim procedimento Comando.
-Executando procedimento Mais Comandos.
-Fim procedimento Mais Comandos (2).
-Fim procedimento Mais Comandos (1).
-Token apos mais cmds: END
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[3].
-
-TOKEN: simbolo_ponto_virgula
-
-Token apos mais cmds 2: simbolo_ponto_virgula
-
-LINHA: BEGIN
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, B) = Q1.
-	Tabela de transicao:  (Q1, E) = Q1.
-	Tabela de transicao:  (Q1, G) = Q1.
-	Tabela de transicao:  (Q1, I) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra BEGIN...
-		Retrocedendo ''...
-Voltei na posição linha[4].
-
-TOKEN: BEGIN
-
-Fim procedimento Bloco.
-Fim procedimento Procedimento (2).
-Fim procedimento Declaração.
-Token apos declaracao: BEGIN
-Executando procedimento Comando.
-
-LINHA:     a:=2 + (2 * 3);
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, a) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra a:...
-		Retrocedendo ':'...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
-Executando procedimento Comando.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[6].
-
-TOKEN: simbolo_atribuicao
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0, 2) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 2 ...
-		Retrocedendo ' '...
-Voltei na posição linha[7].
-
-TOKEN: numero
-
-Executando procedimento Expressao.
-Token: numero
-Executando procedimento Operador Unario.
-Token: numero
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[8].
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[9].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[10].
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0, () = S4.
-		Chamando funcao de saida para S4...
-		Enviando palavra (...
-Voltei na posição linha[11].
-
-TOKEN: simbolo_abre_parentese
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: simbolo_abre_parentese
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, 2) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 2 ...
-		Retrocedendo ' '...
-Voltei na posição linha[12].
-
-TOKEN: numero
-
-Executando procedimento Expressao.
-Token: numero
-Executando procedimento Operador Unario.
-Token: numero
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[13].
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0, *) = S8.
-		Chamando funcao de saida para S8...
-		Enviando palavra *...
-Voltei na posição linha[14].
-
-TOKEN: simbolo_multiplicacao
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[15].
-Comecei na posição linha[16].
-	Tabela de transicao:  (Q0, 3) = Q3.
-	Tabela de transicao:  (Q3, )) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 3)...
-		Retrocedendo ')'...
-Voltei na posição linha[16].
-
-TOKEN: numero
-
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[17].
-	Tabela de transicao:  (Q0, )) = S5.
-		Chamando funcao de saida para S5...
-		Enviando palavra )...
-Voltei na posição linha[17].
-
-TOKEN: simbolo_fecha_parentese
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Mais Fatores (1).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-*token: simbolo_fecha_parentese
-Fim procedimento Expressao.
-Comecei na posição linha[18].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[18].
-
-TOKEN: simbolo_ponto_virgula
-
-Fim procedimento Fator: (expressao).
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: simbolo_ponto_virgula
-Fim procedimento Expressao.
-*token apos expressao simbolo_ponto_virgula
-Token apos cmd: simbolo_ponto_virgula
-Executando procedimento Mais Comandos.
-
-LINHA:     CALL proc1;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, C) = Q1.
-	Tabela de transicao:  (Q1, A) = Q1.
-	Tabela de transicao:  (Q1, L) = Q1.
-	Tabela de transicao:  (Q1, L) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra CALL ...
-		Retrocedendo ' '...
-Voltei na posição linha[7].
-
-TOKEN: CALL
-
-Proc mais cmds: chamando cmd de novo, token CALL
-Executando procedimento Comando.
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[8].
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0, p) = Q1.
-	Tabela de transicao:  (Q1, r) = Q1.
-	Tabela de transicao:  (Q1, o) = Q1.
-	Tabela de transicao:  (Q1, c) = Q1.
-	Tabela de transicao:  (Q1, 1) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra proc1;...
-		Retrocedendo ';'...
-Voltei na posição linha[13].
-
-TOKEN: identificador
-
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[14].
-
-TOKEN: simbolo_ponto_virgula
-
-Executando procedimento Mais Comandos.
-
-LINHA:     WHILE x + 3 > y + 5 DO
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, W) = Q1.
-	Tabela de transicao:  (Q1, H) = Q1.
-	Tabela de transicao:  (Q1, I) = Q1.
-	Tabela de transicao:  (Q1, L) = Q1.
-	Tabela de transicao:  (Q1, E) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra WHILE ...
-		Retrocedendo ' '...
-Voltei na posição linha[8].
-
-TOKEN: WHILE
-
-Proc mais cmds: chamando cmd de novo, token WHILE
-Executando procedimento Comando.
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, x) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra x ...
-		Retrocedendo ' '...
-Voltei na posição linha[10].
-
-TOKEN: identificador
-
-Executando procedimento Condicao.
-Token: identificador
-Executando procedimento Expressao.
-Token: identificador
-Executando procedimento Operador Unario.
-Token: identificador
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[11].
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[12].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[13].
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0, 3) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 3 ...
-		Retrocedendo ' '...
-Voltei na posição linha[14].
-
-TOKEN: numero
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[15].
-Comecei na posição linha[16].
-	Tabela de transicao:  (Q0, >) = Q5.
-	Tabela de transicao:  (Q5,  ) = S18.
-		Chamando funcao de saida para S18...
-		Enviando palavra > ...
-		Retrocedendo ' '...
-Voltei na posição linha[16].
-
-TOKEN: simbolo_maior
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: simbolo_maior
-Fim procedimento Expressao.
-Executando procedimento Relacional.
-Token: simbolo_maior
-Comecei na posição linha[17].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[17].
-Comecei na posição linha[18].
-	Tabela de transicao:  (Q0, y) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra y ...
-		Retrocedendo ' '...
-Voltei na posição linha[18].
-
-TOKEN: identificador
-
-Fim procedimento Relacional.
-Executando procedimento Expressao.
-Token: identificador
-Executando procedimento Operador Unario.
-Token: identificador
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[19].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[19].
-Comecei na posição linha[20].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[20].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[21].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[21].
-Comecei na posição linha[22].
-	Tabela de transicao:  (Q0, 5) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 5 ...
-		Retrocedendo ' '...
-Voltei na posição linha[22].
-
-TOKEN: numero
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[23].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[23].
-Comecei na posição linha[24].
-	Tabela de transicao:  (Q0, D) = Q1.
-	Tabela de transicao:  (Q1, O) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra DO...
-		Retrocedendo ''...
-Voltei na posição linha[25].
-
-TOKEN: DO
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: DO
-Fim procedimento Expressao.
-Fim procedimento Condicao: expressao relacional.
-
-LINHA:         a:= a+x;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[4].
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[5].
-Comecei na posição linha[6].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[6].
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, a) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra a:...
-		Retrocedendo ':'...
-Voltei na posição linha[8].
-
-TOKEN: identificador
-
-Executando procedimento Comando.
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[10].
-
-TOKEN: simbolo_atribuicao
-
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[11].
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, a) = Q1.
-	Tabela de transicao:  (Q1, +) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra a+...
-		Retrocedendo '+'...
-Voltei na posição linha[12].
-
-TOKEN: identificador
-
-Executando procedimento Expressao.
-Token: identificador
-Executando procedimento Operador Unario.
-Token: identificador
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[13].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0, x) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra x;...
-		Retrocedendo ';'...
-Voltei na posição linha[14].
-
-TOKEN: identificador
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[15].
-
-TOKEN: simbolo_ponto_virgula
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: simbolo_ponto_virgula
-Fim procedimento Expressao.
-*token apos expressao simbolo_ponto_virgula
-Executando procedimento Mais Comandos.
-
-LINHA:     b:= 3 - b / a;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra b:...
-		Retrocedendo ':'...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
-Proc mais cmds: chamando cmd de novo, token identificador
-Executando procedimento Comando.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[6].
-
-TOKEN: simbolo_atribuicao
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, 3) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 3 ...
-		Retrocedendo ' '...
-Voltei na posição linha[8].
-
-TOKEN: numero
-
-Executando procedimento Expressao.
-Token: numero
-Executando procedimento Operador Unario.
-Token: numero
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, -) = S7.
-		Chamando funcao de saida para S7...
-		Enviando palavra -...
-Voltei na posição linha[10].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[11].
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1,  ) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra b ...
-		Retrocedendo ' '...
-Voltei na posição linha[12].
-
-TOKEN: identificador
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[13].
-Comecei na posição linha[14].
-	Tabela de transicao:  (Q0, /) = S10.
-		Chamando funcao de saida para S10...
-		Enviando palavra /...
-Voltei na posição linha[14].
-
-TOKEN: simbolo_divisao
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Comecei na posição linha[15].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[15].
-Comecei na posição linha[16].
-	Tabela de transicao:  (Q0, a) = Q1.
-	Tabela de transicao:  (Q1, ;) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra a;...
-		Retrocedendo ';'...
-Voltei na posição linha[16].
-
-TOKEN: identificador
-
-Executando procedimento Fator.
-Token: identificador
-Comecei na posição linha[17].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[17].
-
-TOKEN: simbolo_ponto_virgula
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Mais Fatores (1).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: simbolo_ponto_virgula
-Fim procedimento Expressao.
-*token apos expressao simbolo_ponto_virgula
-Executando procedimento Mais Comandos.
-
-LINHA:     c:= 5 + 7;
-
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[0].
-Comecei na posição linha[1].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[1].
-Comecei na posição linha[2].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[2].
-Comecei na posição linha[3].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[3].
-Comecei na posição linha[4].
-	Tabela de transicao:  (Q0, c) = Q1.
-	Tabela de transicao:  (Q1, :) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra c:...
-		Retrocedendo ':'...
-Voltei na posição linha[4].
-
-TOKEN: identificador
-
-Proc mais cmds: chamando cmd de novo, token identificador
-Executando procedimento Comando.
-Comecei na posição linha[5].
-	Tabela de transicao:  (Q0, :) = Q2.
-	Tabela de transicao:  (Q2, =) = S12.
-		Chamando funcao de saida para S12...
-		Enviando palavra :=...
-Voltei na posição linha[6].
-
-TOKEN: simbolo_atribuicao
-
-Comecei na posição linha[7].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[7].
-Comecei na posição linha[8].
-	Tabela de transicao:  (Q0, 5) = Q3.
-	Tabela de transicao:  (Q3,  ) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 5 ...
-		Retrocedendo ' '...
-Voltei na posição linha[8].
-
-TOKEN: numero
-
-Executando procedimento Expressao.
-Token: numero
-Executando procedimento Operador Unario.
-Token: numero
-Fim procedimento Operador Unario (2).
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[9].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[9].
-Comecei na posição linha[10].
-	Tabela de transicao:  (Q0, +) = S6.
-		Chamando funcao de saida para S6...
-		Enviando palavra +...
-Voltei na posição linha[10].
-
-TOKEN: simbolo_mais
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Comecei na posição linha[11].
-	Tabela de transicao:  (Q0,  ) = S1.
-		Chamando funcao de saida para S1...
-		Enviando palavra  ...
-Voltei na posição linha[11].
-Comecei na posição linha[12].
-	Tabela de transicao:  (Q0, 7) = Q3.
-	Tabela de transicao:  (Q3, ;) = S13.
-		Chamando funcao de saida para S13...
-		Enviando palavra 7;...
-		Retrocedendo ';'...
-Voltei na posição linha[12].
-
-TOKEN: numero
-
-Executando procedimento Termo.
-Executando procedimento Fator.
-Token: numero
-Comecei na posição linha[13].
-	Tabela de transicao:  (Q0, ;) = S3.
-		Chamando funcao de saida para S3...
-		Enviando palavra ;...
-Voltei na posição linha[13].
-
-TOKEN: simbolo_ponto_virgula
-
-Fim procedimento Fator: ident ou numero.
-Executando procedimento Mais Fatores.
-Fim procedimento Mais Fatores (2).
-Fim procedimento Termo.
-Executando procedimento Mais Termos.
-Fim procedimento Mais Termos (2).
-Fim procedimento Mais Termos (1).
-*token: simbolo_ponto_virgula
-Fim procedimento Expressao.
-*token apos expressao simbolo_ponto_virgula
-Executando procedimento Mais Comandos.
-
-LINHA: END.
-Comecei na posição linha[0].
-	Tabela de transicao:  (Q0, E) = Q1.
-	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, D) = Q1.
-	Tabela de transicao:  (Q1, .) = S0.
-		Chamando funcao de saida para S0...
-		Enviando palavra END....
-		Retrocedendo '.'...
-Voltei na posição linha[2].
-
-TOKEN: END
-
-Proc mais cmds: chamando cmd de novo, token END
-Executando procedimento Comando.
-Fim procedimento Comando.
-Executando procedimento Mais Comandos.
-Fim procedimento Mais Comandos (2).
-Fim procedimento Mais Comandos (1).
-Fim procedimento Mais Comandos (1).
-Fim procedimento Mais Comandos (1).
-Fim procedimento Mais Comandos (1).
-Fim procedimento Mais Comandos (1).
-Token apos mais cmds: END
-Token apos mais cmds 2: (null)
-Fim procedimento Bloco.
-Token: (null)
-Programa terminou como esperado (leu ponto final --> leu NULL)
+INICIANDO <bloco>
+Procedimento inicia com TOKEN: CONST
+	INICIANDO <bloco>
+	Procedimento inicia com TOKEN: CONST
+		INICIANDO <declaracao>
+		Procedimento inicia com TOKEN: CONST
+			INICIANDO <constante>.
+			Procedimento inicia com TOKEN: CONST
+				INICIANDO <mais_const>
+				Procedimento inicia com TOKEN: simbolo_virgula
+					INICIANDO <mais_const>
+					Procedimento inicia com TOKEN: simbolo_ponto_virgula
+					FINALIZANDO <mais_const>
+				FINALIZANDO <mais_const>
+			FINALIZANDO <constante>
+			INICIANDO <variavel>
+			Procedimento inicia com TOKEN: VAR
+				INICIANDO <mais_var>
+				Procedimento inicia com TOKEN: simbolo_virgula
+					INICIANDO <mais_var>
+					Procedimento inicia com TOKEN: simbolo_virgula
+						INICIANDO <mais_var>
+						Procedimento inicia com TOKEN: simbolo_ponto_virgula
+						FINALIZANDO <mais_var>
+					FINALIZANDO <mais_var>
+				FINALIZANDO <mais_var>
+			FINALIZANDO <variavel>
+			INICIANDO <procedimento>
+			Procedimento inicia com TOKEN: PROCEDURE
+				INICIANDO <bloco>
+				Procedimento inicia com TOKEN: CONST
+					INICIANDO <declaracao>
+					Procedimento inicia com TOKEN: CONST
+						INICIANDO <constante>.
+						Procedimento inicia com TOKEN: CONST
+							INICIANDO <mais_const>
+							Procedimento inicia com TOKEN: simbolo_ponto_virgula
+							FINALIZANDO <mais_const>
+						FINALIZANDO <constante>
+						INICIANDO <variavel>
+						Procedimento inicia com TOKEN: VAR
+							INICIANDO <mais_var>
+							Procedimento inicia com TOKEN: simbolo_virgula
+								INICIANDO <mais_var>
+								Procedimento inicia com TOKEN: simbolo_virgula
+									INICIANDO <mais_var>
+									Procedimento inicia com TOKEN: simbolo_ponto_virgula
+									FINALIZANDO <mais_var>
+								FINALIZANDO <mais_var>
+							FINALIZANDO <mais_var>
+						FINALIZANDO <variavel>
+					FINALIZANDO <declaração>
+					INICIANDO <comando>
+					Procedimento inicia com TOKEN: BEGIN
+						INICIANDO <comando>
+						Procedimento inicia com TOKEN: identificador
+							INICIANDO <expressao>
+							Procedimento inicia com TOKEN: identificador
+								INICIANDO <operador_unario>
+								Procedimento inicia com TOKEN: identificador
+								Token: identificador
+								FINALIZANDO <operador_unario>
+								INICIANDO <termo>
+								Procedimento inicia com TOKEN: identificador
+									INICIANDO <fator>
+									Procedimento inicia com TOKEN: identificador
+									FINALIZANDO <fator>
+									INICIANDO <mais_fatores>
+									Procedimento inicia com TOKEN: simbolo_mais
+									FINALIZANDO <mais_fatores>
+								FINALIZANDO <termo>
+								INICIANDO <mais_termos>
+								Procedimento inicia com TOKEN: simbolo_mais
+									INICIANDO <termo>
+									Procedimento inicia com TOKEN: identificador
+										INICIANDO <fator>
+										Procedimento inicia com TOKEN: identificador
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+										Procedimento inicia com TOKEN: simbolo_multiplicacao
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: numero
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: simbolo_ponto_virgula
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+									Procedimento inicia com TOKEN: simbolo_ponto_virgula
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <mais_termos>
+							FINALIZANDO <expressao>
+						FINALIZANDO <comando>
+						INICIANDO <mais_cmd>
+						Procedimento inicia com TOKEN: simbolo_ponto_virgula
+							INICIANDO <comando>
+							Procedimento inicia com TOKEN: END
+							FINALIZANDO <comando>
+							INICIANDO <mais_cmd>
+							Procedimento inicia com TOKEN: END
+							FINALIZANDO <mais_cmd>
+						FINALIZANDO <mais_cmd>
+					FINALIZANDO <comando>
+				FINALIZANDO <bloco>.
+			FINALIZANDO <procedimento>
+		FINALIZANDO <declaração>
+		INICIANDO <comando>
+		Procedimento inicia com TOKEN: BEGIN
+			INICIANDO <comando>
+			Procedimento inicia com TOKEN: identificador
+				INICIANDO <expressao>
+				Procedimento inicia com TOKEN: numero
+					INICIANDO <operador_unario>
+					Procedimento inicia com TOKEN: numero
+					Token: numero
+					FINALIZANDO <operador_unario>
+					INICIANDO <termo>
+					Procedimento inicia com TOKEN: numero
+						INICIANDO <fator>
+						Procedimento inicia com TOKEN: numero
+						FINALIZANDO <fator>
+						INICIANDO <mais_fatores>
+						Procedimento inicia com TOKEN: simbolo_mais
+						FINALIZANDO <mais_fatores>
+					FINALIZANDO <termo>
+					INICIANDO <mais_termos>
+					Procedimento inicia com TOKEN: simbolo_mais
+						INICIANDO <termo>
+						Procedimento inicia com TOKEN: simbolo_abre_parentese
+							INICIANDO <fator>
+							Procedimento inicia com TOKEN: simbolo_abre_parentese
+								INICIANDO <expressao>
+								Procedimento inicia com TOKEN: numero
+									INICIANDO <operador_unario>
+									Procedimento inicia com TOKEN: numero
+									Token: numero
+									FINALIZANDO <operador_unario>
+									INICIANDO <termo>
+									Procedimento inicia com TOKEN: numero
+										INICIANDO <fator>
+										Procedimento inicia com TOKEN: numero
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+										Procedimento inicia com TOKEN: simbolo_multiplicacao
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: numero
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: simbolo_fecha_parentese
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+									Procedimento inicia com TOKEN: simbolo_fecha_parentese
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <expressao>
+							FINALIZANDO <fator>
+							INICIANDO <mais_fatores>
+							Procedimento inicia com TOKEN: simbolo_ponto_virgula
+							FINALIZANDO <mais_fatores>
+						FINALIZANDO <termo>
+						INICIANDO <mais_termos>
+						Procedimento inicia com TOKEN: simbolo_ponto_virgula
+						FINALIZANDO <mais_termos>
+					FINALIZANDO <mais_termos>
+				FINALIZANDO <expressao>
+			FINALIZANDO <comando>
+			INICIANDO <mais_cmd>
+			Procedimento inicia com TOKEN: simbolo_ponto_virgula
+				INICIANDO <comando>
+				Procedimento inicia com TOKEN: CALL
+					INICIANDO <mais_cmd>
+					Procedimento inicia com TOKEN: simbolo_ponto_virgula
+						INICIANDO <comando>
+						Procedimento inicia com TOKEN: WHILE
+							INICIANDO <condicao>
+							Procedimento inicia com TOKEN: identificador
+								INICIANDO <expressao>
+								Procedimento inicia com TOKEN: identificador
+									INICIANDO <operador_unario>
+									Procedimento inicia com TOKEN: identificador
+									Token: identificador
+									FINALIZANDO <operador_unario>
+									INICIANDO <termo>
+									Procedimento inicia com TOKEN: identificador
+										INICIANDO <fator>
+										Procedimento inicia com TOKEN: identificador
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+										Procedimento inicia com TOKEN: simbolo_mais
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+									Procedimento inicia com TOKEN: simbolo_mais
+										INICIANDO <termo>
+										Procedimento inicia com TOKEN: numero
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: numero
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: simbolo_maior
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <termo>
+										INICIANDO <mais_termos>
+										Procedimento inicia com TOKEN: simbolo_maior
+										FINALIZANDO <mais_termos>
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <expressao>
+								INICIANDO <relacional>
+								Procedimento inicia com TOKEN: simbolo_maior
+								FINALIZANDO <relacional>
+								INICIANDO <expressao>
+								Procedimento inicia com TOKEN: identificador
+									INICIANDO <operador_unario>
+									Procedimento inicia com TOKEN: identificador
+									Token: identificador
+									FINALIZANDO <operador_unario>
+									INICIANDO <termo>
+									Procedimento inicia com TOKEN: identificador
+										INICIANDO <fator>
+										Procedimento inicia com TOKEN: identificador
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+										Procedimento inicia com TOKEN: simbolo_mais
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+									Procedimento inicia com TOKEN: simbolo_mais
+										INICIANDO <termo>
+										Procedimento inicia com TOKEN: numero
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: numero
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: DO
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <termo>
+										INICIANDO <mais_termos>
+										Procedimento inicia com TOKEN: DO
+										FINALIZANDO <mais_termos>
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <expressao>
+							FINALIZANDO <condicao>
+							INICIANDO <comando>
+							Procedimento inicia com TOKEN: identificador
+								INICIANDO <expressao>
+								Procedimento inicia com TOKEN: identificador
+									INICIANDO <operador_unario>
+									Procedimento inicia com TOKEN: identificador
+									Token: identificador
+									FINALIZANDO <operador_unario>
+									INICIANDO <termo>
+									Procedimento inicia com TOKEN: identificador
+										INICIANDO <fator>
+										Procedimento inicia com TOKEN: identificador
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+										Procedimento inicia com TOKEN: simbolo_mais
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+									Procedimento inicia com TOKEN: simbolo_mais
+										INICIANDO <termo>
+										Procedimento inicia com TOKEN: identificador
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: identificador
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: simbolo_ponto_virgula
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <termo>
+										INICIANDO <mais_termos>
+										Procedimento inicia com TOKEN: simbolo_ponto_virgula
+										FINALIZANDO <mais_termos>
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <expressao>
+							FINALIZANDO <comando>
+						FINALIZANDO <comando>
+						INICIANDO <mais_cmd>
+						Procedimento inicia com TOKEN: simbolo_ponto_virgula
+							INICIANDO <comando>
+							Procedimento inicia com TOKEN: identificador
+								INICIANDO <expressao>
+								Procedimento inicia com TOKEN: numero
+									INICIANDO <operador_unario>
+									Procedimento inicia com TOKEN: numero
+									Token: numero
+									FINALIZANDO <operador_unario>
+									INICIANDO <termo>
+									Procedimento inicia com TOKEN: numero
+										INICIANDO <fator>
+										Procedimento inicia com TOKEN: numero
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+										Procedimento inicia com TOKEN: simbolo_mais
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+									Procedimento inicia com TOKEN: simbolo_mais
+										INICIANDO <termo>
+										Procedimento inicia com TOKEN: identificador
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: identificador
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: simbolo_divisao
+												INICIANDO <fator>
+												Procedimento inicia com TOKEN: identificador
+												FINALIZANDO <fator>
+												INICIANDO <mais_fatores>
+												Procedimento inicia com TOKEN: simbolo_ponto_virgula
+												FINALIZANDO <mais_fatores>
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <termo>
+										INICIANDO <mais_termos>
+										Procedimento inicia com TOKEN: simbolo_ponto_virgula
+										FINALIZANDO <mais_termos>
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <expressao>
+							FINALIZANDO <comando>
+							INICIANDO <mais_cmd>
+							Procedimento inicia com TOKEN: simbolo_ponto_virgula
+								INICIANDO <comando>
+								Procedimento inicia com TOKEN: identificador
+									INICIANDO <expressao>
+									Procedimento inicia com TOKEN: numero
+										INICIANDO <operador_unario>
+										Procedimento inicia com TOKEN: numero
+										Token: numero
+										FINALIZANDO <operador_unario>
+										INICIANDO <termo>
+										Procedimento inicia com TOKEN: numero
+											INICIANDO <fator>
+											Procedimento inicia com TOKEN: numero
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+											Procedimento inicia com TOKEN: simbolo_mais
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <termo>
+										INICIANDO <mais_termos>
+										Procedimento inicia com TOKEN: simbolo_mais
+											INICIANDO <termo>
+											Procedimento inicia com TOKEN: numero
+												INICIANDO <fator>
+												Procedimento inicia com TOKEN: numero
+												FINALIZANDO <fator>
+												INICIANDO <mais_fatores>
+												Procedimento inicia com TOKEN: simbolo_ponto_virgula
+												FINALIZANDO <mais_fatores>
+											FINALIZANDO <termo>
+											INICIANDO <mais_termos>
+											Procedimento inicia com TOKEN: simbolo_ponto_virgula
+											FINALIZANDO <mais_termos>
+										FINALIZANDO <mais_termos>
+									FINALIZANDO <expressao>
+								FINALIZANDO <comando>
+								INICIANDO <mais_cmd>
+								Procedimento inicia com TOKEN: simbolo_ponto_virgula
+									INICIANDO <comando>
+									Procedimento inicia com TOKEN: END
+									FINALIZANDO <comando>
+									INICIANDO <mais_cmd>
+									Procedimento inicia com TOKEN: END
+									FINALIZANDO <mais_cmd>
+								FINALIZANDO <mais_cmd>
+							FINALIZANDO <mais_cmd>
+						FINALIZANDO <mais_cmd>
+					FINALIZANDO <mais_cmd>
+				FINALIZANDO <mais_cmd>
+			FINALIZANDO <comando>
+		FINALIZANDO <bloco>.
+	Token: (null)
+	Programa terminou como esperado (leu ponto final --> leu NULL)

@@ -12,7 +12,7 @@
 //Imprime a mensagems somente se DEBUG_PRINT = 1.
 #define dprint if(DEBUG_PRINT) printf
 //Controle das mensagens de debug.
-#define DEBUG_PRINT 1
+#define DEBUG_PRINT 0
 
 typedef struct{
     char estadoCorrente[4];
