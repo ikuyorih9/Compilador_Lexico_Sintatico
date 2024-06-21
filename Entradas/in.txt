@@ -1,4 +1,4 @@
-CONST x = 1
+CONST a = 4, b = 5;
 VAR a,b,c;
 PROCEDURE proc1;
 CONST y = 2;

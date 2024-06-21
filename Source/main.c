@@ -50,7 +50,7 @@ int main(int argc, char * argv[]){
     //Aloca dinamicamente uma linha para ler da entrada.
     char * linha = (char*) malloc(MAX_LINHA);
     char ** simb_sincronizacao = (char**) malloc(sizeof(char *));
-    simb_sincronizacao[0] = malloc(sizeof(char)*10);
+    simb_sincronizacao[0] = malloc(sizeof(char)*30);
     strcpy(simb_sincronizacao[0], SIMB_PONTO);
 
     int i = 0;

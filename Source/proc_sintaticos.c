@@ -103,17 +103,52 @@ int p_constante(FILE * entrada, char * linha, int *i, char ** token, char ** s, 
                     dprint("Fim procedimento Constante.\n");
                     return 0;
                 }else{
-                    // ERRO: esperava ;
+                    // ERRO: esperava SIMB_PVIRGULA (;)
                     s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 1));
-                    s[num_simb_sinc] = malloc(sizeof(char)*10);
+                    s[num_simb_sinc] = malloc(sizeof(char)*30);
                     strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
-                    printf("Sincronizacao: %s\n", s[num_simb_sinc]);
+                    dprint("Sincronizacao 1: %s\n", s[num_simb_sinc]);
+                    printf("Erro sintático: SIMB_PVIRGULA (;) faltando na posição %d da linha %s", *i, linha);
                     p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
                     *token = obterSimbolo(entrada, linha, i);
                     return 0; //Foi capaz de corrigir o erro
                 }
+            }else{
+                // ERRO: esperava SIMB_NUMERO
+                s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 2));
+                s[num_simb_sinc] = malloc(sizeof(char)*30);
+                s[num_simb_sinc + 1] = malloc(sizeof(char)*30);
+                strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
+                strcpy(s[num_simb_sinc + 1], SIMB_NUMERO);
+                dprint("Sincronizacao 2: %s\n", s[num_simb_sinc]);
+                printf("Erro sintático: SIMB_NUMERO faltando na posição %d da linha %s", *i, linha);
+                p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
+                *token = obterSimbolo(entrada, linha, i);
+                return 0; //Foi capaz de corrigir o erro
             }
+        }else{
+            // ERRO: esperava SIMB_IGUAL
+            s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 2));
+            s[num_simb_sinc] = malloc(sizeof(char)*30);
+            s[num_simb_sinc + 1] = malloc(sizeof(char)*30);
+            strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
+            strcpy(s[num_simb_sinc + 1], SIMB_IGUAL);
+            dprint("Sincronizacao 2: %s\n", s[num_simb_sinc]);
+            printf("Erro sintático: SIMB_IGUAL faltando na posição %d da linha %s", *i, linha);
+            p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
+            *token = obterSimbolo(entrada, linha, i);
+            return 0; //Foi capaz de corrigir o erro
         }
+    }{
+        // ERRO: esperava IDENT
+        s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 1));
+        s[num_simb_sinc] = malloc(sizeof(char)*30);
+        strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
+        dprint("Sincronizacao 1: %s\n", s[num_simb_sinc]);
+        printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
+        p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
+        *token = obterSimbolo(entrada, linha, i);
+        return 0; //Foi capaz de corrigir o erro
     }
     dprint("ERRO: procedimento Constante.\n");
     return 1; //erro
@@ -133,9 +168,45 @@ int p_mais_const(FILE * entrada, char * linha, int *i, char ** token, char ** s,
                     p_mais_const(entrada, linha, i, token, s, num_simb_sinc);
                     dprint("Fim procedimento Mais Constante (1).\n");
                     return 0;
+                }{
+                    // ERRO: esperava SIMB_NUMERO
+                    s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 2));
+                    s[num_simb_sinc] = malloc(sizeof(char)*30);
+                    s[num_simb_sinc + 1] = malloc(sizeof(char)*30);
+                    strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
+                    strcpy(s[num_simb_sinc + 1], SIMB_NUMERO);
+                    dprint("Sincronizacao 2: %s\n", s[num_simb_sinc]);
+                    printf("Erro sintático: SIMB_NUMERO faltando na posição %d da linha %s", *i, linha);
+                    p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
+                    *token = obterSimbolo(entrada, linha, i);
+                    return 0; //Foi capaz de corrigir o erro
                 }
+            }{
+                // ERRO: esperava SIMB_IGUAL
+                s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 2));
+                s[num_simb_sinc] = malloc(sizeof(char)*30);
+                s[num_simb_sinc + 1] = malloc(sizeof(char)*30);
+                strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
+                strcpy(s[num_simb_sinc + 1], SIMB_IGUAL);
+                dprint("Sincronizacao 2: %s\n", s[num_simb_sinc]);
+                printf("Erro sintático: SIMB_IGUAL faltando na posição %d da linha %s", *i, linha);
+                p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
+                *token = obterSimbolo(entrada, linha, i);
+                return 0; //Foi capaz de corrigir o erro
             }
+        }{
+            // ERRO: esperava IDENT
+            s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 1));
+            s[num_simb_sinc] = malloc(sizeof(char)*30);
+            strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
+            dprint("Sincronizacao 1: %s\n", s[num_simb_sinc]);
+            printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
+            p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
+            *token = obterSimbolo(entrada, linha, i);
+            return 0; //Foi capaz de corrigir o erro
         }
+    }{
+        // OBS: se nao era SIMB_VIRGULA entao considera que gerou lambda
     }
     dprint("Fim procedimento Mais Constante (2).\n");
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
