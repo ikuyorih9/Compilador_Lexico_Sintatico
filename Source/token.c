@@ -9,6 +9,11 @@ Aloca memória para um tipo Token*.
 */
 Token * inicializaToken(){
     Token * token = (Token *) malloc(sizeof(Token));
+    if(token == NULL){
+        printf("Erro na alocação do token.\n");
+        return NULL;
+    }
+
     token->valor = (char*) malloc(MAX_LINHA);
     token->tipo = (char*) malloc(MAX_LINHA);
     return token;
@@ -19,9 +24,17 @@ Desaloca memória para um token.
 @param token (Token*) a ser desalocado.
 */
 void destroiToken(Token * token){
-    free(token->tipo);
-    free(token->valor);
-    free(token);
+    if(token != NULL){
+        if(token->tipo != NULL)
+            free(token->tipo);
+        if(token->valor != NULL)
+            free(token->valor);
+        free(token);
+    }
+    else{
+        dprint("Token ja esta desalocado.\n");
+    }
+    token = NULL;
 }
 
 /*

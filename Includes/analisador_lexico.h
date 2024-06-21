@@ -2,10 +2,10 @@
 #define ANALISADOR_LEXICO
 
 #include <stdio.h>
-#include "funcoes_saida.h"
+#include "token.h"
 
-Token * analisadorLexico(char * linha, int * i);
+Token * analisadorLexico(char * linha, int * i, FILE * entrada);
 
-Token * obterSimbolo(FILE * entrada, char * linha, int *i);
+void obterSimbolo(FILE * entrada, char * linha, int *i, Token ** token);
 
 #endif

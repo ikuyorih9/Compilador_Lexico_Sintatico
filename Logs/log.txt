@@ -305,4 +305,16 @@ Erro sintático: IDENT faltando na posição 15 da linha CONST a = 4,  = 5;
 									FINALIZANDO <comando>
 									Simbolo: (END,END)
 									INICIANDO <mais_cmd>
-										Procedimen
+										Procedimento inicia com token: (END,END)
+									FINALIZANDO <mais_cmd>
+								FINALIZANDO <mais_cmd>
+							FINALIZANDO <mais_cmd>
+						FINALIZANDO <mais_cmd>
+					FINALIZANDO <mais_cmd>
+				FINALIZANDO <mais_cmd>
+			FINALIZANDO <comando>
+			Simbolo: (.,simbolo_ponto)
+		FINALIZANDO <bloco>.
+		Simbolo: (.,simbolo_ponto)
+		Programa terminou como esperado (leu ponto final --> leu NULL)
+	FINALIZANDO <bloco>.

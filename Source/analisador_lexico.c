@@ -11,7 +11,7 @@ Realiza a análise léxica do primeiro token encontrado numa linha de entrada.
 @param pos posição da linha lida;
 @return retorna o par (token, identificação). Se NULL, foi encontrado um espaço vazio.
 */
-Token * analisadorLexico(char * linha, int * pos){
+Token * analisadorLexico(char * linha, int * pos, FILE * entrada){
     int i = *pos;
     int posPalavra = 0;
     char estadoAtual[3] = {'Q','0'};
@@ -50,10 +50,15 @@ Token * analisadorLexico(char * linha, int * pos){
             Token * token;
             int retrocede = procuraFuncaoSaida(estadoAtual, palavra, &token);
 
+            if(token != NULL)
+                dprint("\t\tToken encontrado: (%s, %s).\n", token->valor, token->tipo);
+
             //Se tiver que retroceder, o iterador volta uma posição, para que o último caractere seja lido de novo.
             if(retrocede){
                 dprint("\t\tRetrocedendo \'%c\'...\n", linha[i]);
                 i--;
+                if(feof(entrada))
+                    fseek(entrada, -1, SEEK_CUR);
             }
 
             //Atualiza o iterador para a posição atual, que avançou na linha.
@@ -67,7 +72,8 @@ Token * analisadorLexico(char * linha, int * pos){
     return NULL;
 }
 
-Token * obterSimbolo(FILE * entrada, char * linha, int *i){
+void obterSimbolo(FILE * entrada, char * linha, int *i, Token ** token){
+    destroiToken(*token);
     //Enquanto o arquivo de entrada não estiver em EOF:
     while(!feof(entrada)){
         //Lê uma linha da entrada;
@@ -81,22 +87,24 @@ Token * obterSimbolo(FILE * entrada, char * linha, int *i){
             dprint("Comecei na posição linha[%d].\n", *i);
             
             //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
-            Token * token = analisadorLexico(linha, i);
+            *token = analisadorLexico(linha, i, entrada);
+            if(*token == NULL){
+                dprint("Caractere ignorado...\n");
+            }
+            //dprint("\t\tToken encontrado: (%s, %s).\n", (*token)->valor, (*token)->tipo);
             dprint("Voltei na posição linha[%d].\n", *i);
 
             //Avança na linha.
             (*i)++;
 
-            if(token != NULL){
-                return token;
+            if(*token != NULL){
+                return;
             }
+            
             
         }
 
         (*i) = 0;
         linha[*i] = '\0';
-        
-    }
-    return NULL;
-    
+    }    
 }

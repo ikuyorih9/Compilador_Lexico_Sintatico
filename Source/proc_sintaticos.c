@@ -42,7 +42,7 @@ int p_erro(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int 
             }
         }
         //ESSE OBTER SIMBOLO É UM PROBLEMA QUANDO ENCONTRA SYNC. RODAR O CODIGO PARA VER DOIS ERROS SINTATICOS.
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
     }
     pprint("Não encontrou simbolo de sincronizacao, chegou ao fim do programa :(\n");
     return 0;
@@ -102,7 +102,7 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
             strcpy(s[num_simb_sinc], SIMB_PONTO);
             printf("ERRO SINTÁTICO: esperava CONST, VAR, PROCEDURE, BEGIN, CALL, IF, WHILE ou IDENT na posição %d da linha %s\n", *i, linha);
             p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             pop();
             pprint("FINALIZANDO <bloco>\n");
             return 0;
@@ -110,7 +110,7 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
     }
 
     //Obtém o próximo símbolo
-    *token = obterSimbolo(entrada, linha, i);
+    obterSimbolo(entrada, linha, i, token);
 
     pop();
     pprint("FINALIZANDO <bloco>.\n");
@@ -146,23 +146,23 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, char ** s,
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
-    *token = obterSimbolo(entrada, linha, i);
+    obterSimbolo(entrada, linha, i, token);
     pprint("Novo símbolo obtido: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     //Se o símbolo é um identificador.
     if(*token != NULL && cmpToken(*token, IDENT)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         pprint("IDENT encontrado!\n");
         pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
         //Se o símbolo é uma igualdade (=).
         if(*token != NULL && cmpToken(*token, SIMB_IGUAL)){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             pprint("SIMB_IGUAL (=) encontrado!\n");
             pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
             //Se o símbolo é um número.
             if(*token != NULL && cmpToken(*token, SIMB_NUMERO)){
-                *token = obterSimbolo(entrada, linha, i);
+                obterSimbolo(entrada, linha, i, token);
                 pprint("SIMB_NUMERO encontrado!\n");
                 pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
@@ -170,7 +170,7 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, char ** s,
 
                 //Se o símbolo é um ponto-e-vírgula (;).
                 if(*token != NULL && cmpToken(*token, SIMB_PVIRGULA)){
-                    *token = obterSimbolo(entrada, linha, i);
+                    obterSimbolo(entrada, linha, i, token);
                     pprint("SIMB_PVIRGULA (;) encontrado!\n");
                     pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
                     pop();
@@ -186,7 +186,7 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, char ** s,
 
                     printf("ERRO SINTÁTICO: SIMB_PVIRGULA (;) faltando na posição %d da linha %s\n", *i, linha);
                     p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
-                    *token = obterSimbolo(entrada, linha, i);
+                    obterSimbolo(entrada, linha, i, token);
                     pop();
                     pprint("FINALIZANDO <constante>\n");
                     return 0;
@@ -203,7 +203,7 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, char ** s,
 
                 printf("Erro sintático: SIMB_NUMERO faltando na posição %d da linha %s", *i, linha);
                 p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
-                *token = obterSimbolo(entrada, linha, i);
+                obterSimbolo(entrada, linha, i, token);
 
                 pop();
                 pprint("FINALIZANDO <constante>\n");
@@ -221,7 +221,7 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, char ** s,
             
             printf("Erro sintático: SIMB_IGUAL faltando na posição %d da linha %s", *i, linha);
             p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
 
             pop();
             pprint("FINALIZANDO <constante>\n");
@@ -237,7 +237,7 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, char ** s,
 
         printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
         p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
 
         pop();
         pprint("FINALIZANDO <constante>\n");
@@ -255,25 +255,25 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
 
     //Se o símbolo é SIMB_VIRGULA.
     if(*token != NULL && cmpToken(*token, SIMB_VIRGULA)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         pprint("SIMB_VIRGULA encontrado!\n");
         pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
         //Se o símbolo é IDENT.
         if(*token != NULL && cmpToken(*token, IDENT)){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             pprint("IDENT encontrado!\n");
             pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
             //Se o símbolo é SIMB_IGUAL.
             if(*token != NULL && cmpToken(*token, SIMB_IGUAL)){
-                *token = obterSimbolo(entrada, linha, i);
+                obterSimbolo(entrada, linha, i, token);
                 pprint("SIMB_IGUAL encontrado!\n");
                 pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
                 //Se o símbolo é um SIMB_NUMERO.
                 if(*token != NULL && cmpToken(*token, SIMB_NUMERO)){
-                    *token = obterSimbolo(entrada, linha, i);
+                    obterSimbolo(entrada, linha, i, token);
                     pprint("SIMB_IGUAL encontrado!\n");
                     pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
@@ -295,7 +295,7 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
 
                     printf("Erro sintático: SIMB_NUMERO faltando na posição %d da linha %s", *i, linha);
                     p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
-                    *token = obterSimbolo(entrada, linha, i);
+                    obterSimbolo(entrada, linha, i, token);
 
                     pop();
                     pprint("FINALIZANDO <mais_const>\n");
@@ -314,7 +314,7 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
                 
                 printf("Erro sintático: SIMB_IGUAL faltando na posição %d da linha %s", *i, linha);
                 p_erro(entrada, linha, i, token, s, num_simb_sinc + 2);
-                *token = obterSimbolo(entrada, linha, i);
+                obterSimbolo(entrada, linha, i, token);
 
                 pop();
                 pprint("FINALIZANDO <mais_const>\n");
@@ -330,7 +330,7 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
 
             printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
             p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
-            //*token = obterSimbolo(entrada, linha, i);
+            //obterSimbolo(entrada, linha, i, token);
 
             pop();
             pprint("FINALIZANDO <mais_const>\n");
@@ -347,12 +347,12 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     pprint("INICIANDO <variavel>\n");
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
-    *token = obterSimbolo(entrada, linha, i);
+    obterSimbolo(entrada, linha, i, token);
     if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         p_mais_var(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             pop();
             pprint("FINALIZANDO <variavel>\n");
             pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
@@ -371,9 +371,9 @@ int p_mais_var(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, SIMB_VIRGULA) == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             //Chama procedimento Mais_var
             p_mais_var(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -391,15 +391,15 @@ int p_procedimento(FILE * entrada, char * linha, int *i, Token ** token, char **
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, "PROCEDURE") == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
-                *token = obterSimbolo(entrada, linha, i);
+                obterSimbolo(entrada, linha, i, token);
                 //Chama procedimento Bloco
                 p_bloco(entrada, linha, i, token, s, num_simb_sinc);
                 if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
-                    *token = obterSimbolo(entrada, linha, i);
+                    obterSimbolo(entrada, linha, i, token);
                     //Chama procedimento Procedimento
                     p_procedimento(entrada, linha, i, token, s, num_simb_sinc);
                     pop();
@@ -420,9 +420,9 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     //Se comando gera um atribuicao
     if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         if(*token != NULL && strcmp((*token)->tipo, SIMB_ATRIBUICAO) == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             //Chama procedimento Expressao
             p_expressao(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -431,17 +431,17 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             return 0;
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "CALL") == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             return 0;
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "BEGIN") == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         p_comando(entrada, linha, i, token, s, num_simb_sinc);
         p_mais_cmd(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, "END") == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             pop();
             pprint("FINALIZANDO <comando>\n");
             pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
@@ -450,11 +450,11 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             printf("ERRO: esperava END\n");
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "IF") == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Condicao
         p_condicao(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, "THEN") == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             //Chama procedimento Comando
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -463,11 +463,11 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             return 0; //sem erros
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "WHILE") == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Condicao
         p_condicao(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, "DO") == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             //Chama procedimento Comando
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -487,7 +487,7 @@ int p_mais_cmd(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Comando
         p_comando(entrada, linha, i, token, s, num_simb_sinc);
         //Chama procedimento Mais_cmd
@@ -522,7 +522,7 @@ int p_operador_unario(FILE * entrada, char * linha, int *i, Token ** token, char
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     pprint("Token: %s\n", (*token)->tipo);
     if(*token != NULL && (strcmp((*token)->tipo, SIMB_MENOS) == 0 || strcmp((*token)->tipo, SIMB_MAIS) == 0)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         pop();
         pprint("FINALIZANDO <operador_unario>\n");
         return 0; //sem erros
@@ -550,7 +550,7 @@ int p_mais_termos(FILE * entrada, char * linha, int *i, Token ** token, char ** 
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && (strcmp((*token)->tipo, SIMB_MENOS) == 0 || strcmp((*token)->tipo, SIMB_MAIS) == 0)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Termo
         p_termo(entrada, linha, i, token, s, num_simb_sinc);
         //Chama procedimento Mais Termos
@@ -569,16 +569,16 @@ int p_fator(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && (strcmp((*token)->tipo, IDENT) == 0 || strcmp((*token)->tipo, SIMB_NUMERO) == 0)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         pop();
         pprint("FINALIZANDO <fator>\n");
         return 0;
     }else if(*token != NULL && strcmp((*token)->tipo, SIMB_ABRE_PARENTESE) == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Expressao
         p_expressao(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, SIMB_FECHA_PARENTESE) == 0){
-            *token = obterSimbolo(entrada, linha, i);
+            obterSimbolo(entrada, linha, i, token);
             pop();
             pprint("FINALIZANDO <fator>\n");
             return 0; //sem erros
@@ -594,7 +594,7 @@ int p_mais_fatores(FILE * entrada, char * linha, int *i, Token ** token, char **
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && (strcmp((*token)->tipo, SIMB_MULTI) == 0 || strcmp((*token)->tipo, SIMB_DIV) == 0)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Fator
         p_fator(entrada, linha, i, token, s, num_simb_sinc);
         //Chama procedimento Mais Fatores
@@ -613,7 +613,7 @@ int p_condicao(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, "ODD") == 0){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         //Chama procedimento Expressao
         p_expressao(entrada, linha, i, token, s, num_simb_sinc);
         pop();
@@ -643,7 +643,7 @@ int p_relacional(FILE * entrada, char * linha, int *i, Token ** token, char ** s
         (strcmp((*token)->tipo, SIMB_IGUAL) == 0 || strcmp((*token)->tipo, SIMB_DIFERENTE) == 0 ||
          strcmp((*token)->tipo, SIMB_MENOR) == 0 || strcmp((*token)->tipo, SIMB_MENOR_IGUAL) == 0 ||
          strcmp((*token)->tipo, SIMB_MAIOR) == 0 || strcmp((*token)->tipo, SIMB_MAIOR_IGUAL) == 0)){
-        *token = obterSimbolo(entrada, linha, i);
+        obterSimbolo(entrada, linha, i, token);
         pop();
         pprint("FINALIZANDO <relacional>\n");
         return 0; //sem erros
