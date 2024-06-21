@@ -2,6 +2,8 @@
     "files.associations": {
         "string.h": "c",
         "funcoes_saida.h": "c",
-        "tabelas.h": "c"
+        "tabelas.h": "c",
+        "analisador_lexico.h": "c",
+        "proc_sintaticos.h": "c"
     }
 }

@@ -40,7 +40,7 @@ Procura a função a se executar, dependendo do estado inserido.
 @param saida ponteiro para uma string de saída.
 @return (0) se a função não retrocede, (1) se a função retrocede e (-1) se não há função de saída associada ao estado.
 */
-int procuraFuncaoSaida(char * estado, char * token, char ** saida){
+int procuraFuncaoSaida(char * estado, char * token, Token ** saida){
     //Percorre todos os estados de saída da tabela tabelaFuncoes.
     for(int i = 0; i < NUM_ESTADOS_SAIDA; i++){
         //Se o estado de saída lido da tabela for igual ao estado de saída recebido pela função.
@@ -56,222 +56,179 @@ int procuraFuncaoSaida(char * estado, char * token, char ** saida){
     return -1;
 }
 
-char * funcaoSaida0(char * palavra){
+Token * funcaoSaida0(char * palavra){
     //Ignora o último caractere lido: retrocede.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
-
-    char * saida = (char*) malloc(MAX_LINHA);
+    
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
 
     //Verifica se é palavra reservada.
     int palavraReservada = verificaSePalavraReservada(palavra);
     //Se é reservada, identifica com o próprio nome.
-    if(palavraReservada){
-        strcpy(saida, palavra);
-        //strcat(saida,", ");
-        //strcat(saida,palavra);
-    }
+    if(palavraReservada)
+        strcpy(token->tipo, palavra);
     //Se ela não é reservada, identifica como identificador.
-    else{
-        //strcpy(saida, palavra);
-        //strcat(saida,", ");
-        //strcat(saida,IDENT);
-        strcpy(saida,IDENT);
-    }
-    return saida;
+    else
+        strcpy(token->tipo,IDENT);
+
+    return token;
 }
 
-char * funcaoSaida1(char * palavra){
+Token * funcaoSaida1(char * palavra){
     return NULL;
 }
 
-char * funcaoSaida2(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    //strcpy(saida, palavra);
-    //strcat(saida,", ");
-    strcpy(saida, SIMB_VIRGULA);
-    //strcat(saida,SIMB_VIRGULA);
-    return saida;
+Token * funcaoSaida2(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_VIRGULA);
+    return token;
 }
 
-char * funcaoSaida3(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    //strcpy(saida, palavra);
-    //strcat(saida,", ");
-    //strcat(saida,SIMB_PVIRGULA);
-    strcpy(saida, SIMB_PVIRGULA);
-    return saida;
+Token * funcaoSaida3(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_PVIRGULA);
+    return token;
 }
 
-char * funcaoSaida4(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    //strcpy(saida, palavra);
-    //strcat(saida,", ");
-    //strcat(saida,SIMB_ABRE_PARENTESE);
-    strcpy(saida, SIMB_ABRE_PARENTESE);
-    return saida;
+Token * funcaoSaida4(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_ABRE_PARENTESE);
+    return token;
 }
 
-char * funcaoSaida5(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_FECHA_PARENTESE);
-    strcpy(saida, SIMB_FECHA_PARENTESE);
-    return saida;
+Token * funcaoSaida5(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_FECHA_PARENTESE);
+    return token;
 }
 
-char * funcaoSaida6(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MAIS);
-    strcpy(saida, SIMB_MAIS);
-    return saida;
+Token * funcaoSaida6(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MAIS);
+    return token;
 }
 
-char * funcaoSaida7(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MAIS);
-    strcpy(saida, SIMB_MAIS);
-    return saida;
+Token * funcaoSaida7(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MAIS);
+    return token;
 }
 
-char * funcaoSaida8(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MULTI);
-    strcpy(saida, SIMB_MULTI);
-    return saida;
+Token * funcaoSaida8(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MULTI);
+    return token;
 }
 
-char * funcaoSaida9(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_PONTO);
-    strcpy(saida, SIMB_PONTO);
-    return saida;
+Token * funcaoSaida9(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_PONTO);
+    return token;
 }
 
-char * funcaoSaida10(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_DIV);
-    strcpy(saida, SIMB_DIV);
-    return saida;
+Token * funcaoSaida10(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_DIV);
+    return token;
 }
 
-char * funcaoSaida11(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_IGUAL);
-    strcpy(saida, SIMB_IGUAL);
-    return saida;
+Token * funcaoSaida11(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_IGUAL);
+    return token;
 }
 
-char * funcaoSaida12(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_ATRIBUICAO);
-    strcpy(saida, SIMB_ATRIBUICAO);
-    return saida;
+Token * funcaoSaida12(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_ATRIBUICAO);
+    return token;
 }
 
-char * funcaoSaida13(char * palavra){
+Token * funcaoSaida13(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_NUMERO);
-    strcpy(saida, SIMB_NUMERO);
-    return saida;
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_NUMERO);
+    return token;
 }
 
-char * funcaoSaida14(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MENOR_IGUAL);
-    strcpy(saida, SIMB_MENOR_IGUAL);
-    return saida;
+Token * funcaoSaida14(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MENOR_IGUAL);
+    return token;
 }
 
-char * funcaoSaida15(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_DIFERENTE);
-    strcpy(saida, SIMB_DIFERENTE);
-    return saida;
+Token * funcaoSaida15(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_DIFERENTE);
+    return token;
 }
 
-char * funcaoSaida16(char * palavra){
+Token * funcaoSaida16(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MENOR);
-    strcpy(saida, SIMB_MENOR);
-    return saida;
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MENOR);
+    return token;
 }
 
-char * funcaoSaida17(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MAIOR_IGUAL);
-    strcpy(saida, SIMB_MAIOR_IGUAL);
-    return saida;
+Token * funcaoSaida17(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MAIOR_IGUAL);
+    return token;
 }
 
-char * funcaoSaida18(char * palavra){
+Token * funcaoSaida18(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,SIMB_MAIOR);
-    strcpy(saida, SIMB_MAIOR);
-    return saida;
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, SIMB_MAIOR);
+    return token;
 }
 
-char * funcaoSaida19(char * palavra){
+Token * funcaoSaida19(char * palavra){
     return NULL;
 }
 
-char * funcaoErro1(char * palavra){
+Token * funcaoErro1(char * palavra){
     //Ignora a ultima letra que é um caractere invalido.
     int tam = strlen(palavra);
     palavra[tam-1] = '\0';
 
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,ERRO_LEXICO);
-    strcpy(saida, ERRO_LEXICO);
-    return saida;
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, ERRO_LEXICO);
+    return token;
 }
 
-char * funcaoErro2(char * palavra){
-    char * saida = (char*) malloc(MAX_LINHA);
-    // strcpy(saida, palavra);
-    // strcat(saida,", ");
-    // strcat(saida,ERRO_LEXICO);
-    strcpy(saida, ERRO_LEXICO);
-    return saida;
+Token * funcaoErro2(char * palavra){
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+    strcpy(token->tipo, ERRO_LEXICO);
+    return token;
 }

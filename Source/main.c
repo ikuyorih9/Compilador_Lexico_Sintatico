@@ -56,13 +56,18 @@ int main(int argc, char * argv[]){
     int i = 0;
     linha[0] = '\0';
     
-    char * token = obterSimbolo(entrada, linha, &i);
-    //fprintf(saida,"%s\n", token);
-    //printf("\nTOKEN: %s\n\n",token);
-    //free(token);
-    p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
-    
 
+    
+    // char * token;
+    // while(token != NULL){
+    //     token = obterSimbolo(entrada, linha, &i);
+    //     fprintf(saida,"%s\n", token);
+    //     printf("\nTOKEN: %s\n\n",token);
+    //     destroiToken(token);
+
+    // }
+    Token * token = obterSimbolo(entrada, linha, &i);
+    p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
 
     free(linha); //Libera a memória alocada para a linha.
 

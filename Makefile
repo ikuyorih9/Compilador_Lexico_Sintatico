@@ -9,6 +9,7 @@ C_FILES := \
 	$(SRC)/funcoes_saida.c \
 	$(SRC)/analisador_lexico.c \
 	$(SRC)/proc_sintaticos.c \
+	$(SRC)/token.c \
 	$(SRC)/main.c
 
 all: clean $(EXE) run

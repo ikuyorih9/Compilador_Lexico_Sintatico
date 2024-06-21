@@ -11,7 +11,7 @@ Realiza a análise léxica do primeiro token encontrado numa linha de entrada.
 @param pos posição da linha lida;
 @return retorna o par (token, identificação). Se NULL, foi encontrado um espaço vazio.
 */
-char * analisadorLexico(char * linha, int * pos){
+Token * analisadorLexico(char * linha, int * pos){
     int i = *pos;
     int posPalavra = 0;
     char estadoAtual[3] = {'Q','0'};
@@ -47,7 +47,7 @@ char * analisadorLexico(char * linha, int * pos){
             dprint("\t\tEnviando palavra %s...\n", palavra);
 
             //Procura a função de saída para o estado final, salvando em 'token' a resposta do analisador léxico e retornando se deve retroceder.
-            char * token;
+            Token * token;
             int retrocede = procuraFuncaoSaida(estadoAtual, palavra, &token);
 
             //Se tiver que retroceder, o iterador volta uma posição, para que o último caractere seja lido de novo.
@@ -67,8 +67,7 @@ char * analisadorLexico(char * linha, int * pos){
     return NULL;
 }
 
-char * obterSimbolo(FILE * entrada, char * linha, int *i){
-
+Token * obterSimbolo(FILE * entrada, char * linha, int *i){
     //Enquanto o arquivo de entrada não estiver em EOF:
     while(!feof(entrada)){
         //Lê uma linha da entrada;
@@ -82,14 +81,13 @@ char * obterSimbolo(FILE * entrada, char * linha, int *i){
             dprint("Comecei na posição linha[%d].\n", *i);
             
             //Chama o analisador léxico para retornar um TOKEN da linha e atualiza o iterador 'i' para a posição onde ele parou.
-            char * token = analisadorLexico(linha, i);
+            Token * token = analisadorLexico(linha, i);
             dprint("Voltei na posição linha[%d].\n", *i);
 
             //Avança na linha.
             (*i)++;
 
             if(token != NULL){
-                //printf("\nTOKEN: %s\n\n",token);
                 return token;
             }
             
