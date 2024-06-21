@@ -1,0 +1,16 @@
+CONST a = 4,  = 5;
+VAR a,b,c;
+PROCEDURE proc1;
+CONST y = 2;
+VAR g,h,j;
+BEGIN
+    g:= h + j*2;
+END;
+BEGIN
+    a:=2 + (2 * 3);
+    CALL proc1;
+    WHILE x + 3 > y + 5 DO
+        a:= a+x;
+    b:= 3 - b / a;
+    c:= 5 + 7;
+END.

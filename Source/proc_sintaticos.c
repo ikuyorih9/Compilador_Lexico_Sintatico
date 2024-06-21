@@ -80,17 +80,32 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
     
     if(*token != NULL){
         //Verifica se o símbolo é uma declaração.
+        int flag = 0;
         if(cmpToken(*token, "CONST")|| 
            cmpToken(*token, "VAR") || 
            cmpToken(*token, "PROCEDURE")){
             p_declaracao(entrada, linha, i, token, s, num_simb_sinc);
-        }
+            flag = 1;
+        } 
         
-        //Verifica se o símbolo é um comando.
         if(cmpToken(*token, IDENT) || cmpToken(*token, "CALL")|| 
            cmpToken(*token, "BEGIN") || cmpToken(*token, "IF")|| 
-           cmpToken(*token, "WHILE")){
+           cmpToken(*token, "WHILE")){ //Verifica se o símbolo é um comando.
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
+            flag = 1;
+        } 
+        
+        if(flag == 0){//Erro 
+            //Adiciona o símbolo na fila de erros.
+            s = (char**) realloc(s, sizeof(char *) * (num_simb_sinc + 1));
+            s[num_simb_sinc] = malloc(sizeof(char) * TAM_SIMBOLO);
+            strcpy(s[num_simb_sinc], SIMB_PONTO);
+            printf("ERRO SINTÁTICO: esperava CONST, VAR, PROCEDURE, BEGIN, CALL, IF, WHILE ou IDENT na posição %d da linha %s\n", *i, linha);
+            p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
+            *token = obterSimbolo(entrada, linha, i);
+            pop();
+            pprint("FINALIZANDO <bloco>\n");
+            return 0;
         }
     }
 
@@ -99,6 +114,7 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
 
     pop();
     pprint("FINALIZANDO <bloco>.\n");
+    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 0;
 }
 
@@ -108,18 +124,20 @@ int p_declaracao(FILE * entrada, char * linha, int *i, Token ** token, char ** s
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
     if(*token != NULL){
-        if(cmpToken(*token, "CONST"))
+        if(cmpToken(*token, "CONST")){
             p_constante(entrada, linha, i, token, s, num_simb_sinc);
-            
-        if(cmpToken(*token, "VAR"))
+        }   
+        if(cmpToken(*token, "VAR")){
             p_variavel(entrada, linha, i, token, s, num_simb_sinc);
-
-        if(cmpToken(*token, "PROCEDURE"))
+        }           
+        if(cmpToken(*token, "PROCEDURE")){
             p_procedimento(entrada, linha, i, token, s, num_simb_sinc);
+        }      
     }
 
     pop();
     pprint("FINALIZANDO <declaração>\n");
+    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 0;
 }
 
@@ -312,7 +330,7 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
 
             printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
             p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
-            *token = obterSimbolo(entrada, linha, i);
+            //*token = obterSimbolo(entrada, linha, i);
 
             pop();
             pprint("FINALIZANDO <mais_const>\n");
@@ -337,12 +355,14 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
             *token = obterSimbolo(entrada, linha, i);
             pop();
             pprint("FINALIZANDO <variavel>\n");
+            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             return 0;
         }
     }
     pprint("ERRO: procedimento Variavel.\n");
     pop();
     pprint("FINALIZANDO <variavel>\n");
+    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 1; //erro
 }
 
@@ -407,6 +427,7 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             p_expressao(entrada, linha, i, token, s, num_simb_sinc);
             pop();
             pprint("FINALIZANDO <comando>\n");
+            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             return 0;
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "CALL") == 0){
@@ -423,6 +444,7 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             *token = obterSimbolo(entrada, linha, i);
             pop();
             pprint("FINALIZANDO <comando>\n");
+            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             return 0; //sem erros
         }else{
             printf("ERRO: esperava END\n");
@@ -437,6 +459,7 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
             pprint("FINALIZANDO <comando>\n");
+            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             return 0; //sem erros
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "WHILE") == 0){
@@ -449,11 +472,13 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
             pprint("FINALIZANDO <comando>\n");
+            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             return 0; //sem erros
         }
     }
     pop();
     pprint("FINALIZANDO <comando>\n");
+    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
 }
 
