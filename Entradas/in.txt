@@ -1,5 +1,5 @@
-CONST a = 4,  = 5;
-VAR a,b,c;
+CONST @ = 4,  = 5;
+VAR ,b,c;
 BEGIN
     a:=2 + (2 * 3);
     CALL proc1;

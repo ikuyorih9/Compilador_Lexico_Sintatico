@@ -6,41 +6,63 @@ INICIANDO <programa>
 			Procedimento inicia com token: (CONST,CONST)
 			INICIANDO <constante>.
 				Procedimento inicia com token: (CONST,CONST)
-				Novo símbolo obtido: (a,identificador)
-				IDENT encontrado!
-				Proximo simbolo: (=,simbolo_igualdade)
-				SIMB_IGUAL (=) encontrado!
-				Proximo simbolo: (4,numero)
-				SIMB_NUMERO encontrado!
-				Proximo simbolo: (,,simbolo_virgula)
-				INICIANDO <mais_const>
-					Procedimento inicia com token: (,,simbolo_virgula)
-					SIMB_VIRGULA encontrado!
-					Proximo simbolo: (=,simbolo_igualdade)
-Erro sintático: IDENT faltando na posição 15 da linha CONST a = 4,  = 5;
-					Iniciando tratamento de erro
-					Falha no tratamento: simbolo_igualdade != simbolo_ponto_virgula
-					Falha no tratamento: simbolo_igualdade != simbolo_ponto
-					Falha no tratamento: numero != simbolo_ponto_virgula
-					Falha no tratamento: numero != simbolo_ponto
-					Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
-				FINALIZANDO <mais_const>
-				SIMB_PVIRGULA (;) encontrado!
-				Proximo simbolo: (VAR,VAR)
+				Novo símbolo obtido: (@,<erro_lexico>)
+Erro sintático: IDENT faltando na posição 7 da linha CONST @ = 4,  = 5;
+				Iniciando tratamento de erro
+Erro Lexico: @
+				Falha no tratamento: <erro_lexico> != simbolo_ponto_virgula
+				Falha no tratamento: <erro_lexico> != simbolo_ponto
+				Falha no tratamento: simbolo_igualdade != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_igualdade != simbolo_ponto
+				Falha no tratamento: numero != simbolo_ponto_virgula
+				Falha no tratamento: numero != simbolo_ponto
+				Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_virgula != simbolo_ponto
+				Falha no tratamento: simbolo_igualdade != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_igualdade != simbolo_ponto
+				Falha no tratamento: numero != simbolo_ponto_virgula
+				Falha no tratamento: numero != simbolo_ponto
+				Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
 			FINALIZANDO <constante>
 			INICIANDO <variavel>
 				Procedimento inicia com token: (VAR,VAR)
-				INICIANDO <mais_var>
-					Procedimento inicia com token: (,,simbolo_virgula)
-					INICIANDO <mais_var>
-						Procedimento inicia com token: (,,simbolo_virgula)
-						INICIANDO <mais_var>
-							Procedimento inicia com token: (;,simbolo_ponto_virgula)
-						FINALIZANDO <mais_var>
-					FINALIZANDO <mais_var>
-				FINALIZANDO <mais_var>
+Erro sintático: IDENT faltando na posição 5 da linha VAR ,b,c;
+				Iniciando tratamento de erro
+				Falha no tratamento: simbolo_virgula != PROCEDURE
+				Falha no tratamento: simbolo_virgula != CALL
+				Falha no tratamento: simbolo_virgula != BEGIN
+				Falha no tratamento: simbolo_virgula != IF
+				Falha no tratamento: simbolo_virgula != WHILE
+				Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_virgula != simbolo_ponto
+				Falha no tratamento: identificador != PROCEDURE
+				Falha no tratamento: identificador != CALL
+				Falha no tratamento: identificador != BEGIN
+				Falha no tratamento: identificador != IF
+				Falha no tratamento: identificador != WHILE
+				Falha no tratamento: identificador != simbolo_ponto_virgula
+				Falha no tratamento: identificador != simbolo_ponto
+				Falha no tratamento: simbolo_virgula != PROCEDURE
+				Falha no tratamento: simbolo_virgula != CALL
+				Falha no tratamento: simbolo_virgula != BEGIN
+				Falha no tratamento: simbolo_virgula != IF
+				Falha no tratamento: simbolo_virgula != WHILE
+				Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_virgula != simbolo_ponto
+				Falha no tratamento: identificador != PROCEDURE
+				Falha no tratamento: identificador != CALL
+				Falha no tratamento: identificador != BEGIN
+				Falha no tratamento: identificador != IF
+				Falha no tratamento: identificador != WHILE
+				Falha no tratamento: identificador != simbolo_ponto_virgula
+				Falha no tratamento: identificador != simbolo_ponto
+				Falha no tratamento: simbolo_ponto_virgula != PROCEDURE
+				Falha no tratamento: simbolo_ponto_virgula != CALL
+				Falha no tratamento: simbolo_ponto_virgula != BEGIN
+				Falha no tratamento: simbolo_ponto_virgula != IF
+				Falha no tratamento: simbolo_ponto_virgula != WHILE
+				Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
 			FINALIZANDO <variavel>
-			Simbolo: (BEGIN,BEGIN)
 		FINALIZANDO <declaração>
 		Simbolo: (BEGIN,BEGIN)
 		INICIANDO <comando>

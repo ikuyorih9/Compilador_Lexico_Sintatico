@@ -30,6 +30,12 @@ Procedimento de erro.
 */
 int p_erro(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int num_simb_sinc){
     pprint("Iniciando tratamento de erro\n");
+
+    // Exibicao de erros lexicos
+    if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
+        printf("Erro Lexico: %s\n", (*token)->valor);
+    }
+
     int flag = 0;
     while(*token != NULL && flag == 0){
         for(int i = num_simb_sinc - 1; i>=0; i--){
@@ -65,10 +71,15 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
         pop();
         pprint("FINALIZANDO <bloco>.\n");
         return 0; //programa terminou como esperado
-    }else{
-        pprint("ERRO: esperava ponto final após o bloco\n");
+    }else{//Erro 
+        s = (char**) realloc(s, sizeof(char *) * (num_simb_sinc + 1));
+        s[num_simb_sinc] = malloc(sizeof(char) * TAM_SIMBOLO);
+        strcpy(s[num_simb_sinc], SIMB_PONTO);
+        printf("ERRO SINTÁTICO: esperava SIMB_PONTO na posição %d da linha %s\n", *i, linha);
+        p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
+        obterSimbolo(entrada, linha, i, token);
         pop();
-        pprint("FINALIZANDO <bloco>.\n");
+        pprint("FINALIZANDO <bloco> 2\n");
         return 1;
     }
 }
@@ -306,8 +317,8 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
             else{
                 //Adiciona o símbolo na fila de erros.
                 s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 2));
-                s[num_simb_sinc] = malloc(sizeof(char)*30);
-                s[num_simb_sinc + 1] = malloc(sizeof(char)*30);
+                s[num_simb_sinc] = malloc(sizeof(char)*TAM_SIMBOLO);
+                s[num_simb_sinc + 1] = malloc(sizeof(char)*TAM_SIMBOLO);
                 strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
                 strcpy(s[num_simb_sinc + 1], SIMB_IGUAL);
 
@@ -325,12 +336,12 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, char ** s
         else{
             //Adiciona o símbolo na fila de erros.
             s = (char**) realloc(s,sizeof(char *)*(num_simb_sinc + 1));
-            s[num_simb_sinc] = malloc(sizeof(char)*30);
+            s[num_simb_sinc] = malloc(sizeof(char)*TAM_SIMBOLO);
             strcpy(s[num_simb_sinc], SIMB_PVIRGULA);
 
             printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
             p_erro(entrada, linha, i, token, s, num_simb_sinc + 1);
-            //obterSimbolo(entrada, linha, i, token);
+            obterSimbolo(entrada, linha, i, token);
 
             pop();
             pprint("FINALIZANDO <mais_const>\n");
@@ -357,7 +368,46 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
             pprint("FINALIZANDO <variavel>\n");
             pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             return 0;
+        }//Erro ao encontrar um SIMB_PVIRGULA.
+        else{
+            //Adiciona o símbolo na fila de erros.
+            char ** s1 = (char**) malloc(sizeof(char *) *7);
+            for(int i = 0; i< 7; i++){
+                s1[i] = malloc(sizeof(char)*TAM_SIMBOLO);
+            }
+            strcpy(s1[6], "PROCEDURE");
+            strcpy(s1[5], "CALL");
+            strcpy(s1[4], "BEGIN");
+            strcpy(s1[3], "IF");
+            strcpy(s1[2], "WHILE");
+            strcpy(s1[1], SIMB_PVIRGULA);
+            strcpy(s1[0], SIMB_PONTO);
+            printf("Erro sintático: SIMB_PVIRGULA faltando na posição %d da linha %s", *i, linha);
+            p_erro(entrada, linha, i, token, s1, 7);
+            obterSimbolo(entrada, linha, i, token);
+            pop();
+            pprint("FINALIZANDO <variavel>\n");
+            return 0; //Foi capaz de corrigir o erro
         }
+    }//Erro ao encontrar um IDENT.
+    else{
+        char ** s1 = (char**) malloc(sizeof(char *) *7);
+        for(int i = 0; i< 7; i++){
+            s1[i] = malloc(sizeof(char)*TAM_SIMBOLO);
+        }
+        strcpy(s1[6], "PROCEDURE");
+        strcpy(s1[5], "CALL");
+        strcpy(s1[4], "BEGIN");
+        strcpy(s1[3], "IF");
+        strcpy(s1[2], "WHILE");
+        strcpy(s1[1], SIMB_PVIRGULA);
+        strcpy(s1[0], SIMB_PONTO);
+        printf("Erro sintático: IDENT faltando na posição %d da linha %s", *i, linha);
+        p_erro(entrada, linha, i, token, s1, 7);
+        obterSimbolo(entrada, linha, i, token);
+        pop();
+        pprint("FINALIZANDO <variavel>\n");
+        return 1; //Foi capaz de corrigir o erro
     }
     pprint("ERRO: procedimento Variavel.\n");
     pop();
