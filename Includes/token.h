@@ -25,5 +25,12 @@ Desaloca memória para um token.
 */
 void destroiToken(Token * token);
 
+/*
+Compara token recebido com um símbolo.
+@param token Token a comparar.
+@param simbolo Símbolo a comparar.
+*/
+int cmpToken(Token * token, char * simbolo);
+
 
 #endif

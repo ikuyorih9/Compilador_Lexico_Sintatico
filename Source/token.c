@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "token.h"
 
 /*
@@ -21,4 +22,13 @@ void destroiToken(Token * token){
     free(token->tipo);
     free(token->valor);
     free(token);
+}
+
+/*
+Compara token recebido com um símbolo.
+@param token Token a comparar.
+@param simbolo Símbolo a comparar.
+*/
+int cmpToken(Token * token, char * simbolo){
+    return !strcmp(token->tipo, simbolo);
 }

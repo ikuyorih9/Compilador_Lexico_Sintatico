@@ -22,6 +22,7 @@ run:
 	./$(EXE).out $(IN) | tee $(SAIDA_LOG)
 
 clean:
+	clear
 	rm -f Logs/*.txt
 	rm -f *.out
 

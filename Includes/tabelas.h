@@ -3,6 +3,7 @@
 
 #define MAX_PALAVRA 256
 #define MAX_LINHA 1024
+#define TAM_SIMBOLO 32
 #define NUM_PALAVRAS_RESERVADAS 11
 #define ESTADO_INICIAL "Q0"
 
