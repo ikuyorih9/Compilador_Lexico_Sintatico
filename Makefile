@@ -2,6 +2,7 @@ CC = gcc
 SRC := Source
 EXE := analisador_lexico
 ENTRADAS := Entradas
+INCLUDES := Includes
 SAIDA_LOG := Logs/log.txt
 
 C_FILES := \
@@ -15,7 +16,7 @@ C_FILES := \
 all: clean $(EXE) run
 
 $(EXE): $(SRC)/main.c
-	$(CC) $(C_FILES) -o $(EXE).out
+	$(CC) -I $(INCLUDES) $(C_FILES) -o $(EXE).out
 
 run:
 	./$(EXE).out $(IN) | tee $(SAIDA_LOG)
