@@ -1,5 +1,6 @@
-CONST  a = 3, b = 5
-VAR a,b,c;
+a := d + d;
+CONST # = 3, a = 5,
+VAR a, ,c;
 PROCEDURE a;
 CONST y = 2;
 VAR g,h,j
@@ -9,8 +10,8 @@ VAR g,h,j
 BEGIN
     a:=2 + (2 * 3);
     CALL ;
-    IF x + 3  THEN
-    BEGIN
+    IF x + 3)6 > 5  THEN
+    BEG&IN
         a:= a+x;
         b:= 3 - b / a;
     END;
