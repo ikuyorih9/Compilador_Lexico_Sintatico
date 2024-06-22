@@ -44,3 +44,164 @@ Erro sintático: SIMB_PONTO faltando na posição 11 da linha a := d + d;
 	Falha no tratamento: simbolo_ponto_virgula != simbolo_ponto
 	Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
 	FINALIZANDO <programa>
+INICIANDO <programa>
+	Procedimento inicia com token: (CONST,CONST)
+	INICIANDO <bloco>
+		Procedimento inicia com token: (CONST,CONST)
+		INICIANDO <declaracao>
+			Procedimento inicia com token: (CONST,CONST)
+			INICIANDO <constante>.
+				Procedimento inicia com token: (CONST,CONST)
+				Novo símbolo obtido: (a,identificador)
+				IDENT encontrado!
+				Proximo simbolo: (=,simbolo_igualdade)
+				SIMB_IGUAL (=) encontrado!
+				Proximo simbolo: (4,numero)
+				SIMB_NUMERO encontrado!
+				Proximo simbolo: (,,simbolo_virgula)
+				INICIANDO <mais_const>
+					Procedimento inicia com token: (,,simbolo_virgula)
+					SIMB_VIRGULA encontrado!
+					Proximo simbolo: (b,identificador)
+					IDENT encontrado!
+					Proximo simbolo: (=,simbolo_igualdade)
+					SIMB_IGUAL encontrado!
+					Proximo simbolo: (5,numero)
+					SIMB_IGUAL encontrado!
+					Proximo simbolo: (;,simbolo_ponto_virgula)
+					INICIANDO <mais_const>
+						Procedimento inicia com token: (;,simbolo_ponto_virgula)
+					FINALIZANDO <mais_const>
+				FINALIZANDO <mais_const>
+				SIMB_PVIRGULA (;) encontrado!
+				Proximo simbolo: (VAR,VAR)
+			FINALIZANDO <constante>
+			INICIANDO <variavel>
+				Procedimento inicia com token: (VAR,VAR)
+				Proximo simbolo: (a,identificador)
+				IDENT encontrado!
+				Proximo simbolo: (,,simbolo_virgula)
+				INICIANDO <mais_var>
+					Procedimento inicia com token: (,,simbolo_virgula)
+					SIMB_VIRGULA encontrado!
+					Proximo simbolo: (b,identificador)
+					IDENT encontrado!
+					Proximo simbolo: (,,simbolo_virgula)
+					INICIANDO <mais_var>
+						Procedimento inicia com token: (,,simbolo_virgula)
+						SIMB_VIRGULA encontrado!
+						Proximo simbolo: (c,identificador)
+						IDENT encontrado!
+						Proximo simbolo: (;,simbolo_ponto_virgula)
+						INICIANDO <mais_var>
+							Procedimento inicia com token: (;,simbolo_ponto_virgula)
+						FINALIZANDO <mais_var>
+					FINALIZANDO <mais_var>
+				FINALIZANDO <mais_var>
+				SIMB_PVIRGULA encontrado!
+				Proximo simbolo: (BEGIN,BEGIN)
+			FINALIZANDO <variavel>
+			Simbolo: (BEGIN,BEGIN)
+		FINALIZANDO <declaração>
+		Simbolo: (BEGIN,BEGIN)
+		INICIANDO <comando>
+			Procedimento inicia com token: (BEGIN,BEGIN)
+			BEGIN encontrado!
+			Proximo simbolo: (a,identificador)
+			INICIANDO <comando>
+				Procedimento inicia com token: (a,identificador)
+				IDENT encontrado!
+				Proximo simbolo: (:=,simbolo_atribuicao)
+				SIMB_ATRIBUICAO encontrado!
+				Proximo simbolo: (2,numero)
+				INICIANDO <expressao>
+					Procedimento inicia com token: (2,numero)
+					INICIANDO <operador_unario>
+						Procedimento inicia com token: (2,numero)
+					FINALIZANDO <operador_unario>
+					INICIANDO <termo>
+						Procedimento inicia com token: (2,numero)
+						INICIANDO <fator>
+							Procedimento inicia com token: (2,numero)
+							numero encontrado!
+							Proximo simbolo: (+,simbolo_mais)
+						FINALIZANDO <fator>
+						INICIANDO <mais_fatores>
+							Procedimento inicia com token: (+,simbolo_mais)
+						FINALIZANDO <mais_fatores>
+					FINALIZANDO <termo>
+					INICIANDO <mais_termos>
+						Procedimento inicia com token: (+,simbolo_mais)
+						simbolo_mais encontrado!
+						Proximo simbolo: ((,simbolo_abre_parentese)
+						INICIANDO <termo>
+							Procedimento inicia com token: ((,simbolo_abre_parentese)
+							INICIANDO <fator>
+								Procedimento inicia com token: ((,simbolo_abre_parentese)
+								SIMB_ABRE_PARENTESE encontrado!
+								Proximo simbolo: (2,numero)
+								INICIANDO <expressao>
+									Procedimento inicia com token: (2,numero)
+									INICIANDO <operador_unario>
+										Procedimento inicia com token: (2,numero)
+									FINALIZANDO <operador_unario>
+									INICIANDO <termo>
+										Procedimento inicia com token: (2,numero)
+										INICIANDO <fator>
+											Procedimento inicia com token: (2,numero)
+											numero encontrado!
+											Proximo simbolo: (*,simbolo_multiplicacao)
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+											Procedimento inicia com token: (*,simbolo_multiplicacao)
+											simbolo_multiplicacao encontrado!
+											Proximo simbolo: (3,numero)
+											INICIANDO <fator>
+												Procedimento inicia com token: (3,numero)
+												numero encontrado!
+												Proximo simbolo: (),simbolo_fecha_parentese)
+											FINALIZANDO <fator>
+											INICIANDO <mais_fatores>
+												Procedimento inicia com token: (),simbolo_fecha_parentese)
+											FINALIZANDO <mais_fatores>
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+										Procedimento inicia com token: (),simbolo_fecha_parentese)
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <expressao>
+								SIMB_FECHA_PARENTESE encontrado!
+								Proximo simbolo: (;,simbolo_ponto_virgula)
+							FINALIZANDO <fator>
+							INICIANDO <mais_fatores>
+								Procedimento inicia com token: (;,simbolo_ponto_virgula)
+							FINALIZANDO <mais_fatores>
+						FINALIZANDO <termo>
+						INICIANDO <mais_termos>
+							Procedimento inicia com token: (;,simbolo_ponto_virgula)
+						FINALIZANDO <mais_termos>
+					FINALIZANDO <mais_termos>
+				FINALIZANDO <expressao>
+			FINALIZANDO <comando>
+			Simbolo: (;,simbolo_ponto_virgula)
+			INICIANDO <mais_cmd>
+				Procedimento inicia com token: (;,simbolo_ponto_virgula)
+				SIMB_PVIRGULA encontrado!
+				Proximo simbolo: (CAL,identificador)
+				INICIANDO <comando>
+					Procedimento inicia com token: (CAL,identificador)
+					IDENT encontrado!
+					Proximo simbolo: (proc1,identificador)
+				FINALIZANDO <comando>
+				Simbolo: (proc1,identificador)
+				INICIANDO <mais_cmd>
+					Procedimento inicia com token: (proc1,identificador)
+				FINALIZANDO <mais_cmd>
+			FINALIZANDO <mais_cmd>
+ERRO: esperava END
+		FINALIZANDO <comando>
+		Simbolo: (proc1,identificador)
+	FINALIZANDO <bloco>.
+	Simbolo: (;,simbolo_ponto_virgula)
+	ERRO: esperava ponto final após o bloco
+FINALIZANDO <bloco>.

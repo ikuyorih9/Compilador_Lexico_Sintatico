@@ -47,7 +47,6 @@ int p_erro(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int 
                 pprint("Falha no tratamento: %s != %s\n", (*token)->tipo, s[i]);
             }
         }
-        //ESSE OBTER SIMBOLO É UM PROBLEMA QUANDO ENCONTRA SYNC. RODAR O CODIGO PARA VER DOIS ERROS SINTATICOS.
         obterSimbolo(entrada, linha, i, token);
     }
     pprint("Não encontrou simbolo de sincronizacao, chegou ao fim do programa :(\n");
@@ -479,11 +478,16 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     obterSimbolo(entrada, linha, i, token);
+    pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("IDENT encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         p_mais_var(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
             obterSimbolo(entrada, linha, i, token);
+            pprint("SIMB_PVIRGULA encontrado!\n");
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             pop();
             pprint("FINALIZANDO <variavel>\n");
             pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
@@ -555,8 +559,12 @@ int p_mais_var(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, SIMB_VIRGULA) == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("SIMB_VIRGULA encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
             obterSimbolo(entrada, linha, i, token);
+            pprint("IDENT encontrado!\n");
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             //Chama procedimento Mais_var
             p_mais_var(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -605,14 +613,20 @@ int p_procedimento(FILE * entrada, char * linha, int *i, Token ** token, char **
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, "PROCEDURE") == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("PROCEDURE encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
             obterSimbolo(entrada, linha, i, token);
             if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
                 obterSimbolo(entrada, linha, i, token);
+                pprint("SIMB_PVIRGULA encontrado!\n");
+                pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
                 //Chama procedimento Bloco
                 p_bloco(entrada, linha, i, token, s, num_simb_sinc);
                 if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
                     obterSimbolo(entrada, linha, i, token);
+                    pprint("SIMB_PVIRGULA encontrado!\n");
+                    pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
                     //Chama procedimento Procedimento
                     p_procedimento(entrada, linha, i, token, s, num_simb_sinc);
                     pop();
@@ -701,8 +715,12 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
     //Se comando gera um atribuicao
     if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("IDENT encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         if(*token != NULL && strcmp((*token)->tipo, SIMB_ATRIBUICAO) == 0){
             obterSimbolo(entrada, linha, i, token);
+            pprint("SIMB_ATRIBUICAO encontrado!\n");
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             //Chama procedimento Expressao
             p_expressao(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -728,6 +746,8 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "CALL") == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("CALL encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         if(*token != NULL && strcmp((*token)->tipo, IDENT) == 0){
             obterSimbolo(entrada, linha, i, token);
             return 0;
@@ -750,10 +770,14 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "BEGIN") == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("BEGIN encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         p_comando(entrada, linha, i, token, s, num_simb_sinc);
         p_mais_cmd(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, "END") == 0){
             obterSimbolo(entrada, linha, i, token);
+            pprint("END encontrado!\n");
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             pop();
             pprint("FINALIZANDO <comando>\n");
             pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
@@ -777,10 +801,14 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "IF") == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("IF encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         //Chama procedimento Condicao
         p_condicao(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, "THEN") == 0){
             obterSimbolo(entrada, linha, i, token);
+            pprint("THEN encontrado!\n");
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             //Chama procedimento Comando
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -811,10 +839,14 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "WHILE") == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("WHILE encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         //Chama procedimento Condicao
         p_condicao(entrada, linha, i, token, s, num_simb_sinc);
         if(*token != NULL && strcmp((*token)->tipo, "DO") == 0){
             obterSimbolo(entrada, linha, i, token);
+            pprint("DO encontrado!\n");
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             //Chama procedimento Comando
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
@@ -856,6 +888,8 @@ int p_mais_cmd(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     if(*token != NULL && strcmp((*token)->tipo, SIMB_PVIRGULA) == 0){
         obterSimbolo(entrada, linha, i, token);
+        pprint("SIMB_PVIRGULA encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         //Chama procedimento Comando
         p_comando(entrada, linha, i, token, s, num_simb_sinc);
         //Chama procedimento Mais_cmd
@@ -888,13 +922,18 @@ int p_operador_unario(FILE * entrada, char * linha, int *i, Token ** token, char
     pprint("INICIANDO <operador_unario>\n");
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
-    pprint("Token: %s\n", (*token)->tipo);
-    if(*token != NULL && (strcmp((*token)->tipo, SIMB_MENOS) == 0 || strcmp((*token)->tipo, SIMB_MAIS) == 0)){
-        obterSimbolo(entrada, linha, i, token);
-        pop();
-        pprint("FINALIZANDO <operador_unario>\n");
-        return 0; //sem erros
+    
+    if(*token != NULL){
+        if(cmpToken(*token, SIMB_MENOS) || cmpToken(*token, SIMB_MAIS)){
+            pprint("%s encontrado!\n", (*token)->tipo);
+            obterSimbolo(entrada, linha, i, token);
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            pop();
+            pprint("FINALIZANDO <operador_unario>\n");
+            return 0; //sem erros
+        }
     }
+
     pop();
     pprint("FINALIZANDO <operador_unario>\n");
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
@@ -904,10 +943,10 @@ int p_termo(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
     pprint("INICIANDO <termo>\n");
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
-    //Chama procedimento Fator
+
     p_fator(entrada, linha, i, token, s, num_simb_sinc);
-    //Chama procedimento Mais fatores
     p_mais_fatores(entrada, linha, i, token, s, num_simb_sinc);
+
     pop();
     pprint("FINALIZANDO <termo>\n");
     return 0;
@@ -917,16 +956,21 @@ int p_mais_termos(FILE * entrada, char * linha, int *i, Token ** token, char ** 
     pprint("INICIANDO <mais_termos>\n");
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
-    if(*token != NULL && (strcmp((*token)->tipo, SIMB_MENOS) == 0 || strcmp((*token)->tipo, SIMB_MAIS) == 0)){
-        obterSimbolo(entrada, linha, i, token);
-        //Chama procedimento Termo
-        p_termo(entrada, linha, i, token, s, num_simb_sinc);
-        //Chama procedimento Mais Termos
-        p_mais_termos(entrada, linha, i, token, s, num_simb_sinc);
-        pop();
-        pprint("FINALIZANDO <mais_termos>\n");
-        return 0;
+    
+    if(*token != NULL){
+        if(cmpToken(*token, SIMB_MENOS) || cmpToken(*token, SIMB_MAIS)){
+            pprint("%s encontrado!\n", (*token)->tipo);
+            obterSimbolo(entrada, linha, i, token);
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+
+            p_termo(entrada, linha, i, token, s, num_simb_sinc);
+            p_mais_termos(entrada, linha, i, token, s, num_simb_sinc);
+            pop();
+            pprint("FINALIZANDO <mais_termos>\n");
+            return 0;
+        }
     }
+
     pop();
     pprint("FINALIZANDO <mais_termos>\n");
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
@@ -1023,16 +1067,22 @@ int p_mais_fatores(FILE * entrada, char * linha, int *i, Token ** token, char **
     pprint("INICIANDO <mais_fatores>\n");
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
-    if(*token != NULL && (strcmp((*token)->tipo, SIMB_MULTI) == 0 || strcmp((*token)->tipo, SIMB_DIV) == 0)){
-        obterSimbolo(entrada, linha, i, token);
-        //Chama procedimento Fator
-        p_fator(entrada, linha, i, token, s, num_simb_sinc);
-        //Chama procedimento Mais Fatores
-        p_mais_fatores(entrada, linha, i, token, s, num_simb_sinc);
-        pop();
-        pprint("FINALIZANDO <mais_fatores>\n");
-        return 0; // sem erros
+    
+    if(*token != NULL){
+        if(cmpToken(*token, SIMB_MULTI) || cmpToken(*token, SIMB_DIV)){
+            pprint("%s encontrado!\n", (*token)->tipo);
+            obterSimbolo(entrada, linha, i, token);
+            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+
+            p_fator(entrada, linha, i, token, s, num_simb_sinc);
+            p_mais_fatores(entrada, linha, i, token, s, num_simb_sinc);
+
+            pop();
+            pprint("FINALIZANDO <mais_fatores>\n");
+            return 0; // sem erros
+        }
     }
+    
     pop();
     pprint("FINALIZANDO <mais_fatores>\n");
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
@@ -1042,14 +1092,17 @@ int p_condicao(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     pprint("INICIANDO <condicao>\n");
     push();
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
-    if(*token != NULL && strcmp((*token)->tipo, "ODD") == 0){
+    if(*token != NULL && cmpToken(*token, "ODD")){
         obterSimbolo(entrada, linha, i, token);
+        pprint("ODD encontrado!\n");
+        pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         //Chama procedimento Expressao
         p_expressao(entrada, linha, i, token, s, num_simb_sinc);
         pop();
         pprint("FINALIZANDO <condicao>: ODD\n");
         return 0; //sem erros
-    }else{
+    }
+    else{
         //Chama procedimento Expressao
         p_expressao(entrada, linha, i, token, s, num_simb_sinc);
         //Chama procedimento Relacional
