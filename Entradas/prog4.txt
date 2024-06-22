@@ -7,7 +7,7 @@ BEGIN
     g: ; h + j*2;
 END;
 BEGIN
-    a:=2 + (2 * 3);
+    a:=2 +* (2 * 3);
     CALL ;
     IF x + 3  (y + 5 THEN
     BEGIN

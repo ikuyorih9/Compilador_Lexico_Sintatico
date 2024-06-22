@@ -88,7 +88,7 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
         if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
             printf("Erro Lexico: %s na posição %d da linha %s", (*token)->valor, *i, linha);
         }else{
-            printf("Erro sintático: SIMB_PONTO faltando na posição %d da linha %s", *i, linha);
+            printf("Erro sintático: SIMB_PONTO faltando na posição %d da linha %s\n", *i, linha);
         }
         p_erro(entrada, linha, i, token, s1, 9);
         for(int i = 0; i< 8; i++){
@@ -98,6 +98,7 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
         if(cmpToken(*token, SIMB_PVIRGULA)){
             obterSimbolo(entrada, linha, i, token);
         }
+        pop();
         pprint("FINALIZANDO <programa>\n");
         //p_programa(entrada,linha,i,token, s, num_simb_sinc);
         return 1;
@@ -155,14 +156,14 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
             if(cmpToken(*token, SIMB_PVIRGULA)){
                 obterSimbolo(entrada, linha, i, token);
             }
-            pprint("FINALIZANDO <bloco\n");
+            pprint("FINALIZANDO <bloco>\n");
             p_bloco(entrada,linha,i,token, s, num_simb_sinc);
             return 1;
         }
     }
 
     //Obtém o próximo símbolo
-    //obterSimbolo(entrada, linha, i, token);
+    obterSimbolo(entrada, linha, i, token);
 
     pop();
     pprint("FINALIZANDO <bloco>.\n");
@@ -189,7 +190,6 @@ int p_declaracao(FILE * entrada, char * linha, int *i, Token ** token, char ** s
 
     pop();
     pprint("FINALIZANDO <declaração>\n");
-    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 0;
 }
 
@@ -878,7 +878,6 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
     }
     pop();
     pprint("FINALIZANDO <comando>\n");
-    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
 }
 
