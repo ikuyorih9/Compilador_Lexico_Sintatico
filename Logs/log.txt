@@ -258,11 +258,14 @@ Comecei na posição linha[0].
 	Tabela de transicao:  (Q1, G) = Q1.
 	Tabela de transicao:  (Q1, I) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
+	Tabela de transicao:  (Q1, 
+) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra BEGIN...
+		Enviando palavra BEGIN
+...
 		Token encontrado: (BEGIN, BEGIN).
-		Retrocedendo ''...
+		Retrocedendo '
+'...
 Voltei na posição linha[4].
 TOKEN = (BEGIN, BEGIN)
 
@@ -424,11 +427,14 @@ TOKEN = (+, simbolo_mais)
 
 Comecei na posição linha[6].
 	Tabela de transicao:  (Q0, b) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
+	Tabela de transicao:  (Q1, 
+) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra b...
+		Enviando palavra b
+...
 		Token encontrado: (b, identificador).
-		Retrocedendo ''...
+		Retrocedendo '
+'...
 Voltei na posição linha[6].
 TOKEN = (b, identificador)
 
@@ -439,11 +445,14 @@ Comecei na posição linha[0].
 	Tabela de transicao:  (Q0, E) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
 	Tabela de transicao:  (Q1, D) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
+	Tabela de transicao:  (Q1, 
+) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra END...
+		Enviando palavra END
+...
 		Token encontrado: (END, END).
-		Retrocedendo ''...
+		Retrocedendo '
+'...
 Voltei na posição linha[2].
 TOKEN = (END, END)
 
@@ -459,11 +468,14 @@ Comecei na posição linha[0].
 	Tabela de transicao:  (Q1, G) = Q1.
 	Tabela de transicao:  (Q1, I) = Q1.
 	Tabela de transicao:  (Q1, N) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
+	Tabela de transicao:  (Q1, 
+) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra BEGIN...
+		Enviando palavra BEGIN
+...
 		Token encontrado: (BEGIN, BEGIN).
-		Retrocedendo ''...
+		Retrocedendo '
+'...
 Voltei na posição linha[4].
 TOKEN = (BEGIN, BEGIN)
 
@@ -643,11 +655,14 @@ Comecei na posição linha[6].
 	Tabela de transicao:  (Q1, o) = Q1.
 	Tabela de transicao:  (Q1, m) = Q1.
 	Tabela de transicao:  (Q1, a) = Q1.
-	Tabela de transicao:  (Q1, ) = S0.
+	Tabela de transicao:  (Q1, 
+) = S0.
 		Chamando funcao de saida para S0...
-		Enviando palavra soma...
+		Enviando palavra soma
+...
 		Token encontrado: (soma, identificador).
-		Retrocedendo ''...
+		Retrocedendo '
+'...
 Voltei na posição linha[9].
 TOKEN = (soma, identificador)
 
