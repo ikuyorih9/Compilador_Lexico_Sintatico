@@ -57,11 +57,11 @@ int main(int argc, char * argv[]){
     int i = 0;
     linha[0] = '\0';
     
-    listaTokens(entrada, saida);
+    //listaTokens(entrada, saida);
 
     Token * token = NULL;
-    //obterSimbolo(entrada, linha, &i, &token);
-    //p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
+    obterSimbolo(entrada, linha, &i, &token);
+    p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
 
     destroiToken(token);
     free(linha); //Libera a memória alocada para a linha.

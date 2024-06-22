@@ -1,12 +1,12 @@
 CONST a = 4, b = 5;
 VAR a,b,c; {variaveis}
-END.
+E:=4
 
 BEGIN
     a:=2 + (2 *+ 3);
     CAL proc1;
     WHILE x@ + 3 > y + 5 DO
         a:= +x+;
-    b:= 3 - b / a;
+    b:= 3 - b / a
     c:= 5 + 7;
 END.
