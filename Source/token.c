@@ -24,18 +24,18 @@ Token * inicializaToken(){
 Desaloca memória para um token.
 @param token (Token*) a ser desalocado.
 */
-void destroiToken(Token * token){
-    if(token != NULL){
-        if(token->tipo != NULL)
-            free(token->tipo);
-        if(token->valor != NULL)
-            free(token->valor);
-        free(token);
+void destroiToken(Token ** token){
+    if(*token != NULL){
+        if((*token)->tipo != NULL)
+            free((*token)->tipo);
+        if((*token)->valor != NULL)
+            free((*token)->valor);
+        free(*token);
     }
     else{
         dprint("Token ja esta desalocado.\n");
     }
-    token = NULL;
+    *token = NULL;
 }
 
 /*

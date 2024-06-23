@@ -24,7 +24,7 @@ void listaTokens(FILE * entrada, FILE * saida){
             printf("TOKEN = (%s, %s)\n\n", token->valor, token->tipo);
         }
     }
-    destroiToken(token);
+    destroiToken(&token);
     free(linha);
 }
 
@@ -56,6 +56,7 @@ Token * analisadorLexico(char * linha, int * pos, FILE * entrada){
                 Token * token = inicializaToken();
                 strcpy(token->valor, palavra);
                 strcpy(token->tipo, ERRO_EOF);
+                free(palavra);
                 return token;
             }
         }
@@ -70,6 +71,7 @@ Token * analisadorLexico(char * linha, int * pos, FILE * entrada){
         Transicao t = buscaTabelaTransicoes(estadoAtual, linha[i]);
         if(t.entrada == -1){
             dprint("Transição não encontrada.\n");
+            free(palavra);
             exit(0);
         }
 
@@ -116,7 +118,7 @@ Obtém um símbolo da cadeia de caracteres.
 @param token variável do símbolo a ser obtido.
 */
 void obterSimbolo(FILE * entrada, char * linha, int *i, Token ** token){
-    destroiToken(*token);
+    destroiToken(token);
     //Enquanto o arquivo de entrada não estiver em EOF:
     //if(!feof(entrada)){
     while(!feof(entrada)){

@@ -52,8 +52,7 @@ int p_erro(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int 
     }
     pprint("Não encontrou simbolo de sincronizacao, chegou ao fim do programa :(\n");
     if(feof(entrada)){
-        printf("fim do arq");
-        destroiToken(*token);
+        destroiToken(token);
     }
     //obterSimbolo(entrada, linha, i, token);
     return 0;
@@ -66,7 +65,7 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, int * erros
         pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
         //Detecção do menor programa possível.
-        if(*token != NULL && strcmp((*token)->tipo, SIMB_PONTO) == 0){
+        if(token != NULL && strcmp((*token)->tipo, SIMB_PONTO) == 0){
             return 0;
         }
         
@@ -75,6 +74,7 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, int * erros
         
         if(ret == TOKEN_NULO){ //chegou ao ultimo simbolo do arquivo
             //printf("Erro sintático: \t SIMB_PONTO faltando na posição %d da linha %s", *i, linha);
+            pprint("FINALIZANDO <programa>. (token nulo)\n");
             return 1;
         }
 
@@ -162,7 +162,9 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, int * erros){
             strcpy(s1[0], IDENT);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
-            }else{
+            } else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
+            } else{
                 printf("Erro sintático: \t esperava CONST, VAR, PROCEDURE, BEGIN, CALL, IF, WHILE ou IDENT na posição %d da linha %s\n", *i, linha);
             }
             p_erro(entrada, linha, i, token, s1, 10);
@@ -185,7 +187,7 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, int * erros){
     //obterSimbolo(entrada, linha, i, token);
 
     pop();
-    pprint("FINALIZANDO <bloco>. (token nulo)\n");
+    pprint("FINALIZANDO <bloco>. (token nulo 2)\n");
     //pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 3;
 }
@@ -335,6 +337,8 @@ int p_constante(FILE * entrada, char * linha, int *i, Token ** token, int * erro
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t SIMB_IGUAL faltando na posição %d da linha %s", *i, linha);
             }
@@ -482,6 +486,8 @@ int p_mais_const(FILE * entrada, char * linha, int *i, Token ** token, int * err
             strcpy(s1[0], SIMB_PVIRGULA);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t IDENT faltando na posição %d da linha %s", *i, linha);
             }
@@ -535,6 +541,8 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, int * erros
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t SIMB_PVIRGULA faltando na posição %d da linha %s", *i, linha);
             }
@@ -617,6 +625,8 @@ int p_mais_var(FILE * entrada, char * linha, int *i, Token ** token, int * erros
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t IDENT faltando na posição %d da linha %s", *i, linha);
             }
@@ -742,6 +752,8 @@ int p_procedimento(FILE * entrada, char * linha, int *i, Token ** token, int * e
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t IDENT faltando na posição %d da linha %s", *i, linha);
             }
@@ -794,6 +806,8 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, int * erros)
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t SIMB_ATRIBUICAO faltando na posição %d da linha %s", *i, linha);
             }
@@ -831,6 +845,8 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, int * erros)
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t IDENT faltando na posição %d da linha %s", *i, linha);
             }
@@ -865,6 +881,8 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, int * erros)
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){ 
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t END faltando na posição %d da linha %s", *i, linha);
             }
@@ -911,6 +929,8 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, int * erros)
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t THEN faltando na posição %d da linha %s", *i, linha);
             }
@@ -960,6 +980,8 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, int * erros)
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t DO faltando na posição %d da linha %s", *i, linha);
             }
@@ -1115,6 +1137,8 @@ int p_fator(FILE * entrada, char * linha, int *i, Token ** token, int * erros){
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t  ident | numero | ( <expressão> ) faltando na posição %d da linha %s", *i, linha);
             }
@@ -1155,6 +1179,8 @@ int p_fator(FILE * entrada, char * linha, int *i, Token ** token, int * erros){
             strcpy(s1[0], SIMB_PONTO);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: \t %s na posição %d da linha %s", (*token)->valor, *i, linha);
+            }else if(strcmp((*token)->tipo, ERRO_EOF) == 0){
+                printf("Erro: \t Fim de arquivo inesperado na linha %s", linha);
             }else{
                 printf("Erro sintático: \t  ident | numero | ( <expressão> ) faltando na posição %d da linha %s", *i, linha);
             }
