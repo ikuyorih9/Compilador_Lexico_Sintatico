@@ -1,182 +1,216 @@
-INICIANDO <programa>
-	Procedimento inicia com token: (CONST,CONST)
-	INICIANDO <bloco>
-		Procedimento inicia com token: (CONST,CONST)
-		INICIANDO <declaracao>
-			Procedimento inicia com token: (CONST,CONST)
-			INICIANDO <constante>.
-				Procedimento inicia com token: (CONST,CONST)
-				Novo símbolo obtido: (a,identificador)
-				IDENT encontrado!
-				Proximo simbolo: (=,simbolo_igualdade)
-				SIMB_IGUAL (=) encontrado!
-				Proximo simbolo: (4,numero)
-				SIMB_NUMERO encontrado!
-				Proximo simbolo: (,,simbolo_virgula)
-				INICIANDO <mais_const>
-					Procedimento inicia com token: (,,simbolo_virgula)
-					SIMB_VIRGULA encontrado!
-					Proximo simbolo: (b,identificador)
-					IDENT encontrado!
-					Proximo simbolo: (=,simbolo_igualdade)
-					SIMB_IGUAL encontrado!
-					Proximo simbolo: (5,numero)
-					SIMB_IGUAL encontrado!
-					Proximo simbolo: (;,simbolo_ponto_virgula)
-					INICIANDO <mais_const>
-						Procedimento inicia com token: (;,simbolo_ponto_virgula)
-					FINALIZANDO <mais_const>
-				FINALIZANDO <mais_const>
-				SIMB_PVIRGULA (;) encontrado!
-				Proximo simbolo: (VAR,VAR)
-			FINALIZANDO <constante>
-			INICIANDO <variavel>
-				Procedimento inicia com token: (VAR,VAR)
-				Proximo simbolo: (a,identificador)
-				IDENT encontrado!
-				Proximo simbolo: (,,simbolo_virgula)
-				INICIANDO <mais_var>
-					Procedimento inicia com token: (,,simbolo_virgula)
-					SIMB_VIRGULA encontrado!
-					Proximo simbolo: (b,identificador)
-					IDENT encontrado!
-					Proximo simbolo: (,,simbolo_virgula)
-					INICIANDO <mais_var>
-						Procedimento inicia com token: (,,simbolo_virgula)
-						SIMB_VIRGULA encontrado!
-						Proximo simbolo: (c,identificador)
-						IDENT encontrado!
-						Proximo simbolo: (;,simbolo_ponto_virgula)
-						INICIANDO <mais_var>
-							Procedimento inicia com token: (;,simbolo_ponto_virgula)
-						FINALIZANDO <mais_var>
-					FINALIZANDO <mais_var>
-					SIMB_PVIRGULA encontrado!
-					Proximo simbolo: (E,identificador)
-				FINALIZANDO <variavel>
-				Simbolo: (E,identificador)
-			FINALIZANDO <declaração>
-			INICIANDO <comando>
-				Procedimento inicia com token: (E,identificador)
-				IDENT encontrado!
-				Proximo simbolo: (:=,simbolo_atribuicao)
-				SIMB_ATRIBUICAO encontrado!
-				Proximo simbolo: (4,numero)
-				INICIANDO <expressao>
-					Procedimento inicia com token: (4,numero)
-					INICIANDO <operador_unario>
-						Procedimento inicia com token: (4,numero)
-					FINALIZANDO <operador_unario>
-					INICIANDO <termo>
-						Procedimento inicia com token: (4,numero)
-						INICIANDO <fator>
-							Procedimento inicia com token: (4,numero)
-						FINALIZANDO <fator>
-						INICIANDO <mais_fatores>
-							Procedimento inicia com token: (BEGIN,BEGIN)
-						FINALIZANDO <mais_fatores>
-					FINALIZANDO <termo>
-					INICIANDO <mais_termos>
-						Procedimento inicia com token: (BEGIN,BEGIN)
-					FINALIZANDO <mais_termos>
-				FINALIZANDO <expressao>
-			FINALIZANDO <comando>
-			Simbolo: (BEGIN,BEGIN)
-		FINALIZANDO <bloco>.
-		Simbolo: (a,identificador)
-Erro sintático: SIMB_PONTO faltando na posição 5 da linha     a:=2 + (2 *+ 3);
+TOKEN = (a, identificador)
 
-		Iniciando tratamento de erro
-		Falha no tratamento: identificador != simbolo_ponto
-		Falha no tratamento: identificador != simbolo_ponto_virgula
-		Falha no tratamento: identificador != CONST
-		Falha no tratamento: identificador != VAR
-		Falha no tratamento: identificador != PROCEDURE
-		Falha no tratamento: identificador != CALL
-		Falha no tratamento: identificador != BEGIN
-		Falha no tratamento: identificador != IF
-		Falha no tratamento: identificador != WHILE
-		Falha no tratamento: simbolo_atribuicao != simbolo_ponto
-		Falha no tratamento: simbolo_atribuicao != simbolo_ponto_virgula
-		Falha no tratamento: simbolo_atribuicao != CONST
-		Falha no tratamento: simbolo_atribuicao != VAR
-		Falha no tratamento: simbolo_atribuicao != PROCEDURE
-		Falha no tratamento: simbolo_atribuicao != CALL
-		Falha no tratamento: simbolo_atribuicao != BEGIN
-		Falha no tratamento: simbolo_atribuicao != IF
-		Falha no tratamento: simbolo_atribuicao != WHILE
-		Falha no tratamento: numero != simbolo_ponto
-		Falha no tratamento: numero != simbolo_ponto_virgula
-		Falha no tratamento: numero != CONST
-		Falha no tratamento: numero != VAR
-		Falha no tratamento: numero != PROCEDURE
-		Falha no tratamento: numero != CALL
-		Falha no tratamento: numero != BEGIN
-		Falha no tratamento: numero != IF
-		Falha no tratamento: numero != WHILE
-		Falha no tratamento: simbolo_mais != simbolo_ponto
-		Falha no tratamento: simbolo_mais != simbolo_ponto_virgula
-		Falha no tratamento: simbolo_mais != CONST
-		Falha no tratamento: simbolo_mais != VAR
-		Falha no tratamento: simbolo_mais != PROCEDURE
-		Falha no tratamento: simbolo_mais != CALL
-		Falha no tratamento: simbolo_mais != BEGIN
-		Falha no tratamento: simbolo_mais != IF
-		Falha no tratamento: simbolo_mais != WHILE
-		Falha no tratamento: simbolo_abre_parentese != simbolo_ponto
-		Falha no tratamento: simbolo_abre_parentese != simbolo_ponto_virgula
-		Falha no tratamento: simbolo_abre_parentese != CONST
-		Falha no tratamento: simbolo_abre_parentese != VAR
-		Falha no tratamento: simbolo_abre_parentese != PROCEDURE
-		Falha no tratamento: simbolo_abre_parentese != CALL
-		Falha no tratamento: simbolo_abre_parentese != BEGIN
-		Falha no tratamento: simbolo_abre_parentese != IF
-		Falha no tratamento: simbolo_abre_parentese != WHILE
-		Falha no tratamento: numero != simbolo_ponto
-		Falha no tratamento: numero != simbolo_ponto_virgula
-		Falha no tratamento: numero != CONST
-		Falha no tratamento: numero != VAR
-		Falha no tratamento: numero != PROCEDURE
-		Falha no tratamento: numero != CALL
-		Falha no tratamento: numero != BEGIN
-		Falha no tratamento: numero != IF
-		Falha no tratamento: numero != WHILE
-		Falha no tratamento: simbolo_multiplicacao != simbolo_ponto
-		Falha no tratamento: simbolo_multiplicacao != simbolo_ponto_virgula
-		Falha no tratamento: simbolo_multiplicacao != CONST
-		Falha no tratamento: simbolo_multiplicacao != VAR
-		Falha no tratamento: simbolo_multiplicacao != PROCEDURE
-		Falha no tratamento: simbolo_multiplicacao != CALL
-		Falha no tratamento: simbolo_multiplicacao != BEGIN
-		Falha no tratamento: simbolo_multiplicacao != IF
-		Falha no tratamento: simbolo_multiplicacao != WHILE
-		Falha no tratamento: simbolo_mais != simbolo_ponto
-		Falha no tratamento: simbolo_mais != simbolo_ponto_virgula
-		Falha no tratamento: simbolo_mais != CONST
-		Falha no tratamento: simbolo_mais != VAR
-		Falha no tratamento: simbolo_mais != PROCEDURE
-		Falha no tratamento: simbolo_mais != CALL
-		Falha no tratamento: simbolo_mais != BEGIN
-		Falha no tratamento: simbolo_mais != IF
-		Falha no tratamento: simbolo_mais != WHILE
-		Falha no tratamento: numero != simbolo_ponto
-		Falha no tratamento: numero != simbolo_ponto_virgula
-		Falha no tratamento: numero != CONST
-		Falha no tratamento: numero != VAR
-		Falha no tratamento: numero != PROCEDURE
-		Falha no tratamento: numero != CALL
-		Falha no tratamento: numero != BEGIN
-		Falha no tratamento: numero != IF
-		Falha no tratamento: numero != WHILE
-		Falha no tratamento: simbolo_fecha_parentese != simbolo_ponto
-		Falha no tratamento: simbolo_fecha_parentese != simbolo_ponto_virgula
-		Falha no tratamento: simbolo_fecha_parentese != CONST
-		Falha no tratamento: simbolo_fecha_parentese != VAR
-		Falha no tratamento: simbolo_fecha_parentese != PROCEDURE
-		Falha no tratamento: simbolo_fecha_parentese != CALL
-		Falha no tratamento: simbolo_fecha_parentese != BEGIN
-		Falha no tratamento: simbolo_fecha_parentese != IF
-		Falha no tratamento: simbolo_fecha_parentese != WHILE
-		Falha no tratamento: simbolo_ponto_virgula != simbolo_ponto
-		Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
-	FINALIZANDO <programa>
+TOKEN = (:=, simbolo_atribuicao)
+
+TOKEN = (d, identificador)
+
+TOKEN = (+, simbolo_mais)
+
+TOKEN = (d, identificador)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (CONST, CONST)
+
+TOKEN = (#, <erro_lexico>)
+
+TOKEN = (=, simbolo_igualdade)
+
+TOKEN = (3, numero)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (a, identificador)
+
+TOKEN = (=, simbolo_igualdade)
+
+TOKEN = (5, numero)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (VAR, VAR)
+
+TOKEN = (a, identificador)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (c, identificador)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (PROCEDURE, PROCEDURE)
+
+TOKEN = (a, identificador)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (CONST, CONST)
+
+TOKEN = (y, identificador)
+
+TOKEN = (=, simbolo_igualdade)
+
+TOKEN = (2, numero)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (VAR, VAR)
+
+TOKEN = (g, identificador)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (h, identificador)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (j, identificador)
+
+TOKEN = (g, identificador)
+
+TOKEN = (:, <erro_lexico>)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (h, identificador)
+
+TOKEN = (+, simbolo_mais)
+
+TOKEN = (j, identificador)
+
+TOKEN = (*, simbolo_multiplicacao)
+
+TOKEN = (2, numero)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (CONST, CONST)
+
+TOKEN = (a, identificador)
+
+TOKEN = (=, simbolo_igualdade)
+
+TOKEN = (4, numero)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (b, identificador)
+
+TOKEN = (=, simbolo_igualdade)
+
+TOKEN = (5, numero)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (VAR, VAR)
+
+TOKEN = (a, identificador)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (b, identificador)
+
+TOKEN = (,, simbolo_virgula)
+
+TOKEN = (c, identificador)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (BEGIN, BEGIN)
+
+TOKEN = (a, identificador)
+
+TOKEN = (:=, simbolo_atribuicao)
+
+TOKEN = (2, numero)
+
+TOKEN = (+, simbolo_mais)
+
+TOKEN = ((, simbolo_abre_parentese)
+
+TOKEN = (2, numero)
+
+TOKEN = (*, simbolo_multiplicacao)
+
+TOKEN = (3, numero)
+
+TOKEN = (), simbolo_fecha_parentese)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (CALL, CALL)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (IF, IF)
+
+TOKEN = (x, identificador)
+
+TOKEN = (+, simbolo_mais)
+
+TOKEN = (3, numero)
+
+TOKEN = (), simbolo_fecha_parentese)
+
+TOKEN = (6, numero)
+
+TOKEN = (>, simbolo_maior)
+
+TOKEN = (5, numero)
+
+TOKEN = (THEN, THEN)
+
+TOKEN = (BEG, identificador)
+
+TOKEN = (&, <erro_lexico>)
+
+TOKEN = (IN, identificador)
+
+TOKEN = (a, identificador)
+
+TOKEN = (:=, simbolo_atribuicao)
+
+TOKEN = (a, identificador)
+
+TOKEN = (+, simbolo_mais)
+
+TOKEN = (x, identificador)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (b, identificador)
+
+TOKEN = (:=, simbolo_atribuicao)
+
+TOKEN = (3, numero)
+
+TOKEN = (-, simbolo_mais)
+
+TOKEN = (b, identificador)
+
+TOKEN = (/, simbolo_divisao)
+
+TOKEN = (a, identificador)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (END, END)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (c, identificador)
+
+TOKEN = (:=, simbolo_atribuicao)
+
+TOKEN = (5, numero)
+
+TOKEN = (+, simbolo_mais)
+
+TOKEN = (7, numero)
+
+TOKEN = (;, simbolo_ponto_virgula)
+
+TOKEN = (E, FIM_DE_ARQUIVO_INESPERADO)
+
