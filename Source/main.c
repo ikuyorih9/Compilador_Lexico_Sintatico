@@ -53,13 +53,13 @@ int main(int argc, char * argv[]){
     int i = 0;
     linha[0] = '\0';
     
-    listaTokens(entrada, saida);
+    //listaTokens(entrada, saida);
 
 
     int num_erros = 0;
     Token * token = NULL;
     obterSimbolo(entrada, linha, &i, &token);
-    p_programa(entrada, linha, &i, &token, &num_erros);
+    //p_programa(entrada, linha, &i, &token, &num_erros);
     //printf("fim com token: (%s,%s)\n", (token)->valor, (token)->tipo);
 
     while(!feof(entrada) && token != NULL){
@@ -67,6 +67,7 @@ int main(int argc, char * argv[]){
         //printf("fim 2 com token: (%s,%s)\n", (token)->valor, (token)->tipo);
         obterSimbolo(entrada, linha, &i, &token);
     }
+    destroiToken(token);
     free(linha); //Libera a memória alocada para a linha.
 
     if(num_erros == 0){
