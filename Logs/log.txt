@@ -1,9 +1,5 @@
-Erro sintático: 	 SIMB_NUMERO faltando na posição 11 da linha CONST a = , b = 5;
-Erro sintático: 	 IDENT faltando na posição 9 da linha VAR a,b,;
-Erro sintático: 	 SIMB_PVIRGULA faltando na posição 12 da linha PROCEDURE de%sd;
-Erro sintático: 	 SIMB_ATRIBUICAO faltando na posição 10 da linha CONST y  2;
-Erro sintático: 	 SIMB_ATRIBUICAO faltando na posição 6 da linha VAR g,h,j;
-Erro sintático: 	  ident | numero | ( <expressão> ) faltando na posição 16 da linha     a:=2 + (2  3);
-Erro sintático: 	 IDENT faltando na posição 10 da linha     CALL ;
-Erro: 	 Fim de arquivo inesperado na linha END
-Foram encontrados 8 erros
+Erro sintático: 	 SIMB_PVIRGULA faltando na linha BEGIN
+Erro sintático: 	 THEN faltando na linha         b:=3;
+Erro Lexico: 		 @ na linha     c:=@+b
+
+Foram encontrados erros.

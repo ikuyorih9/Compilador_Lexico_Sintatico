@@ -1,16 +1,7 @@
-CONST a = , b = 5;
-VAR a,b,;
-PROCEDURE de%sd;
-CONST y  2;
-VAR g,h,j;
+VAR a,b,c
 BEGIN
-    g:= h + j*2;
-END;
-BEGIN
-    a:=2 + (2  3);
-    CALL ;
-    WHILE x + 3 > y + 5 DO
-        a:= a+x;
-    b:= 3 - b / a;
-    c:= 5 + 7;
-END
+    a:= 2;
+    IF a>2 
+        b:=3;
+    c:=@+b
+END.    

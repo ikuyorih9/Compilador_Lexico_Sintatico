@@ -58,16 +58,18 @@ int main(int argc, char * argv[]){
 
 
     int num_erros = 0;
+    int flag = 0;   
     Token * token = NULL;
     obterSimbolo(entrada, linha, &i, &token);
-    //p_programa(entrada, linha, &i, &token, &num_erros);
-    //printf("fim com token: (%s,%s)\n", (token)->valor, (token)->tipo);
+    p_programa(entrada, linha, &i, &token, &num_erros);
 
     while(!feof(entrada) && token != NULL){
-        p_programa(entrada, linha, &i, &token, &num_erros);
         //printf("fim 2 com token: (%s,%s)\n", (token)->valor, (token)->tipo);
-        if(!feof(entrada) && token != NULL)
-            obterSimbolo(entrada, linha, &i, &token);
+        obterSimbolo(entrada, linha, &i, &token);
+        if(token != NULL){
+            flag = 1;
+        }
+        p_programa(entrada, linha, &i, &token, &num_erros);
     }
     if(token != NULL){
         destroiToken(&token);
@@ -75,10 +77,10 @@ int main(int argc, char * argv[]){
         
     free(linha); //Libera a memória alocada para a linha.
 
-    if(num_erros == 0){
+    if(flag == 0 && num_erros == 0){
         printf("Não foram encontrados erros. Compilação terminou com sucesso.\n");
      }else{
-        printf("\nForam encontrados %d erros\n", num_erros);
+        printf("\nForam encontrados erros.\n");
     }
 
     //Libera os arquivos de entrada e saída.

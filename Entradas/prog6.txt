@@ -1,0 +1,15 @@
+CONST a = 4, b = 5;
+VAR a,b,a;
+PROCEDURE desd;
+CONST y = 2;
+VAR g,h,j;
+BEGIN
+    g:= h + j*2;
+END;
+BEGIN
+    a:=2 + (2 - 3);
+    WHILE x + 3 > y + 5 DO
+        a:= a+x;
+    b:= 3 - b / a;
+    c:= 5  7;
+END.
