@@ -50,6 +50,7 @@ int p_erro(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int 
         obterSimbolo(entrada, linha, i, token);
     }
     pprint("Não encontrou simbolo de sincronizacao, chegou ao fim do programa :(\n");
+    //obterSimbolo(entrada, linha, i, token);
     return 0;
 }
 
@@ -90,7 +91,7 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
         if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
             printf("Erro Lexico: %s na posição %d da linha %s", (*token)->valor, *i, linha);
         }else{
-            printf("Erro sintático: SIMB_PONTO faltando na posição %d da linha %s\n", *i, linha);
+            printf("ERRO SINTÁTICO: SIMB_PONTO faltando na posição %d da linha %s", *i, linha);
         }
         p_erro(entrada, linha, i, token, s1, 9);
         for(int i = 0; i< 9; i++){
@@ -131,27 +132,27 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
         
         if(flag == 0){//Erro seguidor eh SIMB_PONTO
             //Adiciona o símbolo na fila de erros.
-            char ** s1 = (char**) malloc(sizeof(char *) *9);
-            for(int i = 0; i< 9; i++){
+            char ** s1 = (char**) malloc(sizeof(char *) *10);
+            for(int i = 0; i< 10; i++){
                 s1[i] = malloc(sizeof(char)*TAM_SIMBOLO);
             }
-            strcpy(s1[8], SIMB_PONTO);
-            strcpy(s1[7], SIMB_PVIRGULA);
-            strcpy(s1[6], "CONST");
-            strcpy(s1[5], "VAR");
-            strcpy(s1[4], "PROCEDURE");
-            strcpy(s1[3], "CALL");
-            strcpy(s1[2], "BEGIN");
-            strcpy(s1[1], "IF");
-            strcpy(s1[0], "WHILE");
-            //strcpy(s1[0], IDENT);
+            strcpy(s1[9], SIMB_PONTO);
+            strcpy(s1[8], SIMB_PVIRGULA);
+            strcpy(s1[7], "CONST");
+            strcpy(s1[6], "VAR");
+            strcpy(s1[5], "PROCEDURE");
+            strcpy(s1[4], "CALL");
+            strcpy(s1[3], "BEGIN");
+            strcpy(s1[2], "IF");
+            strcpy(s1[1], "WHILE");
+            strcpy(s1[0], IDENT);
             if(strcmp((*token)->tipo, ERRO_LEXICO) == 0){
                 printf("Erro Lexico: %s na posição %d da linha %s", (*token)->valor, *i, linha);
             }else{
                 printf("ERRO SINTÁTICO: esperava CONST, VAR, PROCEDURE, BEGIN, CALL, IF, WHILE ou IDENT na posição %d da linha %s\n", *i, linha);
             }
-            p_erro(entrada, linha, i, token, s1, 9);
-            for(int i = 0; i< 9; i++){
+            p_erro(entrada, linha, i, token, s1, 10);
+            for(int i = 0; i< 10; i++){
                 free(s1[i]);
             }
             free(s1);
@@ -159,7 +160,9 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
                 obterSimbolo(entrada, linha, i, token);
             }
             pprint("FINALIZANDO <bloco>\n");
-            p_bloco(entrada,linha,i,token, s, num_simb_sinc);
+            if(!feof(entrada)){
+                p_bloco(entrada,linha,i,token, s, num_simb_sinc);
+            }
             return 1;
         }
     }
@@ -518,6 +521,10 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
                 obterSimbolo(entrada, linha, i, token);
             }
             pop();
+            for(int i = 0; i< 7; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <variavel>\n");
             return 0; //Foi capaz de corrigir o erro
         }
@@ -544,6 +551,10 @@ int p_variavel(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
             obterSimbolo(entrada, linha, i, token);
         }
         pop();
+        for(int i = 0; i< 7; i++){
+            free(s1[i]);
+        }
+        free(s1);
         pprint("FINALIZANDO <variavel>\n");
         pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         return 1; //Foi capaz de corrigir o erro
@@ -587,7 +598,10 @@ int p_mais_var(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
             }
             p_erro(entrada, linha, i, token, s1, 3);
             //obterSimbolo(entrada, linha, i, token);
-            pop();
+            pop();for(int i = 0; i< 3; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <mais_var>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -653,6 +667,10 @@ int p_procedimento(FILE * entrada, char * linha, int *i, Token ** token, char **
                     }
                     p_erro(entrada, linha, i, token, s1, 7);
                     pop();
+                    for(int i = 0; i< 7; i++){
+                        free(s1[i]);
+                    }
+                    free(s1);
                     pprint("Erro corrigido, nao finaliza <procedimento>\n");
                     return 1; //Foi capaz de corrigir o erro
                 }
@@ -673,6 +691,10 @@ int p_procedimento(FILE * entrada, char * linha, int *i, Token ** token, char **
                 }
                 p_erro(entrada, linha, i, token, s1, 5);
                 pop();
+                for(int i = 0; i< 5; i++){
+                    free(s1[i]);
+                }
+                free(s1);
                 pprint("Finaliza <procedimento>\n");
                 return 1; //Foi capaz de corrigir o erro
             }
@@ -701,6 +723,10 @@ int p_procedimento(FILE * entrada, char * linha, int *i, Token ** token, char **
                 obterSimbolo(entrada, linha, i, token);
             }
             pop();
+            for(int i = 0; i< 10; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <procedimento>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -726,8 +752,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             //Chama procedimento Expressao
             p_expressao(entrada, linha, i, token, s, num_simb_sinc);
             pop();
-            pprint("FINALIZANDO <comando>\n");
-            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            pprint("FINALIZANDO <comando> 1\n");
+            if(*token != NULL){
+                pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            }
             return 0;
         }else{ // Erro nao encontrou SIMB_ATRIBUICAO
             char ** s1 = (char**) malloc(sizeof(char *) *2);
@@ -747,7 +775,12 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
                 free(s1[i]);
             }
             free(s1);
-            pprint("FINALIZANDO <comando>\n");
+            pprint("FINALIZANDO <comando> 2\n");
+            if(*token != NULL){
+                obterSimbolo(entrada, linha, i, token);
+                //Chama procedimento Comando
+                p_comando(entrada, linha, i, token, s, num_simb_sinc);
+            }
             return 1; //Foi capaz de corrigir o erro
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "CALL") == 0){
@@ -775,7 +808,7 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
                 free(s1[i]);
             }
             free(s1);
-            pprint("FINALIZANDO <comando>\n");
+            pprint("FINALIZANDO <comando> 3\n");
             return 1; //Foi capaz de corrigir o erro
         }
     } else if(*token != NULL && strcmp((*token)->tipo, "BEGIN") == 0){
@@ -787,10 +820,11 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
         if(*token != NULL && strcmp((*token)->tipo, "END") == 0){
             obterSimbolo(entrada, linha, i, token);
             pprint("END encontrado!\n");
-            pprint("Proximo simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
             pop();
-            pprint("FINALIZANDO <comando>\n");
-            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            pprint("FINALIZANDO <comando> 4\n");
+            if(*token != NULL){
+                pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            }
             return 0; //sem erros
         }else{ // Erro nao encontrou END
             char ** s1 = (char**) malloc(sizeof(char *) *2);
@@ -810,7 +844,7 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
                 free(s1[i]);
             }
             free(s1);
-            pprint("FINALIZANDO <comando>\n");
+            pprint("FINALIZANDO <comando> 5\n");
             return 1; //Foi capaz de corrigir o erro
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "IF") == 0){
@@ -826,15 +860,18 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             //Chama procedimento Comando
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
-            pprint("FINALIZANDO <comando>\n");
-            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            pprint("FINALIZANDO <comando> 6\n");
+            if(*token != NULL){
+                pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            }
             return 0; //sem erros
         }else{ // Erro nao encontrou THEN
-            char ** s1 = (char**) malloc(sizeof(char *) *7);
-            for(int i = 0; i< 7; i++){
+            char ** s1 = (char**) malloc(sizeof(char *) *8);
+            for(int i = 0; i< 8; i++){
                 s1[i] = malloc(sizeof(char)*TAM_SIMBOLO);
             }//;, END, THEN, DO, ., ident, CALL, BEGIN, IF, WHILE
-            strcpy(s1[6], "THEN");
+            strcpy(s1[7], "THEN");
+            strcpy(s1[6], IDENT);
             strcpy(s1[5], "END");
             strcpy(s1[4], "DO");
             strcpy(s1[3], "BEGIN");
@@ -846,13 +883,17 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             }else{
                 printf("ERRO SINTÁTICO: THEN faltando na posição %d da linha %s", *i, linha);
             }
-            p_erro(entrada, linha, i, token, s1, 7);
+            p_erro(entrada, linha, i, token, s1, 8);
             pop();
-            for(int i = 0; i< 7; i++){
+            for(int i = 0; i< 8; i++){
                 free(s1[i]);
             }
             free(s1);
-            pprint("FINALIZANDO <comando>\n");
+            pprint("FINALIZANDO <comando> 7\n");
+            if(*token != NULL && (cmpToken(*token, IDENT) || cmpToken(*token, "CALL") ||
+                 cmpToken(*token, "BEGIN") || cmpToken(*token, "IF") || cmpToken(*token, "WHILE"))){
+                p_comando(entrada, linha, i, token, s, num_simb_sinc);
+            }
             return 1; //Foi capaz de corrigir o erro
         }
     }else if(*token != NULL && strcmp((*token)->tipo, "WHILE") == 0){
@@ -868,8 +909,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             //Chama procedimento Comando
             p_comando(entrada, linha, i, token, s, num_simb_sinc);
             pop();
-            pprint("FINALIZANDO <comando>\n");
-            pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            pprint("FINALIZANDO <comando> 8\n");
+            if(*token != NULL){
+                pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+            }
             return 0; //sem erros
         }else{ // Erro nao encontrou DO
             char ** s1 = (char**) malloc(sizeof(char *) *7);
@@ -894,12 +937,12 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
                 free(s1[i]);
             }
             free(s1);
-            pprint("FINALIZANDO <comando>\n");
+            pprint("FINALIZANDO <comando> 9\n");
             return 1; //Foi capaz de corrigir o erro
         }
     }
     pop();
-    pprint("FINALIZANDO <comando>\n");
+    pprint("FINALIZANDO <comando> 10\n");
     return 0; //coloquei que retorna 0 (OK) pois pode gerar lambda (???)
 }
 
@@ -1044,7 +1087,14 @@ int p_fator(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
             }
             p_erro(entrada, linha, i, token, s1, 17);
             pop();
+            for(int i = 0; i< 17; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <fator>\n");
+            if(*token != NULL && (strcmp((*token)->tipo, SIMB_FECHA_PARENTESE) == 0 || strcmp((*token)->tipo, SIMB_PVIRGULA) == 0)){
+                obterSimbolo(entrada, linha, i, token);
+            }
             return 1; //Foi capaz de corrigir o erro
         }
     } else{ // Erro nao encontrou  ident | numero | ( <expressão> )

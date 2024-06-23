@@ -9,12 +9,13 @@ VAR g,h,j;
 CONST a = 4, b = 5;
 VAR a,b,c;
 BEGIN
-    a:=2 + (2 * 3);
+    a: 2 + (2 * 3);
+    b:=4 + (5  3);
     CALL ;
     IF x + 3)6 > 5  THEN
     BEG&IN
         a:= a+x;
         b:= 3 - b / a;
-    END;
+    END.
     c:= 5 + 7;
-END.
+END % 
