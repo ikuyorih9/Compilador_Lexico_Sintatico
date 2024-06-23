@@ -13,7 +13,7 @@ Token * inicializaToken();
 Desaloca memória para um token.
 @param token (Token*) a ser desalocado.
 */
-void destroiToken(Token * token);
+void destroiToken(Token ** token);
 
 /*
 Compara token recebido com um símbolo.

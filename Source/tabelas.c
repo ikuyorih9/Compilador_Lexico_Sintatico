@@ -116,9 +116,12 @@ int verificaSePalavraReservada(char * palavra){
 
         //Verifica se a palavra é reservada.
         int encontrouPalavraReservada = !strcmp(palavra, palavraReservada);
-        if(encontrouPalavraReservada)
+        if(encontrouPalavraReservada){
+            fclose(arquivoPalavrasReservadas);
             return 1;
+        }   
     }
+    fclose(arquivoPalavrasReservadas);
     return 0;
 }
 

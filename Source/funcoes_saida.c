@@ -51,6 +51,7 @@ int procuraFuncaoSaida(char * estado, char * token, Token ** saida){
             *saida = tabelaFuncoes[i].funcaoSaida(token);
 
             //Retorna se retrocede ou não, conforme a tabelaFuncoes.
+            free(token);
             return tabelaFuncoes[i].retrocede;
         }
     }
