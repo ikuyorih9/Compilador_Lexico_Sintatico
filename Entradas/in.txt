@@ -1,14 +1,14 @@
-CONST a = 4, b = 5;
-VAR a,b,c;
-PROCEDURE desd;
-CONST y = 2;
+CONST a = , b = 5;
+VAR a,b,;
+PROCEDURE de%sd;
+CONST y  2;
 VAR g,h,j;
 BEGIN
     g:= h + j*2;
 END;
 BEGIN
-    a:=2 + (2 * 3);
-    CALL proc1;
+    a:=2 + (2  3);
+    CALL ;
     WHILE x + 3 > y + 5 DO
         a:= a+x;
     b:= 3 - b / a;

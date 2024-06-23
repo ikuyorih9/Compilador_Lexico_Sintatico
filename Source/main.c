@@ -49,10 +49,6 @@ int main(int argc, char * argv[]){
 
     //Aloca dinamicamente uma linha para ler da entrada.
     char * linha = (char*) malloc(MAX_LINHA);
-    char ** simb_sincronizacao = (char**) malloc(sizeof(char *));
-    simb_sincronizacao[0] = malloc(sizeof(char)*30);
-    strcpy(simb_sincronizacao[0], SIMB_PONTO);
-
     int i = 0;
     linha[0] = '\0';
     
@@ -71,19 +67,25 @@ int main(int argc, char * argv[]){
     // }
     // while(token != NULL);
 
+
+    int num_erros = 0;
     Token * token = NULL;
     obterSimbolo(entrada, linha, &i, &token);
-    p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
+    p_programa(entrada, linha, &i, &token, &num_erros);
     //printf("fim com token: (%s,%s)\n", (token)->valor, (token)->tipo);
 
     while(!feof(entrada) && token != NULL){
-        p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
+        p_programa(entrada, linha, &i, &token, &num_erros);
         //printf("fim 2 com token: (%s,%s)\n", (token)->valor, (token)->tipo);
         obterSimbolo(entrada, linha, &i, &token);
     }
-    free(simb_sincronizacao[0]);
-    free(simb_sincronizacao);
     free(linha); //Libera a memória alocada para a linha.
+
+    if(num_erros == 0){
+        printf("Não foram encontrados erros. Compilação terminou com sucesso.\n");
+    }else{
+        printf("Foram encontrados %d erros\n", num_erros);
+    }
 
     //Libera os arquivos de entrada e saída.
     fclose(entrada);
