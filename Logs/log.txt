@@ -1,0 +1,1670 @@
+Lendo arquivo de entrada 'Entradas/in.txt'...
+Token ja esta desalocado.
+
+LINHA: CONST a = , b = 5;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, C) = Q1.
+	Tabela de transicao:  (Q1, O) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Tabela de transicao:  (Q1, S) = Q1.
+	Tabela de transicao:  (Q1, T) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra CONST ...
+		Token encontrado: (CONST, CONST).
+		Retrocedendo ' '...
+Voltei na posição linha[4].
+INICIANDO <programa>
+	Procedimento inicia com token: (CONST,CONST)
+	INICIANDO <bloco>
+		Procedimento inicia com token: (CONST,CONST)
+		INICIANDO <declaracao>
+			Procedimento inicia com token: (CONST,CONST)
+			INICIANDO <constante>.
+				Procedimento inicia com token: (CONST,CONST)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[5].
+Comecei na posição linha[6].
+	Tabela de transicao:  (Q0, a) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra a ...
+		Token encontrado: (a, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[6].
+				Novo símbolo obtido: (a,identificador)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[7].
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, =) = S11.
+		Chamando funcao de saida para S11...
+		Enviando palavra =...
+		Token encontrado: (=, simbolo_igualdade).
+Voltei na posição linha[8].
+				IDENT encontrado!
+				Proximo simbolo: (=,simbolo_igualdade)
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[9].
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, ,) = S2.
+		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+		Token encontrado: (,, simbolo_virgula).
+Voltei na posição linha[10].
+				SIMB_IGUAL (=) encontrado!
+				Proximo simbolo: (,,simbolo_virgula)
+Erro sintático: 	 SIMB_NUMERO faltando na posição 11 da linha CONST a = , b = 5;
+				Iniciando tratamento de erro
+				Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_virgula != VAR
+				Falha no tratamento: simbolo_virgula != PROCEDURE
+				Falha no tratamento: simbolo_virgula != CALL
+				Falha no tratamento: simbolo_virgula != BEGIN
+				Falha no tratamento: simbolo_virgula != IF
+				Falha no tratamento: simbolo_virgula != WHILE
+				Falha no tratamento: simbolo_virgula != simbolo_ponto
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, b) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra b ...
+		Token encontrado: (b, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[12].
+				Falha no tratamento: identificador != simbolo_ponto_virgula
+				Falha no tratamento: identificador != VAR
+				Falha no tratamento: identificador != PROCEDURE
+				Falha no tratamento: identificador != CALL
+				Falha no tratamento: identificador != BEGIN
+				Falha no tratamento: identificador != IF
+				Falha no tratamento: identificador != WHILE
+				Falha no tratamento: identificador != simbolo_ponto
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[13].
+Comecei na posição linha[14].
+	Tabela de transicao:  (Q0, =) = S11.
+		Chamando funcao de saida para S11...
+		Enviando palavra =...
+		Token encontrado: (=, simbolo_igualdade).
+Voltei na posição linha[14].
+				Falha no tratamento: simbolo_igualdade != simbolo_ponto_virgula
+				Falha no tratamento: simbolo_igualdade != VAR
+				Falha no tratamento: simbolo_igualdade != PROCEDURE
+				Falha no tratamento: simbolo_igualdade != CALL
+				Falha no tratamento: simbolo_igualdade != BEGIN
+				Falha no tratamento: simbolo_igualdade != IF
+				Falha no tratamento: simbolo_igualdade != WHILE
+				Falha no tratamento: simbolo_igualdade != simbolo_ponto
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[15].
+Comecei na posição linha[16].
+	Tabela de transicao:  (Q0, 5) = Q3.
+	Tabela de transicao:  (Q3, ;) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 5;...
+		Token encontrado: (5, numero).
+		Retrocedendo ';'...
+Voltei na posição linha[16].
+				Falha no tratamento: numero != simbolo_ponto_virgula
+				Falha no tratamento: numero != VAR
+				Falha no tratamento: numero != PROCEDURE
+				Falha no tratamento: numero != CALL
+				Falha no tratamento: numero != BEGIN
+				Falha no tratamento: numero != IF
+				Falha no tratamento: numero != WHILE
+				Falha no tratamento: numero != simbolo_ponto
+Comecei na posição linha[17].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[17].
+				Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
+
+LINHA: VAR a,b,;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, V) = Q1.
+	Tabela de transicao:  (Q1, A) = Q1.
+	Tabela de transicao:  (Q1, R) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra VAR ...
+		Token encontrado: (VAR, VAR).
+		Retrocedendo ' '...
+Voltei na posição linha[2].
+			FINALIZANDO <constante>
+			INICIANDO <variavel>
+				Procedimento inicia com token: (VAR,VAR)
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, a) = Q1.
+	Tabela de transicao:  (Q1, ,) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra a,...
+		Token encontrado: (a, identificador).
+		Retrocedendo ','...
+Voltei na posição linha[4].
+				Proximo simbolo: (a,identificador)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0, ,) = S2.
+		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+		Token encontrado: (,, simbolo_virgula).
+Voltei na posição linha[5].
+				IDENT encontrado!
+				Proximo simbolo: (,,simbolo_virgula)
+				INICIANDO <mais_var>
+					Procedimento inicia com token: (,,simbolo_virgula)
+Comecei na posição linha[6].
+	Tabela de transicao:  (Q0, b) = Q1.
+	Tabela de transicao:  (Q1, ,) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra b,...
+		Token encontrado: (b, identificador).
+		Retrocedendo ','...
+Voltei na posição linha[6].
+					SIMB_VIRGULA encontrado!
+					Proximo simbolo: (b,identificador)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0, ,) = S2.
+		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+		Token encontrado: (,, simbolo_virgula).
+Voltei na posição linha[7].
+					IDENT encontrado!
+					Proximo simbolo: (,,simbolo_virgula)
+					INICIANDO <mais_var>
+						Procedimento inicia com token: (,,simbolo_virgula)
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[8].
+						SIMB_VIRGULA encontrado!
+						Proximo simbolo: (;,simbolo_ponto_virgula)
+Erro sintático: 	 IDENT faltando na posição 9 da linha VAR a,b,;
+						Iniciando tratamento de erro
+						Falha no tratamento: simbolo_ponto_virgula != identificador
+						Falha no tratamento: simbolo_ponto_virgula != simbolo_virgula
+						Falha no tratamento: simbolo_ponto_virgula != simbolo_ponto
+
+LINHA: PROCEDURE de%sd;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, P) = Q1.
+	Tabela de transicao:  (Q1, R) = Q1.
+	Tabela de transicao:  (Q1, O) = Q1.
+	Tabela de transicao:  (Q1, C) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
+	Tabela de transicao:  (Q1, D) = Q1.
+	Tabela de transicao:  (Q1, U) = Q1.
+	Tabela de transicao:  (Q1, R) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra PROCEDURE ...
+		Token encontrado: (PROCEDURE, PROCEDURE).
+		Retrocedendo ' '...
+Voltei na posição linha[8].
+						Falha no tratamento: PROCEDURE != identificador
+						Falha no tratamento: PROCEDURE != simbolo_virgula
+						Falha no tratamento: PROCEDURE != simbolo_ponto
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[9].
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, d) = Q1.
+	Tabela de transicao:  (Q1, e) = Q1.
+	Tabela de transicao:  (Q1, %) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra de%...
+		Token encontrado: (de, identificador).
+		Retrocedendo '%'...
+Voltei na posição linha[11].
+						Encontrou simbolo de sincronizacao: identificador
+					FINALIZANDO <mais_var>
+				FINALIZANDO <mais_var>
+Erro sintático: 	 SIMB_PVIRGULA faltando na posição 12 da linha PROCEDURE de%sd;
+				Iniciando tratamento de erro
+				Falha no tratamento: identificador != PROCEDURE
+				Falha no tratamento: identificador != CALL
+				Falha no tratamento: identificador != BEGIN
+				Falha no tratamento: identificador != IF
+				Falha no tratamento: identificador != WHILE
+				Falha no tratamento: identificador != simbolo_ponto_virgula
+				Falha no tratamento: identificador != simbolo_ponto
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, %) = E2.
+		Chamando funcao de saida para E2...
+		Enviando palavra %...
+		Token encontrado: (%, <erro_lexico>).
+Voltei na posição linha[12].
+				Falha no tratamento: <erro_lexico> != PROCEDURE
+				Falha no tratamento: <erro_lexico> != CALL
+				Falha no tratamento: <erro_lexico> != BEGIN
+				Falha no tratamento: <erro_lexico> != IF
+				Falha no tratamento: <erro_lexico> != WHILE
+				Falha no tratamento: <erro_lexico> != simbolo_ponto_virgula
+				Falha no tratamento: <erro_lexico> != simbolo_ponto
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0, s) = Q1.
+	Tabela de transicao:  (Q1, d) = Q1.
+	Tabela de transicao:  (Q1, ;) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra sd;...
+		Token encontrado: (sd, identificador).
+		Retrocedendo ';'...
+Voltei na posição linha[14].
+				Falha no tratamento: identificador != PROCEDURE
+				Falha no tratamento: identificador != CALL
+				Falha no tratamento: identificador != BEGIN
+				Falha no tratamento: identificador != IF
+				Falha no tratamento: identificador != WHILE
+				Falha no tratamento: identificador != simbolo_ponto_virgula
+				Falha no tratamento: identificador != simbolo_ponto
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[15].
+				Falha no tratamento: simbolo_ponto_virgula != PROCEDURE
+				Falha no tratamento: simbolo_ponto_virgula != CALL
+				Falha no tratamento: simbolo_ponto_virgula != BEGIN
+				Falha no tratamento: simbolo_ponto_virgula != IF
+				Falha no tratamento: simbolo_ponto_virgula != WHILE
+				Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
+
+LINHA: CONST y  2;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, C) = Q1.
+	Tabela de transicao:  (Q1, O) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Tabela de transicao:  (Q1, S) = Q1.
+	Tabela de transicao:  (Q1, T) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra CONST ...
+		Token encontrado: (CONST, CONST).
+		Retrocedendo ' '...
+Voltei na posição linha[4].
+			FINALIZANDO <variavel>
+		FINALIZANDO <declaração>
+	FINALIZANDO <bloco>. (token nulo)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[5].
+Comecei na posição linha[6].
+	Tabela de transicao:  (Q0, y) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra y ...
+		Token encontrado: (y, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[6].
+	INICIANDO <programa>
+		Procedimento inicia com token: (y,identificador)
+		INICIANDO <bloco>
+			Procedimento inicia com token: (y,identificador)
+			INICIANDO <comando>
+				Procedimento inicia com token: (y,identificador)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[7].
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[8].
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0, 2) = Q3.
+	Tabela de transicao:  (Q3, ;) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 2;...
+		Token encontrado: (2, numero).
+		Retrocedendo ';'...
+Voltei na posição linha[9].
+				IDENT encontrado!
+				Proximo simbolo: (2,numero)
+Erro sintático: 	 SIMB_ATRIBUICAO faltando na posição 10 da linha CONST y  2;
+				Iniciando tratamento de erro
+				Falha no tratamento: numero != simbolo_ponto_virgula
+				Falha no tratamento: numero != simbolo_ponto
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[10].
+				Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
+			FINALIZANDO <comando> 2
+
+LINHA: VAR g,h,j;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, V) = Q1.
+	Tabela de transicao:  (Q1, A) = Q1.
+	Tabela de transicao:  (Q1, R) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra VAR ...
+		Token encontrado: (VAR, VAR).
+		Retrocedendo ' '...
+Voltei na posição linha[2].
+			ttoken: (VAR,VAR)
+			INICIANDO <comando>
+				Procedimento inicia com token: (VAR,VAR)
+			FINALIZANDO <comando> 10
+		FINALIZANDO <bloco>. (token nulo)
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, g) = Q1.
+	Tabela de transicao:  (Q1, ,) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra g,...
+		Token encontrado: (g, identificador).
+		Retrocedendo ','...
+Voltei na posição linha[4].
+		INICIANDO <programa>
+			Procedimento inicia com token: (g,identificador)
+			INICIANDO <bloco>
+				Procedimento inicia com token: (g,identificador)
+				INICIANDO <comando>
+					Procedimento inicia com token: (g,identificador)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0, ,) = S2.
+		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+		Token encontrado: (,, simbolo_virgula).
+Voltei na posição linha[5].
+					IDENT encontrado!
+					Proximo simbolo: (,,simbolo_virgula)
+Erro sintático: 	 SIMB_ATRIBUICAO faltando na posição 6 da linha VAR g,h,j;
+					Iniciando tratamento de erro
+					Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+					Falha no tratamento: simbolo_virgula != simbolo_ponto
+Comecei na posição linha[6].
+	Tabela de transicao:  (Q0, h) = Q1.
+	Tabela de transicao:  (Q1, ,) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra h,...
+		Token encontrado: (h, identificador).
+		Retrocedendo ','...
+Voltei na posição linha[6].
+					Falha no tratamento: identificador != simbolo_ponto_virgula
+					Falha no tratamento: identificador != simbolo_ponto
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0, ,) = S2.
+		Chamando funcao de saida para S2...
+		Enviando palavra ,...
+		Token encontrado: (,, simbolo_virgula).
+Voltei na posição linha[7].
+					Falha no tratamento: simbolo_virgula != simbolo_ponto_virgula
+					Falha no tratamento: simbolo_virgula != simbolo_ponto
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, j) = Q1.
+	Tabela de transicao:  (Q1, ;) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra j;...
+		Token encontrado: (j, identificador).
+		Retrocedendo ';'...
+Voltei na posição linha[8].
+					Falha no tratamento: identificador != simbolo_ponto_virgula
+					Falha no tratamento: identificador != simbolo_ponto
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[9].
+					Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
+				FINALIZANDO <comando> 2
+
+LINHA: BEGIN
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, B) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
+	Tabela de transicao:  (Q1, G) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Tabela de transicao:  (Q1, 
+) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra BEGIN
+...
+		Token encontrado: (BEGIN, BEGIN).
+		Retrocedendo '
+'...
+Voltei na posição linha[4].
+				ttoken: (BEGIN,BEGIN)
+				INICIANDO <comando>
+					Procedimento inicia com token: (BEGIN,BEGIN)
+
+LINHA:     g:= h + j*2;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, g) = Q1.
+	Tabela de transicao:  (Q1, :) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra g:...
+		Token encontrado: (g, identificador).
+		Retrocedendo ':'...
+Voltei na posição linha[4].
+					BEGIN encontrado!
+					Proximo simbolo: (g,identificador)
+					INICIANDO <comando>
+						Procedimento inicia com token: (g,identificador)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
+		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+		Token encontrado: (:=, simbolo_atribuicao).
+Voltei na posição linha[6].
+						IDENT encontrado!
+						Proximo simbolo: (:=,simbolo_atribuicao)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[7].
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, h) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra h ...
+		Token encontrado: (h, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[8].
+						SIMB_ATRIBUICAO encontrado!
+						Proximo simbolo: (h,identificador)
+						INICIANDO <expressao>
+							Procedimento inicia com token: (h,identificador)
+							INICIANDO <operador_unario>
+								Procedimento inicia com token: (h,identificador)
+							FINALIZANDO <operador_unario>
+							INICIANDO <termo>
+								Procedimento inicia com token: (h,identificador)
+								INICIANDO <fator>
+									Procedimento inicia com token: (h,identificador)
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[9].
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, +) = S6.
+		Chamando funcao de saida para S6...
+		Enviando palavra +...
+		Token encontrado: (+, simbolo_mais).
+Voltei na posição linha[10].
+								FINALIZANDO <fator>
+								INICIANDO <mais_fatores>
+									Procedimento inicia com token: (+,simbolo_mais)
+								FINALIZANDO <mais_fatores>
+							FINALIZANDO <termo>
+							INICIANDO <mais_termos>
+								Procedimento inicia com token: (+,simbolo_mais)
+								simbolo_mais encontrado!
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, j) = Q1.
+	Tabela de transicao:  (Q1, *) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra j*...
+		Token encontrado: (j, identificador).
+		Retrocedendo '*'...
+Voltei na posição linha[12].
+								Proximo simbolo: (j,identificador)
+								INICIANDO <termo>
+									Procedimento inicia com token: (j,identificador)
+									INICIANDO <fator>
+										Procedimento inicia com token: (j,identificador)
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0, *) = S8.
+		Chamando funcao de saida para S8...
+		Enviando palavra *...
+		Token encontrado: (*, simbolo_multiplicacao).
+Voltei na posição linha[13].
+									FINALIZANDO <fator>
+									INICIANDO <mais_fatores>
+										Procedimento inicia com token: (*,simbolo_multiplicacao)
+										simbolo_multiplicacao encontrado!
+Comecei na posição linha[14].
+	Tabela de transicao:  (Q0, 2) = Q3.
+	Tabela de transicao:  (Q3, ;) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 2;...
+		Token encontrado: (2, numero).
+		Retrocedendo ';'...
+Voltei na posição linha[14].
+										Proximo simbolo: (2,numero)
+										INICIANDO <fator>
+											Procedimento inicia com token: (2,numero)
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[15].
+										FINALIZANDO <fator>
+										INICIANDO <mais_fatores>
+											Procedimento inicia com token: (;,simbolo_ponto_virgula)
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <mais_fatores>
+								FINALIZANDO <termo>
+								INICIANDO <mais_termos>
+									Procedimento inicia com token: (;,simbolo_ponto_virgula)
+								FINALIZANDO <mais_termos>
+							FINALIZANDO <mais_termos>
+						FINALIZANDO <expressao>
+					FINALIZANDO <comando> 1
+					Simbolo: (;,simbolo_ponto_virgula)
+					INICIANDO <mais_cmd>
+						Procedimento inicia com token: (;,simbolo_ponto_virgula)
+
+LINHA: END;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, E) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Tabela de transicao:  (Q1, D) = Q1.
+	Tabela de transicao:  (Q1, ;) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra END;...
+		Token encontrado: (END, END).
+		Retrocedendo ';'...
+Voltei na posição linha[2].
+						SIMB_PVIRGULA encontrado!
+						Proximo simbolo: (END,END)
+						INICIANDO <comando>
+							Procedimento inicia com token: (END,END)
+						FINALIZANDO <comando> 10
+						INICIANDO <mais_cmd>
+							Procedimento inicia com token: (END,END)
+						FINALIZANDO <mais_cmd>
+					FINALIZANDO <mais_cmd>
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[3].
+					END encontrado!
+				FINALIZANDO <comando> 4
+			FINALIZANDO <bloco>. (token nulo)
+
+LINHA: BEGIN
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, B) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
+	Tabela de transicao:  (Q1, G) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+	Tabela de transicao:  (Q1, 
+) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra BEGIN
+...
+		Token encontrado: (BEGIN, BEGIN).
+		Retrocedendo '
+'...
+Voltei na posição linha[4].
+			INICIANDO <programa>
+				Procedimento inicia com token: (BEGIN,BEGIN)
+				INICIANDO <bloco>
+					Procedimento inicia com token: (BEGIN,BEGIN)
+					INICIANDO <comando>
+						Procedimento inicia com token: (BEGIN,BEGIN)
+
+LINHA:     a:=2 + (2  3);
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, a) = Q1.
+	Tabela de transicao:  (Q1, :) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra a:...
+		Token encontrado: (a, identificador).
+		Retrocedendo ':'...
+Voltei na posição linha[4].
+						BEGIN encontrado!
+						Proximo simbolo: (a,identificador)
+						INICIANDO <comando>
+							Procedimento inicia com token: (a,identificador)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
+		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+		Token encontrado: (:=, simbolo_atribuicao).
+Voltei na posição linha[6].
+							IDENT encontrado!
+							Proximo simbolo: (:=,simbolo_atribuicao)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0, 2) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 2 ...
+		Token encontrado: (2, numero).
+		Retrocedendo ' '...
+Voltei na posição linha[7].
+							SIMB_ATRIBUICAO encontrado!
+							Proximo simbolo: (2,numero)
+							INICIANDO <expressao>
+								Procedimento inicia com token: (2,numero)
+								INICIANDO <operador_unario>
+									Procedimento inicia com token: (2,numero)
+								FINALIZANDO <operador_unario>
+								INICIANDO <termo>
+									Procedimento inicia com token: (2,numero)
+									INICIANDO <fator>
+										Procedimento inicia com token: (2,numero)
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[8].
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0, +) = S6.
+		Chamando funcao de saida para S6...
+		Enviando palavra +...
+		Token encontrado: (+, simbolo_mais).
+Voltei na posição linha[9].
+									FINALIZANDO <fator>
+									INICIANDO <mais_fatores>
+										Procedimento inicia com token: (+,simbolo_mais)
+									FINALIZANDO <mais_fatores>
+								FINALIZANDO <termo>
+								INICIANDO <mais_termos>
+									Procedimento inicia com token: (+,simbolo_mais)
+									simbolo_mais encontrado!
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[10].
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0, () = S4.
+		Chamando funcao de saida para S4...
+		Enviando palavra (...
+		Token encontrado: ((, simbolo_abre_parentese).
+Voltei na posição linha[11].
+									Proximo simbolo: ((,simbolo_abre_parentese)
+									INICIANDO <termo>
+										Procedimento inicia com token: ((,simbolo_abre_parentese)
+										INICIANDO <fator>
+											Procedimento inicia com token: ((,simbolo_abre_parentese)
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, 2) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 2 ...
+		Token encontrado: (2, numero).
+		Retrocedendo ' '...
+Voltei na posição linha[12].
+											INICIANDO <expressao>
+												Procedimento inicia com token: (2,numero)
+												INICIANDO <operador_unario>
+													Procedimento inicia com token: (2,numero)
+												FINALIZANDO <operador_unario>
+												INICIANDO <termo>
+													Procedimento inicia com token: (2,numero)
+													INICIANDO <fator>
+														Procedimento inicia com token: (2,numero)
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[13].
+Comecei na posição linha[14].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[14].
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0, 3) = Q3.
+	Tabela de transicao:  (Q3, )) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 3)...
+		Token encontrado: (3, numero).
+		Retrocedendo ')'...
+Voltei na posição linha[15].
+													FINALIZANDO <fator>
+													INICIANDO <mais_fatores>
+														Procedimento inicia com token: (3,numero)
+													FINALIZANDO <mais_fatores>
+												FINALIZANDO <termo>
+												INICIANDO <mais_termos>
+													Procedimento inicia com token: (3,numero)
+												FINALIZANDO <mais_termos>
+											FINALIZANDO <expressao>
+Erro sintático: 	  ident | numero | ( <expressão> ) faltando na posição 16 da linha     a:=2 + (2  3);
+											Iniciando tratamento de erro
+											Falha no tratamento: numero != simbolo_multiplicacao
+											Falha no tratamento: numero != simbolo_divisao
+											Falha no tratamento: numero != simbolo_menos
+											Falha no tratamento: numero != simbolo_mais
+											Falha no tratamento: numero != THEN
+											Falha no tratamento: numero != DO
+											Falha no tratamento: numero != simbolo_igualdade
+											Falha no tratamento: numero != simbolo_diferente
+											Falha no tratamento: numero != simbolo_ponto
+											Falha no tratamento: numero != simbolo_menor
+											Falha no tratamento: numero != simbolo_menor_igual
+											Falha no tratamento: numero != simbolo_maior
+											Falha no tratamento: numero != simbolo_maior_igual
+											Falha no tratamento: numero != simbolo_ponto_virgula
+											Falha no tratamento: numero != END
+											Falha no tratamento: numero != simbolo_fecha_parentese
+											Falha no tratamento: numero != simbolo_ponto
+Comecei na posição linha[16].
+	Tabela de transicao:  (Q0, )) = S5.
+		Chamando funcao de saida para S5...
+		Enviando palavra )...
+		Token encontrado: (), simbolo_fecha_parentese).
+Voltei na posição linha[16].
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_multiplicacao
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_divisao
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_menos
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_mais
+											Falha no tratamento: simbolo_fecha_parentese != THEN
+											Falha no tratamento: simbolo_fecha_parentese != DO
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_igualdade
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_diferente
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_ponto
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_menor
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_menor_igual
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_maior
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_maior_igual
+											Falha no tratamento: simbolo_fecha_parentese != simbolo_ponto_virgula
+											Falha no tratamento: simbolo_fecha_parentese != END
+											Encontrou simbolo de sincronizacao: simbolo_fecha_parentese
+										FINALIZANDO <fator>
+Comecei na posição linha[17].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[17].
+										INICIANDO <mais_fatores>
+											Procedimento inicia com token: (;,simbolo_ponto_virgula)
+										FINALIZANDO <mais_fatores>
+									FINALIZANDO <termo>
+									INICIANDO <mais_termos>
+										Procedimento inicia com token: (;,simbolo_ponto_virgula)
+									FINALIZANDO <mais_termos>
+								FINALIZANDO <mais_termos>
+							FINALIZANDO <expressao>
+						FINALIZANDO <comando> 1
+						Simbolo: (;,simbolo_ponto_virgula)
+						INICIANDO <mais_cmd>
+							Procedimento inicia com token: (;,simbolo_ponto_virgula)
+
+LINHA:     CALL ;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, C) = Q1.
+	Tabela de transicao:  (Q1, A) = Q1.
+	Tabela de transicao:  (Q1, L) = Q1.
+	Tabela de transicao:  (Q1, L) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra CALL ...
+		Token encontrado: (CALL, CALL).
+		Retrocedendo ' '...
+Voltei na posição linha[7].
+							SIMB_PVIRGULA encontrado!
+							Proximo simbolo: (CALL,CALL)
+							INICIANDO <comando>
+								Procedimento inicia com token: (CALL,CALL)
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[8].
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[9].
+								CALL encontrado!
+								Proximo simbolo: (;,simbolo_ponto_virgula)
+Erro sintático: 	 IDENT faltando na posição 10 da linha     CALL ;
+								Iniciando tratamento de erro
+								Encontrou simbolo de sincronizacao: simbolo_ponto_virgula
+							FINALIZANDO <comando> 3
+							INICIANDO <mais_cmd>
+								Procedimento inicia com token: (;,simbolo_ponto_virgula)
+
+LINHA:     WHILE x + 3 > y + 5 DO
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, W) = Q1.
+	Tabela de transicao:  (Q1, H) = Q1.
+	Tabela de transicao:  (Q1, I) = Q1.
+	Tabela de transicao:  (Q1, L) = Q1.
+	Tabela de transicao:  (Q1, E) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra WHILE ...
+		Token encontrado: (WHILE, WHILE).
+		Retrocedendo ' '...
+Voltei na posição linha[8].
+								SIMB_PVIRGULA encontrado!
+								Proximo simbolo: (WHILE,WHILE)
+								INICIANDO <comando>
+									Procedimento inicia com token: (WHILE,WHILE)
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[9].
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, x) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra x ...
+		Token encontrado: (x, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[10].
+									WHILE encontrado!
+									Proximo simbolo: (x,identificador)
+									INICIANDO <condicao>
+										Procedimento inicia com token: (x,identificador)
+										INICIANDO <expressao>
+											Procedimento inicia com token: (x,identificador)
+											INICIANDO <operador_unario>
+												Procedimento inicia com token: (x,identificador)
+											FINALIZANDO <operador_unario>
+											INICIANDO <termo>
+												Procedimento inicia com token: (x,identificador)
+												INICIANDO <fator>
+													Procedimento inicia com token: (x,identificador)
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, +) = S6.
+		Chamando funcao de saida para S6...
+		Enviando palavra +...
+		Token encontrado: (+, simbolo_mais).
+Voltei na posição linha[12].
+												FINALIZANDO <fator>
+												INICIANDO <mais_fatores>
+													Procedimento inicia com token: (+,simbolo_mais)
+												FINALIZANDO <mais_fatores>
+											FINALIZANDO <termo>
+											INICIANDO <mais_termos>
+												Procedimento inicia com token: (+,simbolo_mais)
+												simbolo_mais encontrado!
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[13].
+Comecei na posição linha[14].
+	Tabela de transicao:  (Q0, 3) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 3 ...
+		Token encontrado: (3, numero).
+		Retrocedendo ' '...
+Voltei na posição linha[14].
+												Proximo simbolo: (3,numero)
+												INICIANDO <termo>
+													Procedimento inicia com token: (3,numero)
+													INICIANDO <fator>
+														Procedimento inicia com token: (3,numero)
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[15].
+Comecei na posição linha[16].
+	Tabela de transicao:  (Q0, >) = Q5.
+	Tabela de transicao:  (Q5,  ) = S18.
+		Chamando funcao de saida para S18...
+		Enviando palavra > ...
+		Token encontrado: (>, simbolo_maior).
+		Retrocedendo ' '...
+Voltei na posição linha[16].
+													FINALIZANDO <fator>
+													INICIANDO <mais_fatores>
+														Procedimento inicia com token: (>,simbolo_maior)
+													FINALIZANDO <mais_fatores>
+												FINALIZANDO <termo>
+												INICIANDO <mais_termos>
+													Procedimento inicia com token: (>,simbolo_maior)
+												FINALIZANDO <mais_termos>
+											FINALIZANDO <mais_termos>
+										FINALIZANDO <expressao>
+										INICIANDO <relacional>
+											Procedimento inicia com token: (>,simbolo_maior)
+Comecei na posição linha[17].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[17].
+Comecei na posição linha[18].
+	Tabela de transicao:  (Q0, y) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra y ...
+		Token encontrado: (y, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[18].
+										FINALIZANDO <relacional>
+										INICIANDO <expressao>
+											Procedimento inicia com token: (y,identificador)
+											INICIANDO <operador_unario>
+												Procedimento inicia com token: (y,identificador)
+											FINALIZANDO <operador_unario>
+											INICIANDO <termo>
+												Procedimento inicia com token: (y,identificador)
+												INICIANDO <fator>
+													Procedimento inicia com token: (y,identificador)
+Comecei na posição linha[19].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[19].
+Comecei na posição linha[20].
+	Tabela de transicao:  (Q0, +) = S6.
+		Chamando funcao de saida para S6...
+		Enviando palavra +...
+		Token encontrado: (+, simbolo_mais).
+Voltei na posição linha[20].
+												FINALIZANDO <fator>
+												INICIANDO <mais_fatores>
+													Procedimento inicia com token: (+,simbolo_mais)
+												FINALIZANDO <mais_fatores>
+											FINALIZANDO <termo>
+											INICIANDO <mais_termos>
+												Procedimento inicia com token: (+,simbolo_mais)
+												simbolo_mais encontrado!
+Comecei na posição linha[21].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[21].
+Comecei na posição linha[22].
+	Tabela de transicao:  (Q0, 5) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 5 ...
+		Token encontrado: (5, numero).
+		Retrocedendo ' '...
+Voltei na posição linha[22].
+												Proximo simbolo: (5,numero)
+												INICIANDO <termo>
+													Procedimento inicia com token: (5,numero)
+													INICIANDO <fator>
+														Procedimento inicia com token: (5,numero)
+Comecei na posição linha[23].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[23].
+Comecei na posição linha[24].
+	Tabela de transicao:  (Q0, D) = Q1.
+	Tabela de transicao:  (Q1, O) = Q1.
+	Tabela de transicao:  (Q1, 
+) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra DO
+...
+		Token encontrado: (DO, DO).
+		Retrocedendo '
+'...
+Voltei na posição linha[25].
+													FINALIZANDO <fator>
+													INICIANDO <mais_fatores>
+														Procedimento inicia com token: (DO,DO)
+													FINALIZANDO <mais_fatores>
+												FINALIZANDO <termo>
+												INICIANDO <mais_termos>
+													Procedimento inicia com token: (DO,DO)
+												FINALIZANDO <mais_termos>
+											FINALIZANDO <mais_termos>
+										FINALIZANDO <expressao>
+									FINALIZANDO <condicao>
+
+LINHA:         a:= a+x;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[4].
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[5].
+Comecei na posição linha[6].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[6].
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[7].
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, a) = Q1.
+	Tabela de transicao:  (Q1, :) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra a:...
+		Token encontrado: (a, identificador).
+		Retrocedendo ':'...
+Voltei na posição linha[8].
+									DO encontrado!
+									Proximo simbolo: (a,identificador)
+									INICIANDO <comando>
+										Procedimento inicia com token: (a,identificador)
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
+		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+		Token encontrado: (:=, simbolo_atribuicao).
+Voltei na posição linha[10].
+										IDENT encontrado!
+										Proximo simbolo: (:=,simbolo_atribuicao)
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, a) = Q1.
+	Tabela de transicao:  (Q1, +) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra a+...
+		Token encontrado: (a, identificador).
+		Retrocedendo '+'...
+Voltei na posição linha[12].
+										SIMB_ATRIBUICAO encontrado!
+										Proximo simbolo: (a,identificador)
+										INICIANDO <expressao>
+											Procedimento inicia com token: (a,identificador)
+											INICIANDO <operador_unario>
+												Procedimento inicia com token: (a,identificador)
+											FINALIZANDO <operador_unario>
+											INICIANDO <termo>
+												Procedimento inicia com token: (a,identificador)
+												INICIANDO <fator>
+													Procedimento inicia com token: (a,identificador)
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0, +) = S6.
+		Chamando funcao de saida para S6...
+		Enviando palavra +...
+		Token encontrado: (+, simbolo_mais).
+Voltei na posição linha[13].
+												FINALIZANDO <fator>
+												INICIANDO <mais_fatores>
+													Procedimento inicia com token: (+,simbolo_mais)
+												FINALIZANDO <mais_fatores>
+											FINALIZANDO <termo>
+											INICIANDO <mais_termos>
+												Procedimento inicia com token: (+,simbolo_mais)
+												simbolo_mais encontrado!
+Comecei na posição linha[14].
+	Tabela de transicao:  (Q0, x) = Q1.
+	Tabela de transicao:  (Q1, ;) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra x;...
+		Token encontrado: (x, identificador).
+		Retrocedendo ';'...
+Voltei na posição linha[14].
+												Proximo simbolo: (x,identificador)
+												INICIANDO <termo>
+													Procedimento inicia com token: (x,identificador)
+													INICIANDO <fator>
+														Procedimento inicia com token: (x,identificador)
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[15].
+													FINALIZANDO <fator>
+													INICIANDO <mais_fatores>
+														Procedimento inicia com token: (;,simbolo_ponto_virgula)
+													FINALIZANDO <mais_fatores>
+												FINALIZANDO <termo>
+												INICIANDO <mais_termos>
+													Procedimento inicia com token: (;,simbolo_ponto_virgula)
+												FINALIZANDO <mais_termos>
+											FINALIZANDO <mais_termos>
+										FINALIZANDO <expressao>
+									FINALIZANDO <comando> 1
+									Simbolo: (;,simbolo_ponto_virgula)
+								FINALIZANDO <comando> 8
+								Simbolo: (;,simbolo_ponto_virgula)
+								INICIANDO <mais_cmd>
+									Procedimento inicia com token: (;,simbolo_ponto_virgula)
+
+LINHA:     b:= 3 - b / a;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, b) = Q1.
+	Tabela de transicao:  (Q1, :) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra b:...
+		Token encontrado: (b, identificador).
+		Retrocedendo ':'...
+Voltei na posição linha[4].
+									SIMB_PVIRGULA encontrado!
+									Proximo simbolo: (b,identificador)
+									INICIANDO <comando>
+										Procedimento inicia com token: (b,identificador)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
+		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+		Token encontrado: (:=, simbolo_atribuicao).
+Voltei na posição linha[6].
+										IDENT encontrado!
+										Proximo simbolo: (:=,simbolo_atribuicao)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[7].
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, 3) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 3 ...
+		Token encontrado: (3, numero).
+		Retrocedendo ' '...
+Voltei na posição linha[8].
+										SIMB_ATRIBUICAO encontrado!
+										Proximo simbolo: (3,numero)
+										INICIANDO <expressao>
+											Procedimento inicia com token: (3,numero)
+											INICIANDO <operador_unario>
+												Procedimento inicia com token: (3,numero)
+											FINALIZANDO <operador_unario>
+											INICIANDO <termo>
+												Procedimento inicia com token: (3,numero)
+												INICIANDO <fator>
+													Procedimento inicia com token: (3,numero)
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[9].
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, -) = S7.
+		Chamando funcao de saida para S7...
+		Enviando palavra -...
+		Token encontrado: (-, simbolo_mais).
+Voltei na posição linha[10].
+												FINALIZANDO <fator>
+												INICIANDO <mais_fatores>
+													Procedimento inicia com token: (-,simbolo_mais)
+												FINALIZANDO <mais_fatores>
+											FINALIZANDO <termo>
+											INICIANDO <mais_termos>
+												Procedimento inicia com token: (-,simbolo_mais)
+												simbolo_mais encontrado!
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, b) = Q1.
+	Tabela de transicao:  (Q1,  ) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra b ...
+		Token encontrado: (b, identificador).
+		Retrocedendo ' '...
+Voltei na posição linha[12].
+												Proximo simbolo: (b,identificador)
+												INICIANDO <termo>
+													Procedimento inicia com token: (b,identificador)
+													INICIANDO <fator>
+														Procedimento inicia com token: (b,identificador)
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[13].
+Comecei na posição linha[14].
+	Tabela de transicao:  (Q0, /) = S10.
+		Chamando funcao de saida para S10...
+		Enviando palavra /...
+		Token encontrado: (/, simbolo_divisao).
+Voltei na posição linha[14].
+													FINALIZANDO <fator>
+													INICIANDO <mais_fatores>
+														Procedimento inicia com token: (/,simbolo_divisao)
+														simbolo_divisao encontrado!
+Comecei na posição linha[15].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[15].
+Comecei na posição linha[16].
+	Tabela de transicao:  (Q0, a) = Q1.
+	Tabela de transicao:  (Q1, ;) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra a;...
+		Token encontrado: (a, identificador).
+		Retrocedendo ';'...
+Voltei na posição linha[16].
+														Proximo simbolo: (a,identificador)
+														INICIANDO <fator>
+															Procedimento inicia com token: (a,identificador)
+Comecei na posição linha[17].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[17].
+														FINALIZANDO <fator>
+														INICIANDO <mais_fatores>
+															Procedimento inicia com token: (;,simbolo_ponto_virgula)
+														FINALIZANDO <mais_fatores>
+													FINALIZANDO <mais_fatores>
+												FINALIZANDO <termo>
+												INICIANDO <mais_termos>
+													Procedimento inicia com token: (;,simbolo_ponto_virgula)
+												FINALIZANDO <mais_termos>
+											FINALIZANDO <mais_termos>
+										FINALIZANDO <expressao>
+									FINALIZANDO <comando> 1
+									Simbolo: (;,simbolo_ponto_virgula)
+									INICIANDO <mais_cmd>
+										Procedimento inicia com token: (;,simbolo_ponto_virgula)
+
+LINHA:     c:= 5 + 7;
+
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[0].
+Comecei na posição linha[1].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[1].
+Comecei na posição linha[2].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[2].
+Comecei na posição linha[3].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[3].
+Comecei na posição linha[4].
+	Tabela de transicao:  (Q0, c) = Q1.
+	Tabela de transicao:  (Q1, :) = S0.
+		Chamando funcao de saida para S0...
+		Enviando palavra c:...
+		Token encontrado: (c, identificador).
+		Retrocedendo ':'...
+Voltei na posição linha[4].
+										SIMB_PVIRGULA encontrado!
+										Proximo simbolo: (c,identificador)
+										INICIANDO <comando>
+											Procedimento inicia com token: (c,identificador)
+Comecei na posição linha[5].
+	Tabela de transicao:  (Q0, :) = Q2.
+	Tabela de transicao:  (Q2, =) = S12.
+		Chamando funcao de saida para S12...
+		Enviando palavra :=...
+		Token encontrado: (:=, simbolo_atribuicao).
+Voltei na posição linha[6].
+											IDENT encontrado!
+											Proximo simbolo: (:=,simbolo_atribuicao)
+Comecei na posição linha[7].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[7].
+Comecei na posição linha[8].
+	Tabela de transicao:  (Q0, 5) = Q3.
+	Tabela de transicao:  (Q3,  ) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 5 ...
+		Token encontrado: (5, numero).
+		Retrocedendo ' '...
+Voltei na posição linha[8].
+											SIMB_ATRIBUICAO encontrado!
+											Proximo simbolo: (5,numero)
+											INICIANDO <expressao>
+												Procedimento inicia com token: (5,numero)
+												INICIANDO <operador_unario>
+													Procedimento inicia com token: (5,numero)
+												FINALIZANDO <operador_unario>
+												INICIANDO <termo>
+													Procedimento inicia com token: (5,numero)
+													INICIANDO <fator>
+														Procedimento inicia com token: (5,numero)
+Comecei na posição linha[9].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[9].
+Comecei na posição linha[10].
+	Tabela de transicao:  (Q0, +) = S6.
+		Chamando funcao de saida para S6...
+		Enviando palavra +...
+		Token encontrado: (+, simbolo_mais).
+Voltei na posição linha[10].
+													FINALIZANDO <fator>
+													INICIANDO <mais_fatores>
+														Procedimento inicia com token: (+,simbolo_mais)
+													FINALIZANDO <mais_fatores>
+												FINALIZANDO <termo>
+												INICIANDO <mais_termos>
+													Procedimento inicia com token: (+,simbolo_mais)
+													simbolo_mais encontrado!
+Comecei na posição linha[11].
+	Tabela de transicao:  (Q0,  ) = S1.
+		Chamando funcao de saida para S1...
+		Enviando palavra  ...
+Caractere ignorado...
+Voltei na posição linha[11].
+Comecei na posição linha[12].
+	Tabela de transicao:  (Q0, 7) = Q3.
+	Tabela de transicao:  (Q3, ;) = S13.
+		Chamando funcao de saida para S13...
+		Enviando palavra 7;...
+		Token encontrado: (7, numero).
+		Retrocedendo ';'...
+Voltei na posição linha[12].
+													Proximo simbolo: (7,numero)
+													INICIANDO <termo>
+														Procedimento inicia com token: (7,numero)
+														INICIANDO <fator>
+															Procedimento inicia com token: (7,numero)
+Comecei na posição linha[13].
+	Tabela de transicao:  (Q0, ;) = S3.
+		Chamando funcao de saida para S3...
+		Enviando palavra ;...
+		Token encontrado: (;, simbolo_ponto_virgula).
+Voltei na posição linha[13].
+														FINALIZANDO <fator>
+														INICIANDO <mais_fatores>
+															Procedimento inicia com token: (;,simbolo_ponto_virgula)
+														FINALIZANDO <mais_fatores>
+													FINALIZANDO <termo>
+													INICIANDO <mais_termos>
+														Procedimento inicia com token: (;,simbolo_ponto_virgula)
+													FINALIZANDO <mais_termos>
+												FINALIZANDO <mais_termos>
+											FINALIZANDO <expressao>
+										FINALIZANDO <comando> 1
+										Simbolo: (;,simbolo_ponto_virgula)
+										INICIANDO <mais_cmd>
+											Procedimento inicia com token: (;,simbolo_ponto_virgula)
+
+LINHA: EN
+Comecei na posição linha[0].
+	Tabela de transicao:  (Q0, E) = Q1.
+	Tabela de transicao:  (Q1, N) = Q1.
+Fim de linha e nao foi encontrada saida. Lendo outra linha...
+ERRO: fim de arquivo inesperado...
+Voltei na posição linha[0].
+											SIMB_PVIRGULA encontrado!
+											Proximo simbolo: (EN,FIM_DE_ARQUIVO_INESPERADO)
+											INICIANDO <comando>
+												Procedimento inicia com token: (EN,FIM_DE_ARQUIVO_INESPERADO)
+											FINALIZANDO <comando> 10
+											INICIANDO <mais_cmd>
+												Procedimento inicia com token: (EN,FIM_DE_ARQUIVO_INESPERADO)
+											FINALIZANDO <mais_cmd>
+										FINALIZANDO <mais_cmd>
+									FINALIZANDO <mais_cmd>
+								FINALIZANDO <mais_cmd>
+							FINALIZANDO <mais_cmd>
+						FINALIZANDO <mais_cmd>
+Erro sintático: 	 END faltando na posição 1 da linha EN						Iniciando tratamento de erro
+						Não encontrou simbolo de sincronizacao, chegou ao fim do programa :(
+fim do arq					FINALIZANDO <comando> 5
+				FINALIZANDO <bloco>. (token nulo)

@@ -48,12 +48,13 @@ int main(int argc, char * argv[]){
         exit(0);
     }
 
+    //listaTokens(entrada, saida);
+
     //Aloca dinamicamente uma linha para ler da entrada.
     char * linha = (char*) malloc(MAX_LINHA);
     int i = 0;
     linha[0] = '\0';
     
-    //listaTokens(entrada, saida);
 
 
     int num_erros = 0;
@@ -70,11 +71,11 @@ int main(int argc, char * argv[]){
     destroiToken(token);
     free(linha); //Libera a memória alocada para a linha.
 
-    if(num_erros == 0){
-        printf("Não foram encontrados erros. Compilação terminou com sucesso.\n");
-    }else{
-        printf("Foram encontrados %d erros\n", num_erros);
-    }
+    // if(num_erros == 0){
+    //     printf("Não foram encontrados erros. Compilação terminou com sucesso.\n");
+    // }else{
+    //     printf("Foram encontrados %d erros\n", num_erros);
+    // }
 
     //Libera os arquivos de entrada e saída.
     fclose(entrada);

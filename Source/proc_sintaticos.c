@@ -7,7 +7,6 @@
 #include "tabelas.h"
 #include "token.h"
 
-#define PPRINT_ACTV 0
 #define pprint for(int i = 0; PPRINT_ACTV && i < contTab; i++) printf("\t"); if(PPRINT_ACTV) printf
 
 #define TOKEN_NULO 3

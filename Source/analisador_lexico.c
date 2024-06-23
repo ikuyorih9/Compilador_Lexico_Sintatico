@@ -16,6 +16,7 @@ void listaTokens(FILE * entrada, FILE * saida){
     Token * token = NULL;
     char * linha = (char*) malloc(MAX_LINHA);
     int i = 0;
+    linha[i]= '\0';
     while(!feof(entrada)){
         obterSimbolo(entrada, linha, &i, &token);
         if(token != NULL){
