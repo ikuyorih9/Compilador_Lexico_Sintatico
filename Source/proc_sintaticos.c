@@ -37,7 +37,7 @@ int p_erro(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int 
     }*/
 
     int flag = 0;
-    while(*token != NULL && flag == 0){
+    while(!feof(entrada) && *token != NULL && flag == 0){
         for(int i = num_simb_sinc - 1; i>=0; i--){
             if(strcmp((*token)->tipo, s[i]) == 0){
                 pprint("Encontrou simbolo de sincronizacao: %s\n", s[i]);
@@ -59,8 +59,10 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
     pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
 
     //Detecção do menor programa possível.
-    if(*token != NULL && strcmp((*token)->tipo, SIMB_PONTO) == 0)
+    if(*token != NULL && strcmp((*token)->tipo, SIMB_PONTO) == 0){
         return 0;
+    }
+    
 
     p_bloco(entrada, linha, i, token, s, num_simb_sinc);
 
@@ -91,7 +93,7 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
             printf("Erro sintático: SIMB_PONTO faltando na posição %d da linha %s\n", *i, linha);
         }
         p_erro(entrada, linha, i, token, s1, 9);
-        for(int i = 0; i< 8; i++){
+        for(int i = 0; i< 9; i++){
             free(s1[i]);
         }
         free(s1);
@@ -108,9 +110,9 @@ int p_programa(FILE * entrada, char * linha, int *i, Token ** token, char ** s, 
 int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int num_simb_sinc){
     pprint("INICIANDO <bloco>\n");
     push();
-    pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     
     if(*token != NULL){
+        pprint("Procedimento inicia com token: (%s,%s)\n", (*token)->valor, (*token)->tipo);
         //Verifica se o símbolo é uma declaração.
         int flag = 0;
         if(cmpToken(*token, "CONST")|| 
@@ -149,11 +151,11 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
                 printf("ERRO SINTÁTICO: esperava CONST, VAR, PROCEDURE, BEGIN, CALL, IF, WHILE ou IDENT na posição %d da linha %s\n", *i, linha);
             }
             p_erro(entrada, linha, i, token, s1, 9);
-            for(int i = 0; i< 8; i++){
+            for(int i = 0; i< 9; i++){
                 free(s1[i]);
             }
             free(s1);
-            if(cmpToken(*token, SIMB_PVIRGULA)){
+            if(*token != NULL && cmpToken(*token, SIMB_PVIRGULA)){
                 obterSimbolo(entrada, linha, i, token);
             }
             pprint("FINALIZANDO <bloco>\n");
@@ -163,11 +165,11 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
     }
 
     //Obtém o próximo símbolo
-    obterSimbolo(entrada, linha, i, token);
+    //obterSimbolo(entrada, linha, i, token);
 
     pop();
     pprint("FINALIZANDO <bloco>.\n");
-    pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
+    //pprint("Simbolo: (%s,%s)\n", (*token)->valor, (*token)->tipo);
     return 0;
 }
 
@@ -741,6 +743,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             }
             p_erro(entrada, linha, i, token, s1, 2);
             pop();
+            for(int i = 0; i< 2; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <comando>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -765,6 +771,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             }
             p_erro(entrada, linha, i, token, s1, 2);
             pop();
+            for(int i = 0; i< 2; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <comando>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -796,6 +806,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             }
             p_erro(entrada, linha, i, token, s1, 2);
             pop();
+            for(int i = 0; i< 2; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <comando>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -834,6 +848,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             }
             p_erro(entrada, linha, i, token, s1, 7);
             pop();
+            for(int i = 0; i< 7; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <comando>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -872,6 +890,10 @@ int p_comando(FILE * entrada, char * linha, int *i, Token ** token, char ** s, i
             }
             p_erro(entrada, linha, i, token, s1, 7);
             pop();
+            for(int i = 0; i< 7; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <comando>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -1054,6 +1076,10 @@ int p_fator(FILE * entrada, char * linha, int *i, Token ** token, char ** s, int
             }
             p_erro(entrada, linha, i, token, s1, 17);
             pop();
+            for(int i = 0; i< 17; i++){
+                free(s1[i]);
+            }
+            free(s1);
             pprint("FINALIZANDO <fator>\n");
             return 1; //Foi capaz de corrigir o erro
         }
@@ -1137,7 +1163,7 @@ int p_relacional(FILE * entrada, char * linha, int *i, Token ** token, char ** s
         strcpy(s1[8], SIMB_MENOS);
         strcpy(s1[7], SIMB_MAIS);
         strcpy(s1[6], IDENT);
-        strcpy(s1[4], SIMB_NUMERO);
+        strcpy(s1[5], SIMB_NUMERO);
         strcpy(s1[4], SIMB_ABRE_PARENTESE);
         strcpy(s1[3], SIMB_PVIRGULA);
         strcpy(s1[2], "THEN");
@@ -1150,6 +1176,10 @@ int p_relacional(FILE * entrada, char * linha, int *i, Token ** token, char ** s
         }
         p_erro(entrada, linha, i, token, s1, 9);
         pop();
+        for(int i = 0; i< 9; i++){
+            free(s1[i]);
+        }
+        free(s1);
         pprint("FINALIZANDO <relacional>\n");
         return 1; //Foi capaz de corrigir o erro
     }

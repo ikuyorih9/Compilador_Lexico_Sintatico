@@ -1,9 +1,8 @@
-a := d + d;
-CONST # = 3, a = 5,
-VAR a, ,c;
+CONST # = 3, a = 5;
+VAR a, b,c;
 PROCEDURE a;
 CONST y = 2;
-VAR g,h,j
+VAR g,h,j;
 
     g: ; h + j*2;
 
@@ -16,6 +15,6 @@ BEGIN
     BEG&IN
         a:= a+x;
         b:= 3 - b / a;
-    END;
+    END.
     c:= 5 + 7;
-END.
+END % 
