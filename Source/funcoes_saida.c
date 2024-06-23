@@ -31,7 +31,8 @@ const Funcao tabelaFuncoes[] = {
     {{'S','1', '8'}, funcaoSaida18, 1},
     {{'S','1', '9'}, funcaoSaida19, 0},
     {{'E','1'}, funcaoErro1, 1},
-    {{'E','2'}, funcaoErro2, 0}
+    {{'E','2'}, funcaoErro2, 0},
+    {{'E','O','F'}, funcaoSaidaEOF, 0}
 };
 
 /*
@@ -55,6 +56,18 @@ int procuraFuncaoSaida(char * estado, char * token, Token ** saida){
         }
     }
     return -1;
+}
+
+Token * funcaoSaidaEOF(char * palavra){    
+    Token * token = inicializaToken();
+    strcpy(token->valor, palavra);
+
+    //Verifica se é palavra reservada.
+    int palavraReservada = verificaSePalavraReservada(palavra);
+
+    strcpy(token->tipo, ERRO_EOF);
+
+    return token;
 }
 
 Token * funcaoSaida0(char * palavra){

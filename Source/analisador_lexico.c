@@ -43,21 +43,21 @@ Token * analisadorLexico(char * linha, int * pos, FILE * entrada){
 
     //Percorre a linha.
     while(1){
-        if(linha[i] == '\0'){
-            dprint("Fim de linha e nao foi encontrada saida. Lendo outra linha...\n");
-            if(!feof(entrada)){
-                fgets(linha, MAX_LINHA, entrada);
-                dprint("Linha: %s\n", linha);
-                i=0;
-            }
-            else{
-                dprint("ERRO: fim de arquivo inesperado...\n");
-                Token * token = inicializaToken();
-                strcpy(token->valor, palavra);
-                strcpy(token->tipo, ERRO_EOF);
-                return token;
-            }
-        }
+        // if(linha[i] == '\0'){
+        //     dprint("Fim de linha e nao foi encontrada saida. Lendo outra linha...\n");
+        //     if(!feof(entrada)){
+        //         fgets(linha, MAX_LINHA, entrada);
+        //         dprint("Linha: %s\n", linha);
+        //         i=0;
+        //     }
+        //     else{
+        //         dprint("ERRO: fim de arquivo inesperado...\n");
+        //         Token * token = inicializaToken();
+        //         strcpy(token->valor, palavra);
+        //         strcpy(token->tipo, ERRO_EOF);
+        //         return token;
+        //     }
+        // }
         //Salva o caractere na 'palavra'.
         palavra[posPalavra] = linha[i];
         palavra[posPalavra+1] = '\0';

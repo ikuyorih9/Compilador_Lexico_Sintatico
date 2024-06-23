@@ -7,6 +7,7 @@
 int procuraFuncaoSaida(char * estadoFinal, char * token, Token ** saida);
 
 //FUNÇÕES DE SAÍDA.
+Token * funcaoSaidaEOF(char * palavra);
 Token * funcaoSaida0(char * palavra);
 Token * funcaoSaida1(char * palavra);
 Token * funcaoSaida2(char * palavra);

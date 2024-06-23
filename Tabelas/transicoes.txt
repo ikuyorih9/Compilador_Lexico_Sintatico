@@ -154,14 +154,14 @@ Q1 ~ S0
 Q1 \n S0
 Q1 \r S0
 Q1 \t S0
-Q1 \0 S0
+Q1 \0 EOF
 
 //SÍMBOLOS
+Q0 \0 EOF
 Q0 \s S1
 Q0 \n S1
 Q0 \r S1
 Q0 \t S1
-Q0 \0 S1
 Q0 , S2
 Q0 ; S3
 Q0 ( S4

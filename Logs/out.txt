@@ -86,23 +86,4 @@ IN, identificador
 a, identificador
 :=, simbolo_atribuicao
 a, identificador
-+, simbolo_mais
-x, identificador
-;, simbolo_ponto_virgula
-b, identificador
-:=, simbolo_atribuicao
-3, numero
--, simbolo_mais
-b, identificador
-/, simbolo_divisao
-a, identificador
-;, simbolo_ponto_virgula
-END, END
-;, simbolo_ponto_virgula
-c, identificador
-:=, simbolo_atribuicao
-5, numero
-+, simbolo_mais
-7, numero
-;, simbolo_ponto_virgula
-E, FIM_DE_ARQUIVO_INESPERADO
++,
