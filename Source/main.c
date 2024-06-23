@@ -76,7 +76,7 @@ int main(int argc, char * argv[]){
     p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
     //printf("fim com token: (%s,%s)\n", (token)->valor, (token)->tipo);
 
-    while(token != NULL){
+    while(!feof(entrada) && token != NULL){
         p_programa(entrada, linha, &i, &token, simb_sincronizacao, 1);
         //printf("fim 2 com token: (%s,%s)\n", (token)->valor, (token)->tipo);
         obterSimbolo(entrada, linha, &i, &token);

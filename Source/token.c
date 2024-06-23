@@ -43,5 +43,5 @@ Compara token recebido com um símbolo.
 @param simbolo Símbolo a comparar.
 */
 int cmpToken(Token * token, char * simbolo){
-    return !strcmp(token->tipo, simbolo);
+    return token != NULL && !strcmp(token->tipo, simbolo);
 }

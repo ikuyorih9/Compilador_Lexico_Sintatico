@@ -13,4 +13,4 @@ BEGIN
         a:= a+x;
     b:= 3 - b / a;
     c:= 5 + 7;
-END
+EN
