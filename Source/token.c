@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "token.h"
+#include "configs.h"
 
 /*
 Aloca memória para um tipo Token*.

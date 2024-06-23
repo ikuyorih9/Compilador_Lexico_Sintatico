@@ -2,16 +2,7 @@
 #define FUNCAO_SAIDA_H
 
 #include <stdio.h>
-#include "token.h"
-
-#define NUM_ESTADOS_SAIDA 22
-
-//Tipo de dado que associa um estado, uma função e um valor de retroceder.
-typedef struct{
-    char estado[4];
-    Token * (*funcaoSaida)(char*);
-    int retrocede;
-} Funcao;
+#include "configs.h"
 
 int procuraFuncaoSaida(char * estadoFinal, char * token, Token ** saida);
 

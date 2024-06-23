@@ -4,6 +4,7 @@
 #include "funcoes_saida.h"
 #include "tabelas.h"
 #include "simbolos.h"
+#include "token.h"
 
 /*
 Tabela de funções de saída para cada estado de saída.
