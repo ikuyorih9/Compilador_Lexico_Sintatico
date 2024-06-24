@@ -1,5 +1,10 @@
-Erro sintático: 	 SIMB_PVIRGULA faltando na linha BEGIN
-Erro sintático: 	 THEN faltando na linha         b:=3;
-Erro Lexico: 		 @ na linha     c:=@+b
+Erro Lexico: 		 # na linha CONST # = 3, a = 5;
+Erro Lexico: 		 : na linha     a: 2 + (2 * 3);
+Erro sintático: 	  ident | numero | ( <expressão> ) faltando na linha     b:=4 + (5  3);
+Erro sintático: 	 IDENT faltando na linha     CALL ;
+Erro sintático: 	  = | <> | < | <= | > | >= faltando na linha     IF x + 3)6 > 5  THEN
+Erro sintático: 	 THEN faltando na linha     IF x + 3)6 > 5  THEN
+Erro sintático: 	 END faltando na linha     IF x + 3)6 > 5  THEN
+Erro sintático: 	 SIMB_PONTO faltando na linha     END.
 
 Foram encontrados erros.

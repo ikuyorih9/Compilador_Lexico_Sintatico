@@ -63,14 +63,6 @@ int main(int argc, char * argv[]){
     obterSimbolo(entrada, linha, &i, &token);
     p_programa(entrada, linha, &i, &token, &num_erros);
 
-    while(!feof(entrada) && token != NULL){
-        //printf("fim 2 com token: (%s,%s)\n", (token)->valor, (token)->tipo);
-        obterSimbolo(entrada, linha, &i, &token);
-        if(token != NULL){
-            flag = 1;
-        }
-        p_programa(entrada, linha, &i, &token, &num_erros);
-    }
     if(token != NULL){
         destroiToken(&token);
     }

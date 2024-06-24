@@ -179,7 +179,8 @@ int p_bloco(FILE * entrada, char * linha, int *i, Token ** token, int * erros){
                 obterSimbolo(entrada, linha, i, token);
             }
             pprint("FINALIZANDO <bloco>\n");
-            if(!feof(entrada)){
+            if(!feof(entrada) && *token != NULL){
+                obterSimbolo(entrada, linha, i, token);
                 p_bloco(entrada,linha,i,token, erros);
             }
             return 1;
